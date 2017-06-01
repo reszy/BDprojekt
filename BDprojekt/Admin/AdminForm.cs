@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BDprojekt
+namespace PresentationLayer
 {
     public partial class AdminPanel : Form
     {
@@ -16,5 +16,6 @@ namespace BDprojekt
         {
             InitializeComponent();
         }
+        
     }
 }

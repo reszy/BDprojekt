@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PresentationLayer
 {
-    public partial class LoginScreen : Form
+    public partial class DoctorPanel : Form
     {
-        public LoginScreen()
+        public DoctorPanel()
         {
             InitializeComponent();
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
         }
     }
 }

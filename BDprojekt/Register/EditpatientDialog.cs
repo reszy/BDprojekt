@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BDprojekt.Clinic
+namespace BDprojekt.Register
 {
-    public partial class RegisterPanel : Form
+    public partial class EditpatientDialog : Form
     {
-        public RegisterPanel()
+        public EditpatientDialog()
         {
             InitializeComponent();
         }

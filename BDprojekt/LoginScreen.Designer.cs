@@ -1,4 +1,4 @@
-﻿namespace BDprojekt
+﻿namespace PresentationLayer
 {
     partial class LoginScreen
     {

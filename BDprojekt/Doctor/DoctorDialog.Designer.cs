@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer
 {
-    partial class Laboratory
+    partial class DoctorPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -32,16 +32,19 @@
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wylogujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wyjścieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wizytaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wybierzZaznaczonąToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,12 +52,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.plikToolStripMenuItem,
-            this.wizytaToolStripMenuItem,
             this.pomocToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(632, 24);
-            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Size = new System.Drawing.Size(607, 24);
+            this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // plikToolStripMenuItem
@@ -78,20 +80,6 @@
             this.wyjścieToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.wyjścieToolStripMenuItem.Text = "Zakończ";
             // 
-            // wizytaToolStripMenuItem
-            // 
-            this.wizytaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.wybierzZaznaczonąToolStripMenuItem});
-            this.wizytaToolStripMenuItem.Name = "wizytaToolStripMenuItem";
-            this.wizytaToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.wizytaToolStripMenuItem.Text = "Badanie";
-            // 
-            // wybierzZaznaczonąToolStripMenuItem
-            // 
-            this.wybierzZaznaczonąToolStripMenuItem.Name = "wybierzZaznaczonąToolStripMenuItem";
-            this.wybierzZaznaczonąToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.wybierzZaznaczonąToolStripMenuItem.Text = "Wybierz zaznaczoną";
-            // 
             // pomocToolStripMenuItem
             // 
             this.pomocToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -106,46 +94,112 @@
             this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.oProgramieToolStripMenuItem.Text = "O programie...";
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(632, 422);
-            this.splitContainer1.SplitterDistance = 310;
-            this.splitContainer1.TabIndex = 5;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(310, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(607, 334);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Laboratory
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(44, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(113, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(222, 37);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(134, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(375, 37);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowCheckBox = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(220, 20);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(493, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 32);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Zastosuj";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Imię";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(163, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Nazwisko";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 441);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 44);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Otwórz";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(222, 66);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(134, 20);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(175, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "PESEL";
+            // 
+            // DoctorPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 446);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(607, 497);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Laboratory";
-            this.Text = "Laboratory";
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "DoctorPanel";
+            this.Text = "Panel Doktora";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,16 +207,21 @@
         }
 
         #endregion
-
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wylogujToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wyjścieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wizytaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wybierzZaznaczonąToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pomocToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oProgramieToolStripMenuItem;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
     }
 }

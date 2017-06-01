@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BDprojekt
+namespace PresentationLayer
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace BDprojekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DoctorPanel());  //new LoginScreen());
+            Application.Run(new LoginScreen());  //new LoginScreen());
         }
     }
 }

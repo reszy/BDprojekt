@@ -8,15 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BDprojekt.Admin
+namespace BDprojekt.Doctor
 {
-    public partial class AddUserDialog : Form
+    public partial class VisitForm : Form
     {
-        private AdminPanel mainForm;
-
-        public AddUserDialog(AdminPanel mainForm)
+        public VisitForm()
         {
-            this.mainForm = mainForm;
             InitializeComponent();
         }
     }

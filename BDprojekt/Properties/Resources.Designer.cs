@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BDprojekt.Properties
+namespace PresentationLayer.Properties
 {
 
 

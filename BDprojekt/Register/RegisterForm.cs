@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationLayer
+namespace PresentationLayer.Clinic
 {
-    public partial class LoginScreen : Form
+    public partial class RegisterForm : Form
     {
-        public LoginScreen()
+        public RegisterForm()
         {
             InitializeComponent();
         }

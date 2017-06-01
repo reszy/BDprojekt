@@ -45,29 +45,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AddUserDialog.cs">
+    <Compile Include="Admin\AdminDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\AddUserDialog.Designer.cs">
-      <DependentUpon>AddUserDialog.cs</DependentUpon>
+    <Compile Include="Admin\AdminDialog.Designer.cs">
+      <DependentUpon>AdminDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\AdminPanel.cs">
+    <Compile Include="Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\AdminPanel.Designer.cs">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
+    <Compile Include="Admin\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clinic\DoctorPanel.cs">
+    <Compile Include="Doctor\DoctorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clinic\DoctorPanel.Designer.cs">
-      <DependentUpon>DoctorPanel.cs</DependentUpon>
+    <Compile Include="Doctor\DoctorDialog.Designer.cs">
+      <DependentUpon>DoctorDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clinic\RegisterPanel.cs">
+    <Compile Include="Doctor\VisitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clinic\RegisterPanel.Designer.cs">
-      <DependentUpon>RegisterPanel.cs</DependentUpon>
+    <Compile Include="Doctor\VisitForm.Designer.cs">
+      <DependentUpon>VisitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register\EditPatientDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register\EditPatientDialog.Designer.cs">
+      <DependentUpon>EditPatientDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register\RegisterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register\RegisterDialog.Designer.cs">
+      <DependentUpon>RegisterDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratory\Laboratory.cs">
       <SubType>Form</SubType>
@@ -83,14 +101,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Admin\AdminPanel.resx">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\AdminDialog.resx">
+      <DependentUpon>AdminDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clinic\DoctorPanel.resx">
-      <DependentUpon>DoctorPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clinic\RegisterPanel.resx">
-      <DependentUpon>RegisterPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Doctor\DoctorDialog.resx">
+      <DependentUpon>DoctorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\VisitForm.resx">
+      <DependentUpon>VisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register\EditpatientDialog.resx">
+      <DependentUpon>EditPatientDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register\RegisterDialog.resx">
+      <DependentUpon>RegisterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratory\Laboratory.resx">
       <DependentUpon>Laboratory.cs</DependentUpon>
