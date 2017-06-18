@@ -1,0 +1,8 @@
+G:\Studia\BD Proj\Project_Visual\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+G:\Studia\BD Proj\Project_Visual\BusinessLayer\bin\Debug\BusinessLayer.dll
+G:\Studia\BD Proj\Project_Visual\BusinessLayer\bin\Debug\BusinessLayer.pdb
+G:\Studia\BD Proj\Project_Visual\BusinessLayer\bin\Debug\DataLayer.dll
+G:\Studia\BD Proj\Project_Visual\BusinessLayer\bin\Debug\DataLayer.pdb
+G:\Studia\BD Proj\Project_Visual\BusinessLayer\bin\Debug\DataLayer.dll.config
+G:\Studia\BD Proj\Project_Visual\BusinessLayer\obj\Debug\BusinessLayer.dll
+G:\Studia\BD Proj\Project_Visual\BusinessLayer\obj\Debug\BusinessLayer.pdb

@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataLayer;
 
 namespace BusinessLayer
 {
-    public class Class1
+    class AdministarionFacade
     {
+        IQueryable<User> GetAllUsers()
+        {
+            var dc = new Da
+        }
     }
 }
