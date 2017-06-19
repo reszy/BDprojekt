@@ -1,4 +1,3 @@
-G:\Studia\BD Proj\Project_Visual\DataLayer\bin\Debug\DataLayer.dll.config
 G:\Studia\BD Proj\Project_Visual\DataLayer\bin\Debug\DataLayer.dll
 G:\Studia\BD Proj\Project_Visual\DataLayer\bin\Debug\DataLayer.pdb
 G:\Studia\BD Proj\Project_Visual\DataLayer\obj\Debug\DataLayer.dll

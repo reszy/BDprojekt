@@ -36,6 +36,7 @@ namespace BusinessLayer
                 {
                     result.LastName = user.LastName;
                     result.FirstName = user.FirstName;
+                    result.Uname = user.Uname;
                     result.Role = user.Role;                    
                     result.DateRetire = user.DateRetire;                    
                     if (!String.IsNullOrEmpty(user.Password))
