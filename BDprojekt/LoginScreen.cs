@@ -16,5 +16,11 @@ namespace PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            var a = new AdminPanel();
+            a.Show();
+        }
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using BusinessLayer;
+
 namespace PresentationLayer
 {
     public partial class AdminPanel : Form
@@ -15,6 +17,9 @@ namespace PresentationLayer
         public AdminPanel()
         {
             InitializeComponent();
+
+            var users = AdministrationFacade.GetUsers(new DataLayer.User());
+
         }
         
     }

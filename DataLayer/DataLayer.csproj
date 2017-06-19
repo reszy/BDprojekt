@@ -54,6 +54,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="DataClassesClinic.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClassesClinic.designer.cs</LastGenOutput>
