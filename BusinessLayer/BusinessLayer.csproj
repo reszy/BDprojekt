@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
-      <Project>{111cd779-587a-4ddd-a0cb-d5f54f500358}</Project>
+      <Project>{fa930c67-7717-4f8c-bf0a-29ce8328bc55}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
   </ItemGroup>

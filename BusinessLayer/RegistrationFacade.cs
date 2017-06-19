@@ -9,9 +9,9 @@ namespace BusinessLayer
 {
     public class RegistrationFacade
     {
-        public IQueryable<Patient> GetPatient()
+        public IQueryable GetPatient()
         {
-            using(var dc = new DataClassesClinicDataContext())
+            using (var dc = new DataClassesClinicDataContext())
             {
                 var result = from p in dc.Patients
                              select p;
@@ -20,7 +20,7 @@ namespace BusinessLayer
             }
         }
 
-        public IQueryable<Visit> GetVisit(Patient searchCrit)
+        public IQueryable GetVisit(Patient searchCrit)
         {
             using (var dc = new DataClassesClinicDataContext())
             {
@@ -35,7 +35,7 @@ namespace BusinessLayer
         public void AddNewPatient(Patient patient)
         {
             using (var dc = new DataClassesClinicDataContext())
-            {                
+            {
                 dc.Patients.InsertOnSubmit(patient);
                 dc.SubmitChanges();
             }
@@ -50,7 +50,7 @@ namespace BusinessLayer
                               select p).SingleOrDefault();
 
                 if (result != null)
-                {                    
+                {
                     result.BirthdayDate = patient.BirthdayDate;
                     result.FirstName = patient.FirstName;
                     result.LastName = patient.LastName;

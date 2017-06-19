@@ -7,47 +7,40 @@ using DataLayer;
 
 namespace BusinessLayer
 {
-    class AdministrationFacade
+    public static class AdministrationFacade
     {
-        public IQueryable<User> GetUsers(User searchCrit)
+        public static IQueryable GetUsers(User searchCrit)
         {
-            using (var dc = new DataClassesClinicDataContext())
-            {
-                var result = from u in dc.Users
-                             where
-                                  u.FirstName.StartsWith(searchCrit.FirstName) ||
-                                  u.LastName.StartsWith(searchCrit.LastName) ||
-                                  u.PersonId == searchCrit.PersonId                                 
-                             orderby u.PersonId descending
-                             select new User
-                             {
-                                 PersonId = u.PersonId,
-                                 Uname = u.Uname,
-                                 Role = u.Role,
-                                 FirstName = u.FirstName,
-                                 LastName = u.LastName,
-                                 DateRetire = u.DateRetire
-                             };
+            var dc = new DataClassesClinicDataContext();
 
-                return result;
-            }
+            var result = from u in dc.Users
+                         where
+                             (String.IsNullOrEmpty(searchCrit.FirstName) || u.FirstName.StartsWith(searchCrit.FirstName))
+                             &&
+                             (String.IsNullOrEmpty(searchCrit.LastName) || u.LastName.StartsWith(searchCrit.LastName))
+                             &&
+                             (String.IsNullOrEmpty(searchCrit.Uname) || u.Uname.StartsWith(searchCrit.Uname))
+                         select new { u.Uname, u.FirstName, u.LastName, u.Role, u.DateRetire };         
+            return result;            
         }
 
-        public void UpdateUserData(User user)
+        public static void UpdateUserData(User user)
         {
             using (var dc = new DataClassesClinicDataContext())
             {
                 var result = (from u in dc.Users
-                              where u.PersonId == user.PersonId
+                              where String.IsNullOrEmpty(user.Uname) || u.Uname == user.Uname
                               select u).SingleOrDefault();
 
                 if (result != null)
                 {
                     result.LastName = user.LastName;
                     result.FirstName = user.FirstName;
-                    result.Role = user.Role;
-                    result.Uname = user.Uname;
-                    result.Password = user.Password;
+                    result.Role = user.Role;                    
+                    result.DateRetire = user.DateRetire;                    
+                    if (!String.IsNullOrEmpty(user.Password))
+                        result.Password = user.Password;
+
                     dc.SubmitChanges();
                 }
             }
