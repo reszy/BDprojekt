@@ -10,17 +10,22 @@ using System.Windows.Forms;
 
 using BusinessLayer;
 
-namespace PresentationLayer
+namespace PresentationLayer.Admin
 {
-    public partial class AdminPanel : Form
+    public partial class AdminForm : Form
     {
-        public AdminPanel()
+        public AdminForm()
         {
             InitializeComponent();
 
             var users = AdministrationFacade.GetUsers(new DataLayer.User());
 
+            this.dataGridView.DataSource = users;
         }
-        
+
+        private void addUserButton_Click(object sender, EventArgs e)
+        {
+            //this.dataGridView.SelectedRows
+        }
     }
 }

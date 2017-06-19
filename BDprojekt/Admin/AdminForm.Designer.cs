@@ -1,6 +1,6 @@
-﻿namespace PresentationLayer
+﻿namespace PresentationLayer.Admin
 {
-    partial class AdminPanel
+    partial class AdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -54,6 +54,9 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(12, 110);
             this.dataGridView.Name = "dataGridView";
@@ -118,15 +121,18 @@
             // 
             // addUserButton
             // 
+            this.addUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addUserButton.Location = new System.Drawing.Point(12, 512);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(107, 23);
             this.addUserButton.TabIndex = 4;
             this.addUserButton.Text = "Dodaj użytkownika";
             this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
             // editUserButton
             // 
+            this.editUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.editUserButton.Location = new System.Drawing.Point(134, 512);
             this.editUserButton.Name = "editUserButton";
             this.editUserButton.Size = new System.Drawing.Size(107, 23);
