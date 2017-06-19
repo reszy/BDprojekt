@@ -9,3 +9,4 @@ E:\Programowanie\Repos\BDprojekt\DataLayer\bin\Debug\DataLayer.pdb
 E:\Programowanie\Repos\BDprojekt\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
 E:\Programowanie\Repos\BDprojekt\DataLayer\obj\Debug\DataLayer.dll
 E:\Programowanie\Repos\BDprojekt\DataLayer\obj\Debug\DataLayer.pdb
+G:\Studia\BD Proj\Project_Visual\DataLayer\bin\Debug\DataLayer.dll.config
