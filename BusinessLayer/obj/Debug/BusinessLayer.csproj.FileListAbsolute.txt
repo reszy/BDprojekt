@@ -6,3 +6,11 @@ G:\Studia\BD Proj\Project_Visual\BusinessLayer\bin\Debug\DataLayer.pdb
 G:\Studia\BD Proj\Project_Visual\BusinessLayer\bin\Debug\DataLayer.dll.config
 G:\Studia\BD Proj\Project_Visual\BusinessLayer\obj\Debug\BusinessLayer.dll
 G:\Studia\BD Proj\Project_Visual\BusinessLayer\obj\Debug\BusinessLayer.pdb
+E:\Programowanie\Repos\BDprojekt\BusinessLayer\bin\Debug\BusinessLayer.dll
+E:\Programowanie\Repos\BDprojekt\BusinessLayer\bin\Debug\BusinessLayer.pdb
+E:\Programowanie\Repos\BDprojekt\BusinessLayer\bin\Debug\DataLayer.dll
+E:\Programowanie\Repos\BDprojekt\BusinessLayer\bin\Debug\DataLayer.pdb
+E:\Programowanie\Repos\BDprojekt\BusinessLayer\bin\Debug\DataLayer.dll.config
+E:\Programowanie\Repos\BDprojekt\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+E:\Programowanie\Repos\BDprojekt\BusinessLayer\obj\Debug\BusinessLayer.dll
+E:\Programowanie\Repos\BDprojekt\BusinessLayer\obj\Debug\BusinessLayer.pdb
