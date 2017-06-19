@@ -12,9 +12,9 @@ namespace PresentationLayer.Admin
 {
     public partial class AdminDialog : Form
     {
-        private AdminPanel mainForm;
+        private AdminForm mainForm;
 
-        public AdminDialog(AdminPanel mainForm)
+        public AdminDialog(AdminForm mainForm)
         {
             this.mainForm = mainForm;
             InitializeComponent();

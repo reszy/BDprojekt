@@ -19,7 +19,7 @@ namespace PresentationLayer
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            var a = new AdminPanel();
+            var a = new Admin.AdminForm();
             a.Show();
         }
     }
