@@ -24,35 +24,53 @@ namespace BusinessLayer
             return result;            
         }
 
-        public static void UpdateUserData(User user)
+        public static bool UpdateUserData(User user)
         {
             var dc = new DataClassesClinicDataContext();
-            
-            var result = (from u in dc.Users
-                            where String.IsNullOrEmpty(user.Uname) || u.Uname == user.Uname
-                            select u).SingleOrDefault();
 
-            if (result != null)
+            try
             {
-                result.LastName = user.LastName;
-                result.FirstName = user.FirstName;
-                result.Uname = user.Uname;
-                result.Role = user.Role;                    
-                result.DateRetire = user.DateRetire;                    
-                if (!String.IsNullOrEmpty(user.Password))
-                    result.Password = user.Password;
+                var result = (from u in dc.Users
+                              where String.IsNullOrEmpty(user.Uname) || u.Uname == user.Uname
+                              select u).SingleOrDefault();
 
-                dc.SubmitChanges();
-            }            
+                if (result != null)
+                {
+                    result.LastName = user.LastName;
+                    result.FirstName = user.FirstName;
+                    result.Uname = user.Uname;
+                    result.Role = user.Role;
+                    result.DateRetire = user.DateRetire;
+                    if (!String.IsNullOrEmpty(user.Password))
+                        result.Password = user.Password;
+
+                    dc.SubmitChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                //TODO add logger
+                return false;
+            }
+            return true;
         }
 
-        public static void AddNewUser(User user)
+        public static bool AddNewUser(User user)
         {
             var dc = new DataClassesClinicDataContext();
 
-            dc.Users.InsertOnSubmit(user);
+            try
+            {
+                dc.Users.InsertOnSubmit(user);
 
-            dc.SubmitChanges();
+                dc.SubmitChanges();
+            } 
+            catch(Exception e)
+            {
+                //TODO add logger
+                return false;
+            }
+            return true;
         }
     }
 }
