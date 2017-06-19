@@ -26,27 +26,33 @@ namespace BusinessLayer
 
         public static void UpdateUserData(User user)
         {
-            using (var dc = new DataClassesClinicDataContext())
+            var dc = new DataClassesClinicDataContext();
+            
+            var result = (from u in dc.Users
+                            where String.IsNullOrEmpty(user.Uname) || u.Uname == user.Uname
+                            select u).SingleOrDefault();
+
+            if (result != null)
             {
-                var result = (from u in dc.Users
-                              where String.IsNullOrEmpty(user.Uname) || u.Uname == user.Uname
-                              select u).SingleOrDefault();
+                result.LastName = user.LastName;
+                result.FirstName = user.FirstName;
+                result.Uname = user.Uname;
+                result.Role = user.Role;                    
+                result.DateRetire = user.DateRetire;                    
+                if (!String.IsNullOrEmpty(user.Password))
+                    result.Password = user.Password;
 
-                if (result != null)
-                {
-                    result.LastName = user.LastName;
-                    result.FirstName = user.FirstName;
-                    result.Uname = user.Uname;
-                    result.Role = user.Role;                    
-                    result.DateRetire = user.DateRetire;                    
-                    if (!String.IsNullOrEmpty(user.Password))
-                        result.Password = user.Password;
+                dc.SubmitChanges();
+            }            
+        }
 
-                    dc.SubmitChanges();
-                }
-            }
+        public static void AddNewUser(User user)
+        {
+            var dc = new DataClassesClinicDataContext();
+
+            dc.Users.InsertOnSubmit(user);
+
+            dc.SubmitChanges();
         }
     }
-
-
 }

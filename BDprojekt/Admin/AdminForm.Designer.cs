@@ -44,6 +44,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,12 +58,12 @@
             this.dataGridView.Location = new System.Drawing.Point(12, 140);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(401, 361);
+            this.dataGridView.Size = new System.Drawing.Size(566, 361);
             this.dataGridView.TabIndex = 0;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(290, 65);
+            this.searchButton.Location = new System.Drawing.Point(464, 51);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 1;
@@ -75,7 +77,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(423, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(588, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -142,7 +144,7 @@
             // roleComboBox
             // 
             this.roleComboBox.FormattingEnabled = true;
-            this.roleComboBox.Location = new System.Drawing.Point(76, 102);
+            this.roleComboBox.Location = new System.Drawing.Point(266, 68);
             this.roleComboBox.Name = "roleComboBox";
             this.roleComboBox.Size = new System.Drawing.Size(147, 21);
             this.roleComboBox.TabIndex = 7;
@@ -159,7 +161,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 105);
+            this.label2.Location = new System.Drawing.Point(228, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 9;
@@ -181,11 +183,29 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Nazwisko:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(229, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Login:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(266, 36);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(147, 20);
+            this.textBox1.TabIndex = 12;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 546);
+            this.ClientSize = new System.Drawing.Size(588, 546);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LastNameTextBox);
             this.Controls.Add(this.label2);
@@ -226,5 +246,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
