@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using BusinessLayer;
+using DataLayer;
 
 namespace PresentationLayer.Admin
 {
@@ -25,7 +26,26 @@ namespace PresentationLayer.Admin
 
         private void addUserButton_Click(object sender, EventArgs e)
         {
-            //this.dataGridView.SelectedRows
+        }
+
+        internal User getUser()
+        {
+            var ucell = this.dataGridView.SelectedRows[0];
+
+            User user = new User
+            {
+                Uname = ucell.Cells[0].Value.ToString(),
+            };
+            return user;
+        }
+
+        private void editUserButton_Click(object sender, EventArgs e)
+        {
+            if(this.dataGridView.SelectedRows.Count > 0)
+            {
+                var editDialog = new AdminDialog(this);
+                editDialog.ShowDialog();
+            }
         }
     }
 }

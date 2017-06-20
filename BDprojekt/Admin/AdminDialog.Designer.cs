@@ -41,7 +41,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.loginTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -154,12 +154,12 @@
             this.label6.TabIndex = 25;
             this.label6.Text = "Login:";
             // 
-            // textBox2
+            // loginTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(88, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(115, 20);
-            this.textBox2.TabIndex = 24;
+            this.loginTextBox.Location = new System.Drawing.Point(88, 12);
+            this.loginTextBox.Name = "loginTextBox";
+            this.loginTextBox.Size = new System.Drawing.Size(115, 20);
+            this.loginTextBox.TabIndex = 24;
             // 
             // AdminDialog
             // 
@@ -169,7 +169,7 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
@@ -202,6 +202,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox loginTextBox;
     }
 }
