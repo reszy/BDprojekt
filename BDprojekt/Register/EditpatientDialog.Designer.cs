@@ -40,7 +40,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(173, 107);
+            this.button2.Location = new System.Drawing.Point(197, 315);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 21;
@@ -49,7 +49,7 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(30, 107);
+            this.btnApply.Location = new System.Drawing.Point(116, 315);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 20;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 146);
+            this.ClientSize = new System.Drawing.Size(284, 350);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.label3);

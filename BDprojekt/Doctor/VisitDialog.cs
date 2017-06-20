@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BDprojekt.Doctor
 {
-    public partial class VisitForm : Form
+    public partial class VisitDialog : Form
     {
-        public VisitForm()
+        public VisitDialog()
         {
             InitializeComponent();
         }

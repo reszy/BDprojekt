@@ -160,7 +160,7 @@
             // 
             // deleteVisitButton
             // 
-            this.deleteVisitButton.Location = new System.Drawing.Point(141, 187);
+            this.deleteVisitButton.Location = new System.Drawing.Point(129, 187);
             this.deleteVisitButton.Name = "deleteVisitButton";
             this.deleteVisitButton.Size = new System.Drawing.Size(117, 23);
             this.deleteVisitButton.TabIndex = 25;
@@ -290,11 +290,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(280, 187);
+            this.button1.Location = new System.Drawing.Point(252, 187);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 23);
             this.button1.TabIndex = 27;
-            this.button1.Text = "Pokaż terminarz";
+            this.button1.Text = "Pokaż wszytskie";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -316,7 +316,7 @@
             this.groupBox3.Size = new System.Drawing.Size(727, 56);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Wyszukiwanie";
+            this.groupBox3.Text = "Wyszukiwanie pacjentów";
             // 
             // RegisterForm
             // 

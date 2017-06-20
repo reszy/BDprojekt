@@ -49,67 +49,50 @@ namespace BusinessLayer
         public static IQueryable<User> GetUsers(User searchCrit)
         {
             var dc = new DataClassesClinicDataContext();
-
+      
             var result = from u in dc.Users
                          where
-                             (String.IsNullOrEmpty(searchCrit.Role) || u.Role.StartsWith(searchCrit.Role))
-                             &&
-                             (String.IsNullOrEmpty(searchCrit.FirstName) || u.FirstName.StartsWith(searchCrit.FirstName))
-                             &&
-                             (String.IsNullOrEmpty(searchCrit.LastName) || u.LastName.StartsWith(searchCrit.LastName))
-                             &&
-                             (String.IsNullOrEmpty(searchCrit.Uname) || u.Uname.StartsWith(searchCrit.Uname))
-                         select u;         
+                            (String.IsNullOrEmpty(searchCrit.Role) || u.Role.StartsWith(searchCrit.Role))
+                            &&
+                            (String.IsNullOrEmpty(searchCrit.FirstName) || u.FirstName.StartsWith(searchCrit.FirstName))
+                            &&
+                            (String.IsNullOrEmpty(searchCrit.LastName) || u.LastName.StartsWith(searchCrit.LastName))
+                            &&
+                            (String.IsNullOrEmpty(searchCrit.Uname) || u.Uname.StartsWith(searchCrit.Uname))
+                         select u;
             return result;            
         }
 
-        public static bool UpdateUserData(User user)
+        public static void UpdateUserData(User user)
         {
             var dc = new DataClassesClinicDataContext();
+    
+            var result = (from u in dc.Users
+                          where u.PersonId == user.PersonId
+                          select u).SingleOrDefault();
 
-            try
+            if (result != null)
             {
-                var result = (from u in dc.Users
-                              where String.IsNullOrEmpty(user.Uname) || u.Uname == user.Uname
-                              select u).SingleOrDefault();
-
-                if (result != null)
-                {
-                    result.LastName = user.LastName;
-                    result.FirstName = user.FirstName;
-                    result.Uname = user.Uname;
-                    result.Role = user.Role;
-                    result.DateRetire = user.DateRetire;
-                    if (!String.IsNullOrEmpty(user.Password))
-                        result.Password = user.Password;
-
-                    dc.SubmitChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                //TODO add logger
-                return false;
-            }
-            return true;
-        }
-
-        public static bool AddNewUser(User user)
-        {
-            var dc = new DataClassesClinicDataContext();
-
-            try
-            {
-                dc.Users.InsertOnSubmit(user);
+                result.LastName = user.LastName;
+                result.FirstName = user.FirstName;
+                result.Uname = user.Uname;
+                result.Role = user.Role;
+                result.DateRetire = user.DateRetire;
+                if (!String.IsNullOrEmpty(user.Password))
+                    result.Password = Hash(user.Password);
 
                 dc.SubmitChanges();
-            } 
-            catch(Exception e)
-            {
-                //TODO add logger
-                return false;
             }
-            return true;
+        }
+
+        public static void AddNewUser(User user)
+        {
+            var dc = new DataClassesClinicDataContext();
+
+            user.Password = Hash(user.Password);
+
+            dc.Users.InsertOnSubmit(user);
+            dc.SubmitChanges();
         }
     }
 }

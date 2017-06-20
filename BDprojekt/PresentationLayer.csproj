@@ -57,17 +57,17 @@
     <Compile Include="Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\DoctorDialog.cs">
+    <Compile Include="Doctor\DoctorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doctor\DoctorDialog.Designer.cs">
-      <DependentUpon>DoctorDialog.cs</DependentUpon>
+    <Compile Include="Doctor\DoctorForm.Designer.cs">
+      <DependentUpon>DoctorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\VisitForm.cs">
+    <Compile Include="Doctor\VisitDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doctor\VisitForm.Designer.cs">
-      <DependentUpon>VisitForm.cs</DependentUpon>
+    <Compile Include="Doctor\VisitDialog.Designer.cs">
+      <DependentUpon>VisitDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Register\EditPatientDialog.cs">
       <SubType>Form</SubType>
@@ -107,11 +107,11 @@
     <EmbeddedResource Include="Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\DoctorDialog.resx">
-      <DependentUpon>DoctorDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Doctor\DoctorForm.resx">
+      <DependentUpon>DoctorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\VisitForm.resx">
-      <DependentUpon>VisitForm.cs</DependentUpon>
+    <EmbeddedResource Include="Doctor\VisitDialog.resx">
+      <DependentUpon>VisitDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Register\EditpatientDialog.resx">
       <DependentUpon>EditPatientDialog.cs</DependentUpon>
