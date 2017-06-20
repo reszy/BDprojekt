@@ -27,7 +27,7 @@ namespace PresentationLayer.Admin
                 update = true;
                 this.firstNameTextBox.Text = editedUser.FirstName;
                 this.lastNameTextBox.Text = editedUser.LastName;
-                this.loginTextBox.Text = editedUser.Uname;
+                this.userNameTextBox.Text = editedUser.Uname;
             }
             else
             {
