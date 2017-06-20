@@ -150,6 +150,12 @@
             // roleComboBox
             // 
             this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Items.AddRange(new object[] {
+            "Admin",
+            "Doctor",
+            "Receptionist",
+            "Lab Worker",
+            "Lab Manager"});
             this.roleComboBox.Location = new System.Drawing.Point(266, 68);
             this.roleComboBox.Name = "roleComboBox";
             this.roleComboBox.Size = new System.Drawing.Size(147, 21);
@@ -205,7 +211,7 @@
             this.textBox1.Size = new System.Drawing.Size(147, 20);
             this.textBox1.TabIndex = 12;
             // 
-            // AdminPanel
+            // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,7 +230,7 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AdminPanel";
+            this.Name = "AdminForm";
             this.Text = "AdminPanel";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
