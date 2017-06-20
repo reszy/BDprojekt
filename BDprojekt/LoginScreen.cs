@@ -46,7 +46,7 @@ namespace PresentationLayer
             switch (role.ToEnum())
             {
                 case UserRole.Type.ADMIN:
-                    var a = new Admin.AdminForm();
+                    var a = new Admin.AdminForm(this);
                     a.Show();
                     break;
                 case UserRole.Type.DOCTOR:
@@ -62,19 +62,23 @@ namespace PresentationLayer
             }                      
         }
 
-        private void userNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void userNameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            if(e.KeyData == Keys.Enter)
             {
-                loginButton.PerformClick();
+                this.loginButton_Click(this, e);
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 
-        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            if (e.KeyData == Keys.Enter)
             {
-                loginButton.PerformClick();
+                this.loginButton_Click(this, e);
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
     }

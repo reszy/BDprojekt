@@ -15,37 +15,61 @@ namespace PresentationLayer.Admin
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        Form mainForm;
+        List<User> users;
+
+        public AdminForm(Form mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
 
-            var users = AdministrationFacade.GetUsers(new DataLayer.User());
+            users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
 
             this.dataGridView.DataSource = users;
+            this.dataGridView.Refresh();
         }
 
         private void addUserButton_Click(object sender, EventArgs e)
         {
-        }
+            var editDialog = new AdminDialog(null);
+            editDialog.ShowDialog();
 
-        internal User getUser()
-        {
-            var ucell = this.dataGridView.SelectedRows[0];
-
-            User user = new User
-            {
-                Uname = ucell.Cells[0].Value.ToString(),
-            };
-            return user;
+            users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
+            this.dataGridView.Refresh();
         }
 
         private void editUserButton_Click(object sender, EventArgs e)
         {
             if(this.dataGridView.SelectedRows.Count > 0)
             {
-                var editDialog = new AdminDialog(this);
+                var editDialog = new AdminDialog(users[this.dataGridView.CurrentCell.RowIndex]);
                 editDialog.ShowDialog();
+
+                users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
             }
+        }
+
+        private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(sender == this.logoutToolStripMenuItem)
+            {
+                mainForm.Show();
+                this.Close();
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AdminForm_FormClosing(this.logoutToolStripMenuItem, new FormClosingEventArgs(CloseReason.UserClosing, false));
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AdminForm_FormClosing(this.exitToolStripMenuItem, new FormClosingEventArgs(CloseReason.UserClosing, false));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using BusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,21 +14,30 @@ namespace PresentationLayer.Admin
 {
     public partial class AdminDialog : Form
     {
-        private AdminForm mainForm;
         private bool update;
         private User editedUser;
 
-        public AdminDialog(AdminForm mainForm)
+        public AdminDialog(User user)
         {
-            this.mainForm = mainForm;
             InitializeComponent();
+            editedUser = user;
 
-            if((editedUser = this.mainForm.getUser()) != null)
+            if (editedUser != null)
             {
                 update = true;
                 this.firstNameTextBox.Text = editedUser.FirstName;
                 this.lastNameTextBox.Text = editedUser.LastName;
                 this.userNameTextBox.Text = editedUser.Uname;
+                this.passwordTextBox.Text = editedUser.Password;
+                if (editedUser.DateRetire != null)
+                {
+                    this.accountStateDateTimePicker.Checked = true;
+                    this.accountStateDateTimePicker.Value = Convert.ToDateTime(editedUser.DateRetire);
+                }
+                else
+                {
+                    this.accountStateDateTimePicker.Checked = false;
+                }
             }
             else
             {
@@ -35,6 +45,35 @@ namespace PresentationLayer.Admin
                 this.editedUser = new User();
             }
 
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            editedUser.FirstName = this.firstNameTextBox.Text;
+            editedUser.LastName = this.lastNameTextBox.Text;
+            editedUser.Uname = this.userNameTextBox.Text;
+            editedUser.Password = this.passwordTextBox.Text;
+            editedUser.Role = this.roleComboBox.Text;
+            if (this.accountStateDateTimePicker.Checked)
+            {
+                editedUser.DateRetire = this.accountStateDateTimePicker.Value;
+            }
+            else
+            {
+                editedUser.DateRetire = null;
+            }
+
+
+            if (update)
+            {
+                AdministrationFacade.UpdateUserData(editedUser);
+            }
+            else
+            {
+                AdministrationFacade.AddNewUser(editedUser);
+            }
+
+            this.Close();
         }
     }
 }
