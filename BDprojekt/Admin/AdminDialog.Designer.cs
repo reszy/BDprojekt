@@ -57,7 +57,7 @@
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(88, 123);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(218, 20);
+            this.lastNameTextBox.Size = new System.Drawing.Size(146, 20);
             this.lastNameTextBox.TabIndex = 4;
             // 
             // label2
@@ -90,14 +90,14 @@
             "Lab Manager"});
             this.roleComboBox.Location = new System.Drawing.Point(88, 160);
             this.roleComboBox.Name = "roleComboBox";
-            this.roleComboBox.Size = new System.Drawing.Size(172, 21);
+            this.roleComboBox.Size = new System.Drawing.Size(146, 21);
             this.roleComboBox.TabIndex = 5;
             // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(88, 85);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(218, 20);
+            this.firstNameTextBox.Size = new System.Drawing.Size(146, 20);
             this.firstNameTextBox.TabIndex = 3;
             // 
             // cancelButton
@@ -123,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 204);
+            this.label4.Location = new System.Drawing.Point(19, 209);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 21;
@@ -151,7 +151,7 @@
             // 
             this.userNameTextBox.Location = new System.Drawing.Point(88, 12);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(172, 20);
+            this.userNameTextBox.Size = new System.Drawing.Size(146, 20);
             this.userNameTextBox.TabIndex = 1;
             // 
             // passwordTextBox
@@ -161,23 +161,24 @@
             this.passwordTextBox.MaxLength = 250;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(218, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(146, 20);
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // accountStateDateTimePicker
             // 
-            this.accountStateDateTimePicker.Location = new System.Drawing.Point(88, 200);
+            this.accountStateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.accountStateDateTimePicker.Location = new System.Drawing.Point(88, 206);
             this.accountStateDateTimePicker.Name = "accountStateDateTimePicker";
             this.accountStateDateTimePicker.ShowCheckBox = true;
-            this.accountStateDateTimePicker.Size = new System.Drawing.Size(218, 20);
+            this.accountStateDateTimePicker.Size = new System.Drawing.Size(146, 20);
             this.accountStateDateTimePicker.TabIndex = 6;
             // 
             // AdminDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 293);
+            this.ClientSize = new System.Drawing.Size(256, 293);
             this.Controls.Add(this.accountStateDateTimePicker);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.saveButton);

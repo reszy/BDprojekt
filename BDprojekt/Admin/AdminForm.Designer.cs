@@ -46,8 +46,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -58,17 +63,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(12, 110);
+            this.dataGridView.Location = new System.Drawing.Point(6, 19);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(566, 391);
+            this.dataGridView.Size = new System.Drawing.Size(546, 360);
             this.dataGridView.TabIndex = 0;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(464, 51);
+            this.searchButton.Location = new System.Drawing.Point(452, 18);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 1;
@@ -83,7 +88,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(588, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(579, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -127,7 +132,7 @@
             // addUserButton
             // 
             this.addUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addUserButton.Location = new System.Drawing.Point(12, 512);
+            this.addUserButton.Location = new System.Drawing.Point(6, 385);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(107, 23);
             this.addUserButton.TabIndex = 4;
@@ -138,7 +143,7 @@
             // editUserButton
             // 
             this.editUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.editUserButton.Location = new System.Drawing.Point(134, 512);
+            this.editUserButton.Location = new System.Drawing.Point(119, 385);
             this.editUserButton.Name = "editUserButton";
             this.editUserButton.Size = new System.Drawing.Size(107, 23);
             this.editUserButton.TabIndex = 5;
@@ -148,9 +153,9 @@
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(76, 36);
+            this.firstNameTextBox.Location = new System.Drawing.Point(74, 20);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(147, 20);
+            this.firstNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.firstNameTextBox.TabIndex = 6;
             // 
             // roleComboBox
@@ -162,15 +167,15 @@
             "Receptionist",
             "Lab Worker",
             "Lab Manager"});
-            this.roleComboBox.Location = new System.Drawing.Point(266, 68);
+            this.roleComboBox.Location = new System.Drawing.Point(264, 52);
             this.roleComboBox.Name = "roleComboBox";
-            this.roleComboBox.Size = new System.Drawing.Size(147, 21);
+            this.roleComboBox.Size = new System.Drawing.Size(136, 21);
             this.roleComboBox.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 39);
+            this.label1.Location = new System.Drawing.Point(39, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 8;
@@ -179,7 +184,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 71);
+            this.label2.Location = new System.Drawing.Point(226, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 9;
@@ -187,15 +192,15 @@
             // 
             // LastNameTextBox
             // 
-            this.LastNameTextBox.Location = new System.Drawing.Point(76, 69);
+            this.LastNameTextBox.Location = new System.Drawing.Point(74, 53);
             this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(147, 20);
+            this.LastNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.LastNameTextBox.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 72);
+            this.label3.Location = new System.Drawing.Point(12, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 11;
@@ -204,7 +209,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 39);
+            this.label4.Location = new System.Drawing.Point(227, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 13;
@@ -212,28 +217,58 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(266, 36);
+            this.loginTextBox.Location = new System.Drawing.Point(264, 20);
             this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(147, 20);
+            this.loginTextBox.Size = new System.Drawing.Size(136, 20);
             this.loginTextBox.TabIndex = 12;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(452, 51);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 14;
+            this.clearButton.Text = "Wyczyść";
+            this.clearButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.clearButton);
+            this.groupBox1.Controls.Add(this.searchButton);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.firstNameTextBox);
+            this.groupBox1.Controls.Add(this.loginTextBox);
+            this.groupBox1.Controls.Add(this.roleComboBox);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.LastNameTextBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(559, 82);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Wyszukiwarka";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView);
+            this.groupBox2.Controls.Add(this.addUserButton);
+            this.groupBox2.Controls.Add(this.editUserButton);
+            this.groupBox2.Location = new System.Drawing.Point(12, 115);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(558, 414);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Użytkownicy";
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 546);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.loginTextBox);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.LastNameTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.roleComboBox);
-            this.Controls.Add(this.firstNameTextBox);
-            this.Controls.Add(this.editUserButton);
-            this.Controls.Add(this.addUserButton);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.dataGridView);
+            this.ClientSize = new System.Drawing.Size(579, 541);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminForm";
@@ -242,6 +277,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +305,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox loginTextBox;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

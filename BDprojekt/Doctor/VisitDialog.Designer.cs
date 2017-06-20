@@ -52,7 +52,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(603, 339);
+            this.button6.Location = new System.Drawing.Point(603, 329);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 23);
             this.button6.TabIndex = 40;
@@ -61,7 +61,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(490, 339);
+            this.button5.Location = new System.Drawing.Point(490, 329);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 23);
             this.button5.TabIndex = 39;
@@ -70,7 +70,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(193, 272);
+            this.button4.Location = new System.Drawing.Point(207, 272);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(171, 23);
             this.button4.TabIndex = 38;
@@ -79,7 +79,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(380, 272);
+            this.button3.Location = new System.Drawing.Point(407, 272);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 23);
             this.button3.TabIndex = 37;
@@ -88,7 +88,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(516, 272);
+            this.button2.Location = new System.Drawing.Point(559, 272);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 23);
             this.button2.TabIndex = 36;
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 386);
+            this.ClientSize = new System.Drawing.Size(721, 359);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);

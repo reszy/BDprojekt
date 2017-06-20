@@ -57,6 +57,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.clearButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGrid)).BeginInit();
@@ -90,14 +91,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.logoutToolStripMenuItem.Text = "Wyloguj";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.exitToolStripMenuItem.Text = "Zakończ";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -161,12 +162,12 @@
             this.visitDataGrid.ReadOnly = true;
             this.visitDataGrid.RowTemplate.Height = 24;
             this.visitDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.visitDataGrid.Size = new System.Drawing.Size(717, 164);
+            this.visitDataGrid.Size = new System.Drawing.Size(717, 179);
             this.visitDataGrid.TabIndex = 26;
             // 
             // deleteVisitButton
             // 
-            this.deleteVisitButton.Location = new System.Drawing.Point(129, 187);
+            this.deleteVisitButton.Location = new System.Drawing.Point(129, 202);
             this.deleteVisitButton.Name = "deleteVisitButton";
             this.deleteVisitButton.Size = new System.Drawing.Size(117, 23);
             this.deleteVisitButton.TabIndex = 25;
@@ -193,7 +194,7 @@
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(6, 187);
+            this.registerButton.Location = new System.Drawing.Point(5, 202);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(117, 23);
             this.registerButton.TabIndex = 22;
@@ -203,7 +204,7 @@
             // searchButton
             // 
             this.searchButton.BackColor = System.Drawing.SystemColors.Control;
-            this.searchButton.Location = new System.Drawing.Point(647, 18);
+            this.searchButton.Location = new System.Drawing.Point(615, 11);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 20;
@@ -213,7 +214,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(428, 24);
+            this.label3.Location = new System.Drawing.Point(402, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 19;
@@ -221,22 +222,22 @@
             // 
             // peselTextBox
             // 
-            this.peselTextBox.Location = new System.Drawing.Point(467, 21);
+            this.peselTextBox.Location = new System.Drawing.Point(441, 26);
             this.peselTextBox.Name = "peselTextBox";
-            this.peselTextBox.Size = new System.Drawing.Size(150, 20);
+            this.peselTextBox.Size = new System.Drawing.Size(133, 20);
             this.peselTextBox.TabIndex = 18;
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(261, 21);
+            this.firstNameTextBox.Location = new System.Drawing.Point(254, 26);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(150, 20);
+            this.firstNameTextBox.Size = new System.Drawing.Size(133, 20);
             this.firstNameTextBox.TabIndex = 17;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 24);
+            this.label4.Location = new System.Drawing.Point(222, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 16;
@@ -245,7 +246,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 24);
+            this.label1.Location = new System.Drawing.Point(18, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 15;
@@ -253,9 +254,9 @@
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(64, 21);
+            this.lastNameTextBox.Location = new System.Drawing.Point(77, 26);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(150, 20);
+            this.lastNameTextBox.Size = new System.Drawing.Size(133, 20);
             this.lastNameTextBox.TabIndex = 14;
             this.lastNameTextBox.Text = "K";
             // 
@@ -279,9 +280,9 @@
             this.groupBox1.Controls.Add(this.patientsDataGrid);
             this.groupBox1.Controls.Add(this.addNewPatientButton);
             this.groupBox1.Controls.Add(this.editPatientButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 89);
+            this.groupBox1.Location = new System.Drawing.Point(12, 102);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(727, 291);
+            this.groupBox1.Size = new System.Drawing.Size(727, 286);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pacienci";
@@ -292,16 +293,16 @@
             this.groupBox2.Controls.Add(this.visitDataGrid);
             this.groupBox2.Controls.Add(this.registerButton);
             this.groupBox2.Controls.Add(this.deleteVisitButton);
-            this.groupBox2.Location = new System.Drawing.Point(12, 386);
+            this.groupBox2.Location = new System.Drawing.Point(12, 391);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(727, 217);
+            this.groupBox2.Size = new System.Drawing.Size(727, 228);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Wizyty";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(252, 187);
+            this.button1.Location = new System.Drawing.Point(252, 202);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 23);
             this.button1.TabIndex = 27;
@@ -312,6 +313,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox3.Controls.Add(this.clearButton);
             this.groupBox3.Controls.Add(this.searchButton);
             this.groupBox3.Controls.Add(this.lastNameTextBox);
             this.groupBox3.Controls.Add(this.label1);
@@ -324,16 +326,25 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox3.Size = new System.Drawing.Size(727, 56);
+            this.groupBox3.Size = new System.Drawing.Size(727, 69);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Wyszukiwanie pacjentów";
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(615, 40);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 21;
+            this.clearButton.Text = "Wyczyść";
+            this.clearButton.UseVisualStyleBackColor = true;
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 612);
+            this.ClientSize = new System.Drawing.Size(747, 623);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -386,5 +397,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button clearButton;
     }
 }
