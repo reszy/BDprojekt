@@ -57,7 +57,7 @@
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(88, 123);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(218, 20);
+            this.lastNameTextBox.Size = new System.Drawing.Size(172, 20);
             this.lastNameTextBox.TabIndex = 16;
             // 
             // label2
@@ -96,7 +96,7 @@
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(88, 85);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(218, 20);
+            this.firstNameTextBox.Size = new System.Drawing.Size(172, 20);
             this.firstNameTextBox.TabIndex = 12;
             // 
             // cancelButton
@@ -159,7 +159,7 @@
             this.passwordTextBox.MaxLength = 250;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(218, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(172, 20);
             this.passwordTextBox.TabIndex = 26;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 

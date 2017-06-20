@@ -14,6 +14,19 @@ namespace PresentationLayer
         [STAThread]
         static void Main()
         {
+            DataLayer.User user = new DataLayer.User
+            {
+                PersonId = 4,
+                FirstName = "Adam",
+                LastName = "Wnuk",
+                DateRetire = DateTime.Now,
+                Uname = "uncle",
+                Password = "4347d0f8ba661234a8eadc005e2e1d1b646c9682",
+                Role = "Admin"
+            };
+
+            AdministrationFacade.AddNewUser(user);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginScreen());  //new LoginScreen());
