@@ -57,7 +57,7 @@
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(88, 123);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(132, 20);
+            this.lastNameTextBox.Size = new System.Drawing.Size(218, 20);
             this.lastNameTextBox.TabIndex = 16;
             // 
             // label2
@@ -89,19 +89,19 @@
             "Lab Manager"});
             this.roleComboBox.Location = new System.Drawing.Point(88, 160);
             this.roleComboBox.Name = "roleComboBox";
-            this.roleComboBox.Size = new System.Drawing.Size(132, 21);
+            this.roleComboBox.Size = new System.Drawing.Size(172, 21);
             this.roleComboBox.TabIndex = 13;
             // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(88, 85);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(132, 20);
+            this.firstNameTextBox.Size = new System.Drawing.Size(218, 20);
             this.firstNameTextBox.TabIndex = 12;
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(145, 259);
+            this.cancelButton.Location = new System.Drawing.Point(159, 258);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 18;
@@ -110,12 +110,13 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(56, 259);
+            this.saveButton.Location = new System.Drawing.Point(78, 258);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 19;
             this.saveButton.Text = "Zapisz";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // label4
             // 
@@ -148,7 +149,7 @@
             // 
             this.userNameTextBox.Location = new System.Drawing.Point(88, 12);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(132, 20);
+            this.userNameTextBox.Size = new System.Drawing.Size(172, 20);
             this.userNameTextBox.TabIndex = 24;
             // 
             // passwordTextBox
@@ -158,7 +159,7 @@
             this.passwordTextBox.MaxLength = 250;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(132, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(218, 20);
             this.passwordTextBox.TabIndex = 26;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
@@ -166,14 +167,15 @@
             // 
             this.accountStateDateTimePicker.Location = new System.Drawing.Point(88, 200);
             this.accountStateDateTimePicker.Name = "accountStateDateTimePicker";
-            this.accountStateDateTimePicker.Size = new System.Drawing.Size(206, 20);
+            this.accountStateDateTimePicker.ShowCheckBox = true;
+            this.accountStateDateTimePicker.Size = new System.Drawing.Size(218, 20);
             this.accountStateDateTimePicker.TabIndex = 27;
             // 
             // AdminDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 293);
+            this.ClientSize = new System.Drawing.Size(318, 293);
             this.Controls.Add(this.accountStateDateTimePicker);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.saveButton);
@@ -188,8 +190,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.roleComboBox);
             this.Controls.Add(this.firstNameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "AdminDialog";
-            this.Text = "Dialog";
+            this.Text = "Użytkownik";
             this.ResumeLayout(false);
             this.PerformLayout();
 

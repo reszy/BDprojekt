@@ -69,6 +69,24 @@
     <Compile Include="Doctor\VisitDialog.Designer.cs">
       <DependentUpon>VisitDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Examination\ExaminationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examination\ExaminationDialog.Designer.cs">
+      <DependentUpon>ExaminationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examination\ExListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examination\ExListDialog.Designer.cs">
+      <DependentUpon>ExListDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examination\ExReultsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examination\ExReultsDialog.Designer.cs">
+      <DependentUpon>ExReultsDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register\EditPatientDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +130,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\VisitDialog.resx">
       <DependentUpon>VisitDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examination\ExaminationDialog.resx">
+      <DependentUpon>ExaminationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examination\ExListDialog.resx">
+      <DependentUpon>ExListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examination\ExReultsDialog.resx">
+      <DependentUpon>ExReultsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Register\EditpatientDialog.resx">
       <DependentUpon>EditPatientDialog.cs</DependentUpon>
