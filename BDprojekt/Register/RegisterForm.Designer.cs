@@ -40,28 +40,29 @@
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnShowVisists = new System.Windows.Forms.Button();
-            this.dataGridViewVisits = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.visitDataGrid = new System.Windows.Forms.DataGridView();
+            this.deleteVisitButton = new System.Windows.Forms.Button();
+            this.addNewPatientButton = new System.Windows.Forms.Button();
+            this.editPatientButton = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.peselTextBox = new System.Windows.Forms.TextBox();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.patientsDataGrid = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVisits)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsDataGrid)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,7 +74,7 @@
             this.pomocToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(764, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(747, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -147,138 +148,89 @@
             this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.oProgramieToolStripMenuItem.Text = "O programie...";
             // 
-            // btnShowVisists
+            // visitDataGrid
             // 
-            this.btnShowVisists.Location = new System.Drawing.Point(596, 443);
-            this.btnShowVisists.Margin = new System.Windows.Forms.Padding(2);
-            this.btnShowVisists.Name = "btnShowVisists";
-            this.btnShowVisists.Size = new System.Drawing.Size(156, 47);
-            this.btnShowVisists.TabIndex = 27;
-            this.btnShowVisists.Text = "Pokaż Wizyty";
-            this.btnShowVisists.UseVisualStyleBackColor = true;
+            this.visitDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visitDataGrid.Location = new System.Drawing.Point(5, 18);
+            this.visitDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.visitDataGrid.Name = "visitDataGrid";
+            this.visitDataGrid.RowTemplate.Height = 24;
+            this.visitDataGrid.Size = new System.Drawing.Size(717, 164);
+            this.visitDataGrid.TabIndex = 26;
             // 
-            // dataGridViewVisits
+            // deleteVisitButton
             // 
-            this.dataGridViewVisits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewVisits.Location = new System.Drawing.Point(25, 375);
-            this.dataGridViewVisits.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewVisits.Name = "dataGridViewVisits";
-            this.dataGridViewVisits.RowTemplate.Height = 24;
-            this.dataGridViewVisits.Size = new System.Drawing.Size(547, 226);
-            this.dataGridViewVisits.TabIndex = 26;
+            this.deleteVisitButton.Location = new System.Drawing.Point(141, 187);
+            this.deleteVisitButton.Name = "deleteVisitButton";
+            this.deleteVisitButton.Size = new System.Drawing.Size(117, 23);
+            this.deleteVisitButton.TabIndex = 25;
+            this.deleteVisitButton.Text = "Usuń wizytę";
+            this.deleteVisitButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // addNewPatientButton
             // 
-            this.button5.Location = new System.Drawing.Point(597, 404);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(155, 23);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Usuń wizytę";
-            this.button5.UseVisualStyleBackColor = true;
+            this.addNewPatientButton.Location = new System.Drawing.Point(6, 260);
+            this.addNewPatientButton.Name = "addNewPatientButton";
+            this.addNewPatientButton.Size = new System.Drawing.Size(117, 23);
+            this.addNewPatientButton.TabIndex = 24;
+            this.addNewPatientButton.Text = "Nowy pacjent";
+            this.addNewPatientButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // editPatientButton
             // 
-            this.button4.Location = new System.Drawing.Point(596, 91);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(155, 23);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Nowy pacjent";
-            this.button4.UseVisualStyleBackColor = true;
+            this.editPatientButton.Location = new System.Drawing.Point(141, 260);
+            this.editPatientButton.Name = "editPatientButton";
+            this.editPatientButton.Size = new System.Drawing.Size(117, 23);
+            this.editPatientButton.TabIndex = 23;
+            this.editPatientButton.Text = "Edytuj dane pacjenta";
+            this.editPatientButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // registerButton
             // 
-            this.button3.Location = new System.Drawing.Point(596, 120);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 20);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Edytuj dane pacjenta";
-            this.button3.UseVisualStyleBackColor = true;
+            this.registerButton.Location = new System.Drawing.Point(6, 187);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(117, 23);
+            this.registerButton.TabIndex = 22;
+            this.registerButton.Text = "Rejestruj";
+            this.registerButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // searchButton
             // 
-            this.button2.Location = new System.Drawing.Point(597, 375);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Rejestruj";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Data,
-            this.Nazwisko,
-            this.Imie,
-            this.Pesel,
-            this.Lekarz});
-            this.dataGridView1.Location = new System.Drawing.Point(25, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(547, 254);
-            this.dataGridView1.TabIndex = 21;
-            // 
-            // Data
-            // 
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            // 
-            // Nazwisko
-            // 
-            this.Nazwisko.HeaderText = "Nazwisko";
-            this.Nazwisko.Name = "Nazwisko";
-            // 
-            // Imie
-            // 
-            this.Imie.HeaderText = "Imie";
-            this.Imie.Name = "Imie";
-            // 
-            // Pesel
-            // 
-            this.Pesel.HeaderText = "Pesel";
-            this.Pesel.Name = "Pesel";
-            // 
-            // Lekarz
-            // 
-            this.Lekarz.HeaderText = "Lekarz";
-            this.Lekarz.Name = "Lekarz";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(677, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Szukaj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchButton.BackColor = System.Drawing.SystemColors.Control;
+            this.searchButton.Location = new System.Drawing.Point(647, 18);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 20;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(445, 38);
+            this.label3.Location = new System.Drawing.Point(428, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "Pesel:";
             // 
-            // textBox3
+            // peselTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(484, 35);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(150, 20);
-            this.textBox3.TabIndex = 18;
+            this.peselTextBox.Location = new System.Drawing.Point(467, 21);
+            this.peselTextBox.Name = "peselTextBox";
+            this.peselTextBox.Size = new System.Drawing.Size(150, 20);
+            this.peselTextBox.TabIndex = 18;
             // 
-            // textBox4
+            // firstNameTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(278, 35);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(150, 20);
-            this.textBox4.TabIndex = 17;
+            this.firstNameTextBox.Location = new System.Drawing.Point(261, 21);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(150, 20);
+            this.firstNameTextBox.TabIndex = 17;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(246, 38);
+            this.label4.Location = new System.Drawing.Point(229, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 16;
@@ -287,47 +239,105 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 38);
+            this.label1.Location = new System.Drawing.Point(5, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Nazwisko:";
             // 
-            // textBox1
+            // lastNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.Text = "K";
+            this.lastNameTextBox.Location = new System.Drawing.Point(64, 21);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(150, 20);
+            this.lastNameTextBox.TabIndex = 14;
+            this.lastNameTextBox.Text = "K";
+            // 
+            // patientsDataGrid
+            // 
+            this.patientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patientsDataGrid.Location = new System.Drawing.Point(5, 18);
+            this.patientsDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.patientsDataGrid.Name = "patientsDataGrid";
+            this.patientsDataGrid.RowTemplate.Height = 24;
+            this.patientsDataGrid.Size = new System.Drawing.Size(717, 237);
+            this.patientsDataGrid.TabIndex = 28;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.patientsDataGrid);
+            this.groupBox1.Controls.Add(this.addNewPatientButton);
+            this.groupBox1.Controls.Add(this.editPatientButton);
+            this.groupBox1.Location = new System.Drawing.Point(12, 89);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(727, 291);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pacienci";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.visitDataGrid);
+            this.groupBox2.Controls.Add(this.registerButton);
+            this.groupBox2.Controls.Add(this.deleteVisitButton);
+            this.groupBox2.Location = new System.Drawing.Point(12, 386);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(727, 217);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Wizyty";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(280, 187);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 23);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Pokaż terminarz";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox3.Controls.Add(this.searchButton);
+            this.groupBox3.Controls.Add(this.lastNameTextBox);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.firstNameTextBox);
+            this.groupBox3.Controls.Add(this.peselTextBox);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox3.Location = new System.Drawing.Point(12, 27);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox3.Size = new System.Drawing.Size(727, 56);
+            this.groupBox3.TabIndex = 31;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Wyszukiwanie";
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 612);
-            this.Controls.Add(this.btnShowVisists);
-            this.Controls.Add(this.dataGridViewVisits);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(747, 612);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RegisterForm";
             this.Text = "RegisterPanel";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVisits)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsDataGrid)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,24 +357,22 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem wizytaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wyszukajWizyteToolStripMenuItem;
-        private System.Windows.Forms.Button btnShowVisists;
-        private System.Windows.Forms.DataGridView dataGridViewVisits;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwisko;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Imie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pesel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lekarz;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView visitDataGrid;
+        private System.Windows.Forms.Button deleteVisitButton;
+        private System.Windows.Forms.Button addNewPatientButton;
+        private System.Windows.Forms.Button editPatientButton;
+        private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox peselTextBox;
+        private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.DataGridView patientsDataGrid;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

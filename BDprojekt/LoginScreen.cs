@@ -51,13 +51,15 @@ namespace PresentationLayer
                     break;
                 case UserRole.Type.DOCTOR:
                     var d = new DoctorPanel();
-                    d.Show();
+                    d.Show();          
                     break;
                 case UserRole.Type.LABWORKER:
                     var l = new Laboratory();
+                    l.Show();
                     break;
                 case UserRole.Type.RECEPTIONIST:
                     var r = new RegisterForm();
+                    r.Show();
                     break;
             }                      
         }

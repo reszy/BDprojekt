@@ -9,7 +9,7 @@ namespace BusinessLayer
 {
     public class RegistrationFacade
     {
-        public IQueryable GetPatient()
+        public IQueryable GetPatients()
         {
             using (var dc = new DataClassesClinicDataContext())
             {
