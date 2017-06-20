@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wylogujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zakończToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wyszukajPacientaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajPacientaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,23 +81,25 @@
             // plikToolStripMenuItem
             // 
             this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.wylogujToolStripMenuItem,
-            this.zakończToolStripMenuItem});
+            this.logoutToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
-            // wylogujToolStripMenuItem
+            // logoutToolStripMenuItem
             // 
-            this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
-            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.wylogujToolStripMenuItem.Text = "Wyloguj";
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Text = "Wyloguj";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // zakończToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.zakończToolStripMenuItem.Name = "zakończToolStripMenuItem";
-            this.zakończToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.zakończToolStripMenuItem.Text = "Zakończ";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Zakończ";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // pacientToolStripMenuItem
             // 
@@ -150,11 +152,15 @@
             // 
             // visitDataGrid
             // 
+            this.visitDataGrid.AllowUserToAddRows = false;
+            this.visitDataGrid.AllowUserToDeleteRows = false;
             this.visitDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.visitDataGrid.Location = new System.Drawing.Point(5, 18);
             this.visitDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.visitDataGrid.Name = "visitDataGrid";
+            this.visitDataGrid.ReadOnly = true;
             this.visitDataGrid.RowTemplate.Height = 24;
+            this.visitDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.visitDataGrid.Size = new System.Drawing.Size(717, 164);
             this.visitDataGrid.TabIndex = 26;
             // 
@@ -255,11 +261,16 @@
             // 
             // patientsDataGrid
             // 
+            this.patientsDataGrid.AllowUserToAddRows = false;
+            this.patientsDataGrid.AllowUserToDeleteRows = false;
             this.patientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientsDataGrid.Location = new System.Drawing.Point(5, 18);
             this.patientsDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.patientsDataGrid.MultiSelect = false;
             this.patientsDataGrid.Name = "patientsDataGrid";
+            this.patientsDataGrid.ReadOnly = true;
             this.patientsDataGrid.RowTemplate.Height = 24;
+            this.patientsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.patientsDataGrid.Size = new System.Drawing.Size(717, 237);
             this.patientsDataGrid.TabIndex = 28;
             // 
@@ -330,6 +341,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RegisterForm";
             this.Text = "RegisterPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).EndInit();
@@ -347,8 +359,8 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wylogujToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zakończToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wyszukajPacientaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dodajPacientaToolStripMenuItem;
