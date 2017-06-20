@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministrationFacade.cs" />
+    <Compile Include="Exceptions\LoginException.cs" />
     <Compile Include="RegistrationFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRole.cs" />

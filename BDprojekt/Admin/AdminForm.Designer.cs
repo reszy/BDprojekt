@@ -153,6 +153,12 @@
             // roleComboBox
             // 
             this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Items.AddRange(new object[] {
+            "Admin",
+            "Doctor",
+            "Receptionist",
+            "Lab Worker",
+            "Lab Manager"});
             this.roleComboBox.Location = new System.Drawing.Point(266, 68);
             this.roleComboBox.Name = "roleComboBox";
             this.roleComboBox.Size = new System.Drawing.Size(147, 21);

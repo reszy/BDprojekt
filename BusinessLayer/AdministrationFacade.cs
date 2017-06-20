@@ -4,23 +4,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
+using System.Security.Cryptography;
 
 namespace BusinessLayer
 {
     public static class AdministrationFacade
     {
-        public static IQueryable GetUsers(User searchCrit)
+        private static string Hash(string input)
+        {
+            var hash = (new SHA1Managed()).ComputeHash(Encoding.UTF8.GetBytes(input));
+            return string.Join("", hash.Select(b => b.ToString("x2")).ToArray());
+        }
+
+        public static UserRole MakeLogin(String userName, String password)
+        {  
+            var users = GetUsers(
+                new User { Uname = userName }
+                );
+
+            if (users.Count() == 1)
+            {
+                User authUser = users.SingleOrDefault();
+
+                if (authUser.Password == Hash(password) && authUser.Uname == userName)
+                {
+                    if (DateTime.Now.Date < authUser.DateRetire)
+                    {
+                        UserRole role = authUser.Role;
+                        if(role == UserRole.EMPTY)
+                            throw new Exceptions.LoginException("Temu kontu nie przydzelono roli");
+                        else
+                            return role;
+                    }                       
+                    else                    
+                        throw new Exceptions.LoginException("To konto wygasło");
+                    
+                }
+
+            }
+            throw new Exceptions.LoginException("Niepoprawne dane logowania");
+        }
+
+
+        public static IQueryable<User> GetUsers(User searchCrit)
         {
             var dc = new DataClassesClinicDataContext();
 
             var result = from u in dc.Users
                          where
+                             (String.IsNullOrEmpty(searchCrit.Role) || u.Role.StartsWith(searchCrit.Role))
+                             &&
                              (String.IsNullOrEmpty(searchCrit.FirstName) || u.FirstName.StartsWith(searchCrit.FirstName))
                              &&
                              (String.IsNullOrEmpty(searchCrit.LastName) || u.LastName.StartsWith(searchCrit.LastName))
                              &&
                              (String.IsNullOrEmpty(searchCrit.Uname) || u.Uname.StartsWith(searchCrit.Uname))
-                         select new { u.Uname, u.FirstName, u.LastName, u.Role, u.DateRetire };         
+                         select u;         
             return result;            
         }
 
