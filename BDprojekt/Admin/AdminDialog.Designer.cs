@@ -58,7 +58,7 @@
             this.lastNameTextBox.Location = new System.Drawing.Point(88, 123);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(218, 20);
-            this.lastNameTextBox.TabIndex = 16;
+            this.lastNameTextBox.TabIndex = 4;
             // 
             // label2
             // 
@@ -80,6 +80,7 @@
             // 
             // roleComboBox
             // 
+            this.roleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roleComboBox.FormattingEnabled = true;
             this.roleComboBox.Items.AddRange(new object[] {
             "Admin",
@@ -90,30 +91,31 @@
             this.roleComboBox.Location = new System.Drawing.Point(88, 160);
             this.roleComboBox.Name = "roleComboBox";
             this.roleComboBox.Size = new System.Drawing.Size(172, 21);
-            this.roleComboBox.TabIndex = 13;
+            this.roleComboBox.TabIndex = 5;
             // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(88, 85);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(218, 20);
-            this.firstNameTextBox.TabIndex = 12;
+            this.firstNameTextBox.TabIndex = 3;
             // 
             // cancelButton
             // 
             this.cancelButton.Location = new System.Drawing.Point(159, 258);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 18;
+            this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // saveButton
             // 
             this.saveButton.Location = new System.Drawing.Point(78, 258);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 19;
+            this.saveButton.TabIndex = 7;
             this.saveButton.Text = "Zapisz";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -150,7 +152,7 @@
             this.userNameTextBox.Location = new System.Drawing.Point(88, 12);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(172, 20);
-            this.userNameTextBox.TabIndex = 24;
+            this.userNameTextBox.TabIndex = 1;
             // 
             // passwordTextBox
             // 
@@ -160,7 +162,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(218, 20);
-            this.passwordTextBox.TabIndex = 26;
+            this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // accountStateDateTimePicker
@@ -169,7 +171,7 @@
             this.accountStateDateTimePicker.Name = "accountStateDateTimePicker";
             this.accountStateDateTimePicker.ShowCheckBox = true;
             this.accountStateDateTimePicker.Size = new System.Drawing.Size(218, 20);
-            this.accountStateDateTimePicker.TabIndex = 27;
+            this.accountStateDateTimePicker.TabIndex = 6;
             // 
             // AdminDialog
             // 

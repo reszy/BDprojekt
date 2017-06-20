@@ -42,6 +42,8 @@ namespace PresentationLayer
             }
 
             this.Hide();
+            this.passwordTextBox.Text = "";
+            this.userNameTextBox.Text = "";
 
             switch (role.ToEnum())
             {
@@ -58,7 +60,7 @@ namespace PresentationLayer
                     l.Show();
                     break;
                 case UserRole.Type.RECEPTIONIST:
-                    var r = new RegisterForm();
+                    var r = new RegisterForm(this);
                     r.Show();
                     break;
             }                      

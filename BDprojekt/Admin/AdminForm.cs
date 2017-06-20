@@ -18,13 +18,22 @@ namespace PresentationLayer.Admin
         Form mainForm;
         List<User> users;
 
+        private bool logout;
+
         public AdminForm(Form mainForm)
         {
             this.mainForm = mainForm;
             InitializeComponent();
 
-            users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
+            refreshList();
+        }
 
+        private void refreshList(bool getAll = true)
+        {
+            if(getAll)
+                users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
+
+            this.dataGridView.DataSource = null;
             this.dataGridView.DataSource = users;
             this.dataGridView.Refresh();
         }
@@ -33,9 +42,7 @@ namespace PresentationLayer.Admin
         {
             var editDialog = new AdminDialog(null);
             editDialog.ShowDialog();
-
-            users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
-            this.dataGridView.Refresh();
+            refreshList();
         }
 
         private void editUserButton_Click(object sender, EventArgs e)
@@ -44,32 +51,47 @@ namespace PresentationLayer.Admin
             {
                 var editDialog = new AdminDialog(users[this.dataGridView.CurrentCell.RowIndex]);
                 editDialog.ShowDialog();
-
-                users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
+                refreshList();
             }
         }
 
         private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(sender == this.logoutToolStripMenuItem)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
-                mainForm.Show();
-                this.Close();
-            }
-            else
-            {
-                Application.Exit();
+                if (logout)
+                {
+                    mainForm.Show();
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.AdminForm_FormClosing(this.logoutToolStripMenuItem, new FormClosingEventArgs(CloseReason.UserClosing, false));
+            logout = true;
+            this.Close();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.AdminForm_FormClosing(this.exitToolStripMenuItem, new FormClosingEventArgs(CloseReason.UserClosing, false));
+            logout = false;
+            this.Close();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            User searchCriteria = new User();
+            searchCriteria.FirstName = this.firstNameTextBox.Text;
+            searchCriteria.LastName = this.LastNameTextBox.Text;
+            searchCriteria.Uname = this.loginTextBox.Text;
+            searchCriteria.Role = this.roleComboBox.Text;
+
+            users = AdministrationFacade.GetUsers(searchCriteria).ToList();
+            this.refreshList(false);
         }
     }
 }

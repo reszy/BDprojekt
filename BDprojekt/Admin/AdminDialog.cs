@@ -28,7 +28,7 @@ namespace PresentationLayer.Admin
                 this.firstNameTextBox.Text = editedUser.FirstName;
                 this.lastNameTextBox.Text = editedUser.LastName;
                 this.userNameTextBox.Text = editedUser.Uname;
-                this.passwordTextBox.Text = editedUser.Password;
+                this.passwordTextBox.Text = "";
                 if (editedUser.DateRetire != null)
                 {
                     this.accountStateDateTimePicker.Checked = true;
@@ -73,6 +73,11 @@ namespace PresentationLayer.Admin
                 AdministrationFacade.AddNewUser(editedUser);
             }
 
+            this.Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

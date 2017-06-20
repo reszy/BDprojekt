@@ -45,7 +45,7 @@
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.loginTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,7 @@
             this.searchButton.TabIndex = 1;
             this.searchButton.Text = "Szukaj";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // menuStrip1
             // 
@@ -98,14 +99,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.logoutToolStripMenuItem.Text = "Wyloguj";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.exitToolStripMenuItem.Text = "Zakończ";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -209,12 +210,12 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Login:";
             // 
-            // textBox1
+            // loginTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(266, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 12;
+            this.loginTextBox.Location = new System.Drawing.Point(266, 36);
+            this.loginTextBox.Name = "loginTextBox";
+            this.loginTextBox.Size = new System.Drawing.Size(147, 20);
+            this.loginTextBox.TabIndex = 12;
             // 
             // AdminForm
             // 
@@ -222,7 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 546);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LastNameTextBox);
             this.Controls.Add(this.label2);
@@ -265,6 +266,6 @@
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox loginTextBox;
     }
 }
