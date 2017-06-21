@@ -11,10 +11,11 @@ namespace BusinessLayer
         public static readonly UserRole ADMIN = new UserRole("Admin", Type.ADMIN);
         public static readonly UserRole DOCTOR = new UserRole("Doctor", Type.DOCTOR);
         public static readonly UserRole LABWORKER = new UserRole("LabWorker", Type.LABWORKER);
+        public static readonly UserRole LABMANAGER = new UserRole("LabManager", Type.LABMANAGER);
         public static readonly UserRole RECEPTIONIST = new UserRole("Receptionist", Type.RECEPTIONIST);
         public static readonly UserRole EMPTY = new UserRole("", Type.EMPTY);
 
-        public enum Type{ ADMIN, DOCTOR, LABWORKER, RECEPTIONIST, EMPTY }
+        public enum Type{ ADMIN, DOCTOR, LABWORKER, RECEPTIONIST, LABMANAGER, EMPTY }
 
         public static IEnumerable<UserRole> Values
         {

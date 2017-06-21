@@ -34,7 +34,7 @@
   </Table>
   <Table Name="dbo.LaboratoryExamination" Member="LaboratoryExaminations">
     <Type Name="LaboratoryExamination">
-      <Column Name="LaboratoryExaminationId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LaboratoryExaminationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MedicalExaminationCode" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="VisitId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="LabWorkerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -71,7 +71,7 @@
   </Table>
   <Table Name="dbo.Patient" Member="Patients">
     <Type Name="Patient">
-      <Column Name="PatientId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PatientId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="AddressId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FirstName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="LastName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
@@ -86,7 +86,7 @@
   </Table>
   <Table Name="dbo.PhysicalExamination" Member="PhysicalExaminations">
     <Type Name="PhysicalExamination">
-      <Column Name="PhysicalExaminationId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PhysicalExaminationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MedicalExaminationCode" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="VisitId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Result" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -104,7 +104,7 @@
   </Table>
   <Table Name="dbo.[User]" Member="Users">
     <Type Name="User">
-      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Uname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Role" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
@@ -121,7 +121,7 @@
   </Table>
   <Table Name="dbo.Visit" Member="Visits">
     <Type Name="Visit">
-      <Column Name="VisitId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VisitId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="PatientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ReceptionistId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DoctorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

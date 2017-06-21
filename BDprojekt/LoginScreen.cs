@@ -37,7 +37,8 @@ namespace PresentationLayer
                     "Błąd logowania", 
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
-                    );
+                    );                
+                passwordTextBox.Clear();
                 return;
             }
 

@@ -28,7 +28,7 @@ namespace BusinessLayer
 
                 if (authUser.Password == Hash(password) && authUser.Uname == userName)
                 {
-                    if (DateTime.Now.Date < authUser.DateRetire)
+                    if (authUser.DateRetire == null || DateTime.Now.Date < authUser.DateRetire)
                     {
                         UserRole role = authUser.Role;
                         if(role == UserRole.EMPTY)
