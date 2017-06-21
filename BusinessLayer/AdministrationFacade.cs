@@ -77,8 +77,7 @@ namespace BusinessLayer
                 result.FirstName = user.FirstName;
                 result.Uname = user.Uname;
                 result.Role = user.Role;
-                result.DateRetire = result.DateRetire;
-                user.DateRetire = user.DateRetire;
+                result.DateRetire = user.DateRetire;
                 if (!String.IsNullOrEmpty(user.Password))
                     result.Password = Hash(user.Password);
 
