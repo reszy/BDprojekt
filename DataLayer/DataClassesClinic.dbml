@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Clinic" Class="DataClassesClinicDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HOLLY_PC\SQLEXPRESS;Initial Catalog=Clinic;Integrated Security=True" SettingsObjectName="DataLayer.Properties.Settings" SettingsPropertyName="ClinicConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=Clinic;Integrated Security=True" SettingsObjectName="DataLayer.Properties.Settings" SettingsPropertyName="ClinicConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Address" Member="Addresses">
     <Type Name="Address">
-      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="City" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Street" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="HouseNr" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
@@ -12,6 +12,24 @@
       <Column Name="Phone" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
       <Association Name="Address_Patient" Member="Patients" ThisKey="AddressId" OtherKey="AddressId" Type="Patient" />
       <Association Name="Address_User" Member="Users" ThisKey="AddressId" OtherKey="AddressId" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visit" Member="Visits">
+    <Type Name="Visit">
+      <Column Name="VisitId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PatientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReceptionistId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Diagnosis" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfRegistration" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndCancelDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Visit_LaboratoryExamination" Member="LaboratoryExaminations" ThisKey="VisitId" OtherKey="VisitId" Type="LaboratoryExamination" />
+      <Association Name="Visit_PhysicalExamination" Member="PhysicalExaminations" ThisKey="VisitId" OtherKey="VisitId" Type="PhysicalExamination" />
+      <Association Name="Doctor_Visit" Member="Doctor" ThisKey="DoctorId" OtherKey="DoctorId" Type="Doctor" IsForeignKey="true" />
+      <Association Name="Patient_Visit" Member="Patient" ThisKey="PatientId" OtherKey="PatientId" Type="Patient" IsForeignKey="true" />
+      <Association Name="Receptionist_Visit" Member="Receptionist" ThisKey="ReceptionistId" OtherKey="ReceptionistId" Type="Receptionist" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DictionaryMedicalExamination" Member="DictionaryMedicalExaminations">
@@ -47,9 +65,9 @@
       <Column Name="ApprovalCancelDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Association Name="DictionaryMedicalExamination_LaboratoryExamination" Member="DictionaryMedicalExamination" ThisKey="MedicalExaminationCode" OtherKey="MedicalExaminationCode" Type="DictionaryMedicalExamination" IsForeignKey="true" />
+      <Association Name="Visit_LaboratoryExamination" Member="Visit" ThisKey="VisitId" OtherKey="VisitId" Type="Visit" IsForeignKey="true" />
       <Association Name="LaboratoryManager_LaboratoryExamination" Member="LaboratoryManager" ThisKey="LaboratoryManagerId" OtherKey="LaboratoryManagerId" Type="LaboratoryManager" IsForeignKey="true" />
       <Association Name="LabWorker_LaboratoryExamination" Member="LabWorker" ThisKey="LabWorkerId" OtherKey="LabWorkerId" Type="LabWorker" IsForeignKey="true" />
-      <Association Name="Visit_LaboratoryExamination" Member="Visit" ThisKey="VisitId" OtherKey="VisitId" Type="Visit" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LaboratoryManager" Member="LaboratoryManagers">
@@ -107,7 +125,7 @@
       <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Uname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Role" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
       <Column Name="FirstName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
       <Column Name="LastName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
       <Column Name="AddressId" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -117,24 +135,6 @@
       <Association Name="User_LabWorker" Member="LabWorker" ThisKey="PersonId" OtherKey="LabWorkerId" Type="LabWorker" Cardinality="One" />
       <Association Name="User_Receptionist" Member="Receptionist" ThisKey="PersonId" OtherKey="ReceptionistId" Type="Receptionist" Cardinality="One" />
       <Association Name="Address_User" Member="Address" ThisKey="AddressId" OtherKey="AddressId" Type="Address" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Visit" Member="Visits">
-    <Type Name="Visit">
-      <Column Name="VisitId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PatientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ReceptionistId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DoctorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Diagnosis" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DateOfRegistration" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="EndCancelDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="Visit_LaboratoryExamination" Member="LaboratoryExaminations" ThisKey="VisitId" OtherKey="VisitId" Type="LaboratoryExamination" />
-      <Association Name="Visit_PhysicalExamination" Member="PhysicalExaminations" ThisKey="VisitId" OtherKey="VisitId" Type="PhysicalExamination" />
-      <Association Name="Doctor_Visit" Member="Doctor" ThisKey="DoctorId" OtherKey="DoctorId" Type="Doctor" IsForeignKey="true" />
-      <Association Name="Patient_Visit" Member="Patient" ThisKey="PatientId" OtherKey="PatientId" Type="Patient" IsForeignKey="true" />
-      <Association Name="Receptionist_Visit" Member="Receptionist" ThisKey="ReceptionistId" OtherKey="ReceptionistId" Type="Receptionist" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

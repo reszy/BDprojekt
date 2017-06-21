@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnApply = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.applyButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lastnameTextBox = new System.Windows.Forms.TextBox();
+            this.firstnameTextBox = new System.Windows.Forms.TextBox();
+            this.peselTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(197, 315);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Powrót";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(197, 315);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 21;
+            this.cancelButton.Text = "Powrót";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // btnApply
+            // applyButton
             // 
-            this.btnApply.Location = new System.Drawing.Point(116, 315);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 20;
-            this.btnApply.Text = "Zatwierdź";
-            this.btnApply.UseVisualStyleBackColor = true;
+            this.applyButton.Location = new System.Drawing.Point(116, 315);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.TabIndex = 20;
+            this.applyButton.Text = "Zatwierdź";
+            this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
             // label3
             // 
@@ -83,40 +85,40 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Imie:";
             // 
-            // textBox2
+            // lastnameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(106, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 16;
+            this.lastnameTextBox.Location = new System.Drawing.Point(109, 38);
+            this.lastnameTextBox.Name = "lastnameTextBox";
+            this.lastnameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lastnameTextBox.TabIndex = 16;
             // 
-            // textBox1
+            // firstnameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 15;
+            this.firstnameTextBox.Location = new System.Drawing.Point(109, 12);
+            this.firstnameTextBox.Name = "firstnameTextBox";
+            this.firstnameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.firstnameTextBox.TabIndex = 15;
             // 
-            // textBox4
+            // peselTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 12);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 14;
+            this.peselTextBox.Location = new System.Drawing.Point(109, 64);
+            this.peselTextBox.Name = "peselTextBox";
+            this.peselTextBox.Size = new System.Drawing.Size(100, 20);
+            this.peselTextBox.TabIndex = 14;
             // 
             // EditpatientDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 350);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnApply);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.applyButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.lastnameTextBox);
+            this.Controls.Add(this.firstnameTextBox);
+            this.Controls.Add(this.peselTextBox);
             this.Name = "EditpatientDialog";
             this.Text = "EditPatientDialog";
             this.ResumeLayout(false);
@@ -126,13 +128,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox lastnameTextBox;
+        private System.Windows.Forms.TextBox firstnameTextBox;
+        private System.Windows.Forms.TextBox peselTextBox;
     }
 }

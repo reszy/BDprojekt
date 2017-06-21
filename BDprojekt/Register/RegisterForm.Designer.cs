@@ -55,7 +55,7 @@
             this.patientsDataGrid = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.showAllButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.clearButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -155,6 +155,9 @@
             // 
             this.visitDataGrid.AllowUserToAddRows = false;
             this.visitDataGrid.AllowUserToDeleteRows = false;
+            this.visitDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.visitDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.visitDataGrid.Location = new System.Drawing.Point(5, 18);
             this.visitDataGrid.Margin = new System.Windows.Forms.Padding(2);
@@ -167,12 +170,14 @@
             // 
             // deleteVisitButton
             // 
+            this.deleteVisitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.deleteVisitButton.Location = new System.Drawing.Point(129, 202);
             this.deleteVisitButton.Name = "deleteVisitButton";
             this.deleteVisitButton.Size = new System.Drawing.Size(117, 23);
             this.deleteVisitButton.TabIndex = 25;
             this.deleteVisitButton.Text = "Usuń wizytę";
             this.deleteVisitButton.UseVisualStyleBackColor = true;
+            this.deleteVisitButton.Click += new System.EventHandler(this.deleteVisitButton_Click);
             // 
             // addNewPatientButton
             // 
@@ -182,6 +187,7 @@
             this.addNewPatientButton.TabIndex = 24;
             this.addNewPatientButton.Text = "Nowy pacjent";
             this.addNewPatientButton.UseVisualStyleBackColor = true;
+            this.addNewPatientButton.Click += new System.EventHandler(this.addNewPatientButton_Click);
             // 
             // editPatientButton
             // 
@@ -191,15 +197,18 @@
             this.editPatientButton.TabIndex = 23;
             this.editPatientButton.Text = "Edytuj dane pacjenta";
             this.editPatientButton.UseVisualStyleBackColor = true;
+            this.editPatientButton.Click += new System.EventHandler(this.editPatientButton_Click);
             // 
             // registerButton
             // 
+            this.registerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.registerButton.Location = new System.Drawing.Point(5, 202);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(117, 23);
             this.registerButton.TabIndex = 22;
             this.registerButton.Text = "Rejestruj";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // searchButton
             // 
@@ -210,6 +219,7 @@
             this.searchButton.TabIndex = 20;
             this.searchButton.Text = "Szukaj";
             this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // label3
             // 
@@ -264,6 +274,8 @@
             // 
             this.patientsDataGrid.AllowUserToAddRows = false;
             this.patientsDataGrid.AllowUserToDeleteRows = false;
+            this.patientsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.patientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientsDataGrid.Location = new System.Drawing.Point(5, 18);
             this.patientsDataGrid.Margin = new System.Windows.Forms.Padding(2);
@@ -274,9 +286,12 @@
             this.patientsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.patientsDataGrid.Size = new System.Drawing.Size(717, 237);
             this.patientsDataGrid.TabIndex = 28;
+            this.patientsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientsDataGrid_CellClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.patientsDataGrid);
             this.groupBox1.Controls.Add(this.addNewPatientButton);
             this.groupBox1.Controls.Add(this.editPatientButton);
@@ -289,7 +304,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.showAllButton);
             this.groupBox2.Controls.Add(this.visitDataGrid);
             this.groupBox2.Controls.Add(this.registerButton);
             this.groupBox2.Controls.Add(this.deleteVisitButton);
@@ -300,14 +318,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Wizyty";
             // 
-            // button1
+            // showAllButton
             // 
-            this.button1.Location = new System.Drawing.Point(252, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 23);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Pokaż wszytskie";
-            this.button1.UseVisualStyleBackColor = true;
+            this.showAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.showAllButton.Location = new System.Drawing.Point(252, 202);
+            this.showAllButton.Name = "showAllButton";
+            this.showAllButton.Size = new System.Drawing.Size(117, 23);
+            this.showAllButton.TabIndex = 27;
+            this.showAllButton.Text = "Pokaż wszytskie";
+            this.showAllButton.UseVisualStyleBackColor = true;
+            this.showAllButton.Click += new System.EventHandler(this.showAllButton_Click);
             // 
             // groupBox3
             // 
@@ -339,6 +359,7 @@
             this.clearButton.TabIndex = 21;
             this.clearButton.Text = "Wyczyść";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // RegisterForm
             // 
@@ -395,7 +416,7 @@
         private System.Windows.Forms.DataGridView patientsDataGrid;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button showAllButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button clearButton;
     }

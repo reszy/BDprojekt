@@ -33,6 +33,9 @@ namespace DataLayer
     partial void InsertAddress(Address instance);
     partial void UpdateAddress(Address instance);
     partial void DeleteAddress(Address instance);
+    partial void InsertVisit(Visit instance);
+    partial void UpdateVisit(Visit instance);
+    partial void DeleteVisit(Visit instance);
     partial void InsertDictionaryMedicalExamination(DictionaryMedicalExamination instance);
     partial void UpdateDictionaryMedicalExamination(DictionaryMedicalExamination instance);
     partial void DeleteDictionaryMedicalExamination(DictionaryMedicalExamination instance);
@@ -60,13 +63,10 @@ namespace DataLayer
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
-    partial void InsertVisit(Visit instance);
-    partial void UpdateVisit(Visit instance);
-    partial void DeleteVisit(Visit instance);
     #endregion
 		
 		public DataClassesClinicDataContext() : 
-				base(global::DataLayer.Properties.Settings.Default.ClinicConnectionString, mappingSource)
+				base(global::DataLayer.Properties.Settings.Default.ClinicConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -100,6 +100,14 @@ namespace DataLayer
 			get
 			{
 				return this.GetTable<Address>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Visit> Visits
+		{
+			get
+			{
+				return this.GetTable<Visit>();
 			}
 		}
 		
@@ -174,14 +182,6 @@ namespace DataLayer
 				return this.GetTable<User>();
 			}
 		}
-		
-		public System.Data.Linq.Table<Visit> Visits
-		{
-			get
-			{
-				return this.GetTable<Visit>();
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Address")]
@@ -239,7 +239,7 @@ namespace DataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int AddressId
 		{
 			get
@@ -467,6 +467,439 @@ namespace DataLayer
 		{
 			this.SendPropertyChanging();
 			entity.Address = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Visit")]
+	public partial class Visit : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _VisitId;
+		
+		private int _PatientId;
+		
+		private int _ReceptionistId;
+		
+		private int _DoctorId;
+		
+		private string _Description;
+		
+		private string _Diagnosis;
+		
+		private string _Status;
+		
+		private System.DateTime _DateOfRegistration;
+		
+		private System.Nullable<System.DateTime> _EndCancelDate;
+		
+		private EntitySet<LaboratoryExamination> _LaboratoryExaminations;
+		
+		private EntitySet<PhysicalExamination> _PhysicalExaminations;
+		
+		private EntityRef<Doctor> _Doctor;
+		
+		private EntityRef<Patient> _Patient;
+		
+		private EntityRef<Receptionist> _Receptionist;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnVisitIdChanging(int value);
+    partial void OnVisitIdChanged();
+    partial void OnPatientIdChanging(int value);
+    partial void OnPatientIdChanged();
+    partial void OnReceptionistIdChanging(int value);
+    partial void OnReceptionistIdChanged();
+    partial void OnDoctorIdChanging(int value);
+    partial void OnDoctorIdChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnDiagnosisChanging(string value);
+    partial void OnDiagnosisChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    partial void OnDateOfRegistrationChanging(System.DateTime value);
+    partial void OnDateOfRegistrationChanged();
+    partial void OnEndCancelDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndCancelDateChanged();
+    #endregion
+		
+		public Visit()
+		{
+			this._LaboratoryExaminations = new EntitySet<LaboratoryExamination>(new Action<LaboratoryExamination>(this.attach_LaboratoryExaminations), new Action<LaboratoryExamination>(this.detach_LaboratoryExaminations));
+			this._PhysicalExaminations = new EntitySet<PhysicalExamination>(new Action<PhysicalExamination>(this.attach_PhysicalExaminations), new Action<PhysicalExamination>(this.detach_PhysicalExaminations));
+			this._Doctor = default(EntityRef<Doctor>);
+			this._Patient = default(EntityRef<Patient>);
+			this._Receptionist = default(EntityRef<Receptionist>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisitId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int VisitId
+		{
+			get
+			{
+				return this._VisitId;
+			}
+			set
+			{
+				if ((this._VisitId != value))
+				{
+					this.OnVisitIdChanging(value);
+					this.SendPropertyChanging();
+					this._VisitId = value;
+					this.SendPropertyChanged("VisitId");
+					this.OnVisitIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PatientId", DbType="Int NOT NULL")]
+		public int PatientId
+		{
+			get
+			{
+				return this._PatientId;
+			}
+			set
+			{
+				if ((this._PatientId != value))
+				{
+					if (this._Patient.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPatientIdChanging(value);
+					this.SendPropertyChanging();
+					this._PatientId = value;
+					this.SendPropertyChanged("PatientId");
+					this.OnPatientIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceptionistId", DbType="Int NOT NULL")]
+		public int ReceptionistId
+		{
+			get
+			{
+				return this._ReceptionistId;
+			}
+			set
+			{
+				if ((this._ReceptionistId != value))
+				{
+					if (this._Receptionist.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnReceptionistIdChanging(value);
+					this.SendPropertyChanging();
+					this._ReceptionistId = value;
+					this.SendPropertyChanged("ReceptionistId");
+					this.OnReceptionistIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoctorId", DbType="Int NOT NULL")]
+		public int DoctorId
+		{
+			get
+			{
+				return this._DoctorId;
+			}
+			set
+			{
+				if ((this._DoctorId != value))
+				{
+					if (this._Doctor.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDoctorIdChanging(value);
+					this.SendPropertyChanging();
+					this._DoctorId = value;
+					this.SendPropertyChanged("DoctorId");
+					this.OnDoctorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diagnosis", DbType="NVarChar(MAX)")]
+		public string Diagnosis
+		{
+			get
+			{
+				return this._Diagnosis;
+			}
+			set
+			{
+				if ((this._Diagnosis != value))
+				{
+					this.OnDiagnosisChanging(value);
+					this.SendPropertyChanging();
+					this._Diagnosis = value;
+					this.SendPropertyChanged("Diagnosis");
+					this.OnDiagnosisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfRegistration", DbType="DateTime NOT NULL")]
+		public System.DateTime DateOfRegistration
+		{
+			get
+			{
+				return this._DateOfRegistration;
+			}
+			set
+			{
+				if ((this._DateOfRegistration != value))
+				{
+					this.OnDateOfRegistrationChanging(value);
+					this.SendPropertyChanging();
+					this._DateOfRegistration = value;
+					this.SendPropertyChanged("DateOfRegistration");
+					this.OnDateOfRegistrationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndCancelDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndCancelDate
+		{
+			get
+			{
+				return this._EndCancelDate;
+			}
+			set
+			{
+				if ((this._EndCancelDate != value))
+				{
+					this.OnEndCancelDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndCancelDate = value;
+					this.SendPropertyChanged("EndCancelDate");
+					this.OnEndCancelDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visit_LaboratoryExamination", Storage="_LaboratoryExaminations", ThisKey="VisitId", OtherKey="VisitId")]
+		public EntitySet<LaboratoryExamination> LaboratoryExaminations
+		{
+			get
+			{
+				return this._LaboratoryExaminations;
+			}
+			set
+			{
+				this._LaboratoryExaminations.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visit_PhysicalExamination", Storage="_PhysicalExaminations", ThisKey="VisitId", OtherKey="VisitId")]
+		public EntitySet<PhysicalExamination> PhysicalExaminations
+		{
+			get
+			{
+				return this._PhysicalExaminations;
+			}
+			set
+			{
+				this._PhysicalExaminations.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Doctor_Visit", Storage="_Doctor", ThisKey="DoctorId", OtherKey="DoctorId", IsForeignKey=true)]
+		public Doctor Doctor
+		{
+			get
+			{
+				return this._Doctor.Entity;
+			}
+			set
+			{
+				Doctor previousValue = this._Doctor.Entity;
+				if (((previousValue != value) 
+							|| (this._Doctor.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Doctor.Entity = null;
+						previousValue.Visits.Remove(this);
+					}
+					this._Doctor.Entity = value;
+					if ((value != null))
+					{
+						value.Visits.Add(this);
+						this._DoctorId = value.DoctorId;
+					}
+					else
+					{
+						this._DoctorId = default(int);
+					}
+					this.SendPropertyChanged("Doctor");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Patient_Visit", Storage="_Patient", ThisKey="PatientId", OtherKey="PatientId", IsForeignKey=true)]
+		public Patient Patient
+		{
+			get
+			{
+				return this._Patient.Entity;
+			}
+			set
+			{
+				Patient previousValue = this._Patient.Entity;
+				if (((previousValue != value) 
+							|| (this._Patient.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Patient.Entity = null;
+						previousValue.Visits.Remove(this);
+					}
+					this._Patient.Entity = value;
+					if ((value != null))
+					{
+						value.Visits.Add(this);
+						this._PatientId = value.PatientId;
+					}
+					else
+					{
+						this._PatientId = default(int);
+					}
+					this.SendPropertyChanged("Patient");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Receptionist_Visit", Storage="_Receptionist", ThisKey="ReceptionistId", OtherKey="ReceptionistId", IsForeignKey=true)]
+		public Receptionist Receptionist
+		{
+			get
+			{
+				return this._Receptionist.Entity;
+			}
+			set
+			{
+				Receptionist previousValue = this._Receptionist.Entity;
+				if (((previousValue != value) 
+							|| (this._Receptionist.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Receptionist.Entity = null;
+						previousValue.Visits.Remove(this);
+					}
+					this._Receptionist.Entity = value;
+					if ((value != null))
+					{
+						value.Visits.Add(this);
+						this._ReceptionistId = value.ReceptionistId;
+					}
+					else
+					{
+						this._ReceptionistId = default(int);
+					}
+					this.SendPropertyChanged("Receptionist");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LaboratoryExaminations(LaboratoryExamination entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visit = this;
+		}
+		
+		private void detach_LaboratoryExaminations(LaboratoryExamination entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visit = null;
+		}
+		
+		private void attach_PhysicalExaminations(PhysicalExamination entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visit = this;
+		}
+		
+		private void detach_PhysicalExaminations(PhysicalExamination entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visit = null;
 		}
 	}
 	
@@ -847,11 +1280,11 @@ namespace DataLayer
 		
 		private EntityRef<DictionaryMedicalExamination> _DictionaryMedicalExamination;
 		
+		private EntityRef<Visit> _Visit;
+		
 		private EntityRef<LaboratoryManager> _LaboratoryManager;
 		
 		private EntityRef<LabWorker> _LabWorker;
-		
-		private EntityRef<Visit> _Visit;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -886,9 +1319,9 @@ namespace DataLayer
 		public LaboratoryExamination()
 		{
 			this._DictionaryMedicalExamination = default(EntityRef<DictionaryMedicalExamination>);
+			this._Visit = default(EntityRef<Visit>);
 			this._LaboratoryManager = default(EntityRef<LaboratoryManager>);
 			this._LabWorker = default(EntityRef<LabWorker>);
-			this._Visit = default(EntityRef<Visit>);
 			OnCreated();
 		}
 		
@@ -1182,6 +1615,40 @@ namespace DataLayer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visit_LaboratoryExamination", Storage="_Visit", ThisKey="VisitId", OtherKey="VisitId", IsForeignKey=true)]
+		public Visit Visit
+		{
+			get
+			{
+				return this._Visit.Entity;
+			}
+			set
+			{
+				Visit previousValue = this._Visit.Entity;
+				if (((previousValue != value) 
+							|| (this._Visit.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Visit.Entity = null;
+						previousValue.LaboratoryExaminations.Remove(this);
+					}
+					this._Visit.Entity = value;
+					if ((value != null))
+					{
+						value.LaboratoryExaminations.Add(this);
+						this._VisitId = value.VisitId;
+					}
+					else
+					{
+						this._VisitId = default(int);
+					}
+					this.SendPropertyChanged("Visit");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LaboratoryManager_LaboratoryExamination", Storage="_LaboratoryManager", ThisKey="LaboratoryManagerId", OtherKey="LaboratoryManagerId", IsForeignKey=true)]
 		public LaboratoryManager LaboratoryManager
 		{
@@ -1246,40 +1713,6 @@ namespace DataLayer
 						this._LabWorkerId = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("LabWorker");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visit_LaboratoryExamination", Storage="_Visit", ThisKey="VisitId", OtherKey="VisitId", IsForeignKey=true)]
-		public Visit Visit
-		{
-			get
-			{
-				return this._Visit.Entity;
-			}
-			set
-			{
-				Visit previousValue = this._Visit.Entity;
-				if (((previousValue != value) 
-							|| (this._Visit.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Visit.Entity = null;
-						previousValue.LaboratoryExaminations.Remove(this);
-					}
-					this._Visit.Entity = value;
-					if ((value != null))
-					{
-						value.LaboratoryExaminations.Add(this);
-						this._VisitId = value.VisitId;
-					}
-					else
-					{
-						this._VisitId = default(int);
-					}
-					this.SendPropertyChanged("Visit");
 				}
 			}
 		}
@@ -2457,7 +2890,7 @@ namespace DataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="NVarChar(12) NOT NULL", CanBeNull=false)]
 		public string Role
 		{
 			get
@@ -2729,439 +3162,6 @@ namespace DataLayer
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Visit")]
-	public partial class Visit : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _VisitId;
-		
-		private int _PatientId;
-		
-		private int _ReceptionistId;
-		
-		private int _DoctorId;
-		
-		private string _Description;
-		
-		private string _Diagnosis;
-		
-		private string _Status;
-		
-		private System.DateTime _DateOfRegistration;
-		
-		private System.Nullable<System.DateTime> _EndCancelDate;
-		
-		private EntitySet<LaboratoryExamination> _LaboratoryExaminations;
-		
-		private EntitySet<PhysicalExamination> _PhysicalExaminations;
-		
-		private EntityRef<Doctor> _Doctor;
-		
-		private EntityRef<Patient> _Patient;
-		
-		private EntityRef<Receptionist> _Receptionist;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnVisitIdChanging(int value);
-    partial void OnVisitIdChanged();
-    partial void OnPatientIdChanging(int value);
-    partial void OnPatientIdChanged();
-    partial void OnReceptionistIdChanging(int value);
-    partial void OnReceptionistIdChanged();
-    partial void OnDoctorIdChanging(int value);
-    partial void OnDoctorIdChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnDiagnosisChanging(string value);
-    partial void OnDiagnosisChanged();
-    partial void OnStatusChanging(string value);
-    partial void OnStatusChanged();
-    partial void OnDateOfRegistrationChanging(System.DateTime value);
-    partial void OnDateOfRegistrationChanged();
-    partial void OnEndCancelDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnEndCancelDateChanged();
-    #endregion
-		
-		public Visit()
-		{
-			this._LaboratoryExaminations = new EntitySet<LaboratoryExamination>(new Action<LaboratoryExamination>(this.attach_LaboratoryExaminations), new Action<LaboratoryExamination>(this.detach_LaboratoryExaminations));
-			this._PhysicalExaminations = new EntitySet<PhysicalExamination>(new Action<PhysicalExamination>(this.attach_PhysicalExaminations), new Action<PhysicalExamination>(this.detach_PhysicalExaminations));
-			this._Doctor = default(EntityRef<Doctor>);
-			this._Patient = default(EntityRef<Patient>);
-			this._Receptionist = default(EntityRef<Receptionist>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisitId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int VisitId
-		{
-			get
-			{
-				return this._VisitId;
-			}
-			set
-			{
-				if ((this._VisitId != value))
-				{
-					this.OnVisitIdChanging(value);
-					this.SendPropertyChanging();
-					this._VisitId = value;
-					this.SendPropertyChanged("VisitId");
-					this.OnVisitIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PatientId", DbType="Int NOT NULL")]
-		public int PatientId
-		{
-			get
-			{
-				return this._PatientId;
-			}
-			set
-			{
-				if ((this._PatientId != value))
-				{
-					if (this._Patient.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPatientIdChanging(value);
-					this.SendPropertyChanging();
-					this._PatientId = value;
-					this.SendPropertyChanged("PatientId");
-					this.OnPatientIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceptionistId", DbType="Int NOT NULL")]
-		public int ReceptionistId
-		{
-			get
-			{
-				return this._ReceptionistId;
-			}
-			set
-			{
-				if ((this._ReceptionistId != value))
-				{
-					if (this._Receptionist.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnReceptionistIdChanging(value);
-					this.SendPropertyChanging();
-					this._ReceptionistId = value;
-					this.SendPropertyChanged("ReceptionistId");
-					this.OnReceptionistIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoctorId", DbType="Int NOT NULL")]
-		public int DoctorId
-		{
-			get
-			{
-				return this._DoctorId;
-			}
-			set
-			{
-				if ((this._DoctorId != value))
-				{
-					if (this._Doctor.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDoctorIdChanging(value);
-					this.SendPropertyChanging();
-					this._DoctorId = value;
-					this.SendPropertyChanged("DoctorId");
-					this.OnDoctorIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diagnosis", DbType="NVarChar(MAX)")]
-		public string Diagnosis
-		{
-			get
-			{
-				return this._Diagnosis;
-			}
-			set
-			{
-				if ((this._Diagnosis != value))
-				{
-					this.OnDiagnosisChanging(value);
-					this.SendPropertyChanging();
-					this._Diagnosis = value;
-					this.SendPropertyChanged("Diagnosis");
-					this.OnDiagnosisChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfRegistration", DbType="DateTime NOT NULL")]
-		public System.DateTime DateOfRegistration
-		{
-			get
-			{
-				return this._DateOfRegistration;
-			}
-			set
-			{
-				if ((this._DateOfRegistration != value))
-				{
-					this.OnDateOfRegistrationChanging(value);
-					this.SendPropertyChanging();
-					this._DateOfRegistration = value;
-					this.SendPropertyChanged("DateOfRegistration");
-					this.OnDateOfRegistrationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndCancelDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> EndCancelDate
-		{
-			get
-			{
-				return this._EndCancelDate;
-			}
-			set
-			{
-				if ((this._EndCancelDate != value))
-				{
-					this.OnEndCancelDateChanging(value);
-					this.SendPropertyChanging();
-					this._EndCancelDate = value;
-					this.SendPropertyChanged("EndCancelDate");
-					this.OnEndCancelDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visit_LaboratoryExamination", Storage="_LaboratoryExaminations", ThisKey="VisitId", OtherKey="VisitId")]
-		public EntitySet<LaboratoryExamination> LaboratoryExaminations
-		{
-			get
-			{
-				return this._LaboratoryExaminations;
-			}
-			set
-			{
-				this._LaboratoryExaminations.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visit_PhysicalExamination", Storage="_PhysicalExaminations", ThisKey="VisitId", OtherKey="VisitId")]
-		public EntitySet<PhysicalExamination> PhysicalExaminations
-		{
-			get
-			{
-				return this._PhysicalExaminations;
-			}
-			set
-			{
-				this._PhysicalExaminations.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Doctor_Visit", Storage="_Doctor", ThisKey="DoctorId", OtherKey="DoctorId", IsForeignKey=true)]
-		public Doctor Doctor
-		{
-			get
-			{
-				return this._Doctor.Entity;
-			}
-			set
-			{
-				Doctor previousValue = this._Doctor.Entity;
-				if (((previousValue != value) 
-							|| (this._Doctor.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Doctor.Entity = null;
-						previousValue.Visits.Remove(this);
-					}
-					this._Doctor.Entity = value;
-					if ((value != null))
-					{
-						value.Visits.Add(this);
-						this._DoctorId = value.DoctorId;
-					}
-					else
-					{
-						this._DoctorId = default(int);
-					}
-					this.SendPropertyChanged("Doctor");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Patient_Visit", Storage="_Patient", ThisKey="PatientId", OtherKey="PatientId", IsForeignKey=true)]
-		public Patient Patient
-		{
-			get
-			{
-				return this._Patient.Entity;
-			}
-			set
-			{
-				Patient previousValue = this._Patient.Entity;
-				if (((previousValue != value) 
-							|| (this._Patient.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Patient.Entity = null;
-						previousValue.Visits.Remove(this);
-					}
-					this._Patient.Entity = value;
-					if ((value != null))
-					{
-						value.Visits.Add(this);
-						this._PatientId = value.PatientId;
-					}
-					else
-					{
-						this._PatientId = default(int);
-					}
-					this.SendPropertyChanged("Patient");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Receptionist_Visit", Storage="_Receptionist", ThisKey="ReceptionistId", OtherKey="ReceptionistId", IsForeignKey=true)]
-		public Receptionist Receptionist
-		{
-			get
-			{
-				return this._Receptionist.Entity;
-			}
-			set
-			{
-				Receptionist previousValue = this._Receptionist.Entity;
-				if (((previousValue != value) 
-							|| (this._Receptionist.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Receptionist.Entity = null;
-						previousValue.Visits.Remove(this);
-					}
-					this._Receptionist.Entity = value;
-					if ((value != null))
-					{
-						value.Visits.Add(this);
-						this._ReceptionistId = value.ReceptionistId;
-					}
-					else
-					{
-						this._ReceptionistId = default(int);
-					}
-					this.SendPropertyChanged("Receptionist");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_LaboratoryExaminations(LaboratoryExamination entity)
-		{
-			this.SendPropertyChanging();
-			entity.Visit = this;
-		}
-		
-		private void detach_LaboratoryExaminations(LaboratoryExamination entity)
-		{
-			this.SendPropertyChanging();
-			entity.Visit = null;
-		}
-		
-		private void attach_PhysicalExaminations(PhysicalExamination entity)
-		{
-			this.SendPropertyChanging();
-			entity.Visit = this;
-		}
-		
-		private void detach_PhysicalExaminations(PhysicalExamination entity)
-		{
-			this.SendPropertyChanging();
-			entity.Visit = null;
 		}
 	}
 }
