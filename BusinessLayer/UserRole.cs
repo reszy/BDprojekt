@@ -8,14 +8,14 @@ namespace BusinessLayer
 {
     public class UserRole
     {
-        public static readonly UserRole ADMIN = new UserRole("Admin", Type.ADMIN);
-        public static readonly UserRole DOCTOR = new UserRole("Doctor", Type.DOCTOR);
-        public static readonly UserRole LABWORKER = new UserRole("LabWorker", Type.LABWORKER);
-        public static readonly UserRole LABMANAGER = new UserRole("LabManager", Type.LABMANAGER);
-        public static readonly UserRole RECEPTIONIST = new UserRole("Receptionist", Type.RECEPTIONIST);
-        public static readonly UserRole EMPTY = new UserRole("", Type.EMPTY);
+        public static readonly UserRole ADMIN = new UserRole("Admin", Type.Admin);
+        public static readonly UserRole DOCTOR = new UserRole("Doctor", Type.Doctor);
+        public static readonly UserRole LABWORKER = new UserRole("LabWorker", Type.LabWorker);
+        public static readonly UserRole LABMANAGER = new UserRole("LabManager", Type.LabManager);
+        public static readonly UserRole RECEPTIONIST = new UserRole("Receptionist", Type.Receptionist);
+        public static readonly UserRole EMPTY = new UserRole("", Type.Empty);
 
-        public enum Type{ ADMIN, DOCTOR, LABWORKER, RECEPTIONIST, LABMANAGER, EMPTY }
+        public enum Type{ Admin, Doctor, LabWorker, Receptionist, LabManager, Empty }
 
         public static IEnumerable<UserRole> Values
         {
