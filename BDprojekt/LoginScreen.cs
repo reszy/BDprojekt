@@ -48,20 +48,20 @@ namespace PresentationLayer
 
             switch (role.ToEnum())
             {
-                case UserRole.Type.Admin:
+                case UserRole.Type.ADMIN:
                     var a = new Admin.AdminForm(this);
                     a.Show();
                     break;
-                case UserRole.Type.Doctor:
+                case UserRole.Type.DOCTOR:
                     var d = new DoctorPanel();
                     d.Show();          
                     break;
-                case UserRole.Type.LabWorker:
-                case UserRole.Type.LabManager:
+                case UserRole.Type.LABWORKER:
+                case UserRole.Type.LABMANAGER:
                     var l = new Laboratory();
                     l.Show();
                     break;
-                case UserRole.Type.Receptionist:
+                case UserRole.Type.RECEPTIONIST:
                     var r = new RegisterForm(this);
                     r.Show();
                     break;

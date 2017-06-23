@@ -13,14 +13,14 @@ using BusinessLayer;
 
 namespace BDprojekt.Register
 {
-    public partial class EditpatientDialog : Form
+    public partial class EditPatientDialog : Form
     {
         RegistrationFacade rFacade;
         Patient editedPatient;
 
         bool update = false;
 
-        public EditpatientDialog(Patient patient)
+        public EditPatientDialog(Patient patient)
         {
             this.editedPatient = patient;
             rFacade = new RegistrationFacade();
