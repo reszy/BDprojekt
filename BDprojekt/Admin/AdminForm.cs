@@ -34,11 +34,37 @@ namespace PresentationLayer.Admin
 
         private void refreshList(bool getAll = true)
         {
-            if(getAll)
+            //this.dataGridView.Rows.Clear();
+            if (getAll)
+            {
                 users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
 
-            this.dataGridView.DataSource = null;
-            this.dataGridView.DataSource = users;
+                foreach (var u in users)
+                {
+                    string Street = "";
+                    string City = "";
+                    string HouseNr = "";
+                    string PlaceNr = "";
+                    string ZipCode = "";
+                    string Province = "";
+                    string Phone = "";
+
+                    if (u.Address != null)
+                    {
+                        Street = u.Address.Street;
+                        City = u.Address.City;
+                        HouseNr = u.Address.HouseNr;
+                        PlaceNr = u.Address.PlaceNr;
+                        ZipCode = u.Address.ZipCode;
+                        Province = u.Address.Province;
+                        Phone = u.Address.Phone;
+                    }
+
+                    this.dataGridView.Rows.Add(
+                        u.Uname, u.FirstName, u.LastName, u.Role, u.DateRetire.ToString(),
+                        City, Street, HouseNr, PlaceNr, ZipCode, Province, Phone
+                        );                }
+            }
             this.dataGridView.Refresh();
         }
 
