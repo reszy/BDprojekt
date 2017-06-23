@@ -8,13 +8,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using BusinessLayer;
+using DataLayer;
+
 namespace BDprojekt.Register
 {
     public partial class RegisterDialog : Form
     {
-        public RegisterDialog()
+        List<User> doctors;
+        List<string> doctorNames;
+
+        public RegisterDialog(int patientId)
         {
             InitializeComponent();
+
+            doctors = PersonelFacade.GetUsers(new User { Role = UserRole.DOCTOR.ToString() }).ToList();
+            doctorNames = new List<string>();
+            foreach (var doctor in doctors)
+            {
+                doctorNames.Add(doctor.LastName + " " + doctor.FirstName);
+            }
+            this.comboBox1.DataSource = doctorNames;
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

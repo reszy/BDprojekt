@@ -35,24 +35,66 @@ namespace PresentationLayer.Clinic
         {
             if (getAll)
                 patients = PatientsFacade.GetPatients(new Patient()).ToList();
+            
 
-            this.patientsDataGrid.DataSource = null;
-            this.patientsDataGrid.DataSource = patients;
+
+            this.patientsDataGrid.Rows.Clear();
+            if (patients != null)
+            {
+                foreach (var patient in patients)
+                {
+                    string Street = "";
+                    string City = "";
+                    string HouseNr = "";
+                    string PlaceNr = "";
+                    string ZipCode = "";
+                    string Province = "";
+                    string Phone = "";
+
+                    if (patient.Address != null)
+                    {
+                        Street = patient.Address.Street;
+                        City = patient.Address.City;
+                        HouseNr = patient.Address.HouseNr;
+                        PlaceNr = patient.Address.PlaceNr;
+                        ZipCode = patient.Address.ZipCode;
+                        Province = patient.Address.Province;
+                        Phone = patient.Address.Phone;
+                    }
+
+                    this.patientsDataGrid.Rows.Add(
+                        patient.FirstName, patient.LastName, patient.Pesel, patient.Sex, patient.BirthdayDate.ToString(), patient.NIP, (patient.Insurance == 'Y'),
+                        City, Street, HouseNr, PlaceNr, ZipCode, Province, Phone
+                        );
+                }
+            }
             this.patientsDataGrid.Refresh();
         }
 
         private void refreshVisitList(int patientId)
         {
-            if (patientId > 0)
+            if (patientId >= 0)
             {
                 visits = VisitsFacade.GetVisits(new Visit { PatientId = patientId }).ToList();
             }
             else
             {
-                visits = null;
+                visits = VisitsFacade.GetVisits(new Visit()).ToList();
             }
-            this.visitDataGrid.DataSource = null;
-            this.visitDataGrid.DataSource = visits;
+
+
+            this.visitDataGrid.Rows.Clear();
+            if (visits != null)
+            {
+                foreach (var visit in visits)
+                {
+                    var doctor = PersonelFacade.GetUsers(new User { Doctor = visit.Doctor });
+
+                    this.visitDataGrid.Rows.Add(
+                        visit.DateOfRegistration.ToString(), "Anon", visit.Status, visit.EndCancelDate.ToString() 
+                        );
+                }
+            }
             this.visitDataGrid.Refresh();
         }
 
@@ -91,7 +133,7 @@ namespace PresentationLayer.Clinic
             patientCriteria.LastName = this.lastNameTextBox.Text;
             patientCriteria.Pesel = this.peselTextBox.Text;
 
-            PatientsFacade.GetPatients(patientCriteria);
+            patients = PatientsFacade.GetPatients(patientCriteria).ToList();
             refreshPatientList(false);
         }
 
@@ -125,17 +167,18 @@ namespace PresentationLayer.Clinic
 
         private void showAllButton_Click(object sender, EventArgs e)
         {
-            refreshVisitList(0);//TODO make to pass null or something to get all visits today
+            refreshVisitList(-1);
         }
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            //TODO 
+            if (this.patientsDataGrid.SelectedRows.Count > 0)
+            {
+                var dialog = new RegisterDialog(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
+                dialog.ShowDialog();
 
-            var dialog = new RegisterDialog();
-            dialog.ShowDialog();
-
-            refreshVisitList(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
+                refreshVisitList(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
+            }
         }
 
         private void deleteVisitButton_Click(object sender, EventArgs e)

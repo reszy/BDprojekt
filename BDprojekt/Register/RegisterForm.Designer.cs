@@ -53,6 +53,24 @@
             this.showAllButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.clearButton = new System.Windows.Forms.Button();
+            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdayDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.insurance = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.houseNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.province = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfRegistration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endCancelDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGrid)).BeginInit();
@@ -106,7 +124,7 @@
             // oProgramieToolStripMenuItem
             // 
             this.oProgramieToolStripMenuItem.Name = "oProgramieToolStripMenuItem";
-            this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.oProgramieToolStripMenuItem.Text = "O programie...";
             // 
             // visitDataGrid
@@ -117,6 +135,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.visitDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visitDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateOfRegistration,
+            this.doctorName,
+            this.status,
+            this.endCancelDate});
             this.visitDataGrid.Location = new System.Drawing.Point(5, 18);
             this.visitDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.visitDataGrid.Name = "visitDataGrid";
@@ -234,6 +257,21 @@
             this.patientsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.patientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patientsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.firstname,
+            this.lastname,
+            this.pesel,
+            this.sex,
+            this.birthdayDate,
+            this.nip,
+            this.insurance,
+            this.city,
+            this.street,
+            this.houseNr,
+            this.placeNr,
+            this.zipCode,
+            this.province,
+            this.phone});
             this.patientsDataGrid.Location = new System.Drawing.Point(5, 18);
             this.patientsDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.patientsDataGrid.MultiSelect = false;
@@ -318,6 +356,116 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // firstname
+            // 
+            this.firstname.HeaderText = "Imię";
+            this.firstname.Name = "firstname";
+            this.firstname.ReadOnly = true;
+            // 
+            // lastname
+            // 
+            this.lastname.HeaderText = "Nazwisko";
+            this.lastname.Name = "lastname";
+            this.lastname.ReadOnly = true;
+            // 
+            // pesel
+            // 
+            this.pesel.HeaderText = "Pesel";
+            this.pesel.Name = "pesel";
+            this.pesel.ReadOnly = true;
+            // 
+            // sex
+            // 
+            this.sex.HeaderText = "Płeć";
+            this.sex.Name = "sex";
+            this.sex.ReadOnly = true;
+            // 
+            // birthdayDate
+            // 
+            this.birthdayDate.HeaderText = "Data urodzenia";
+            this.birthdayDate.Name = "birthdayDate";
+            this.birthdayDate.ReadOnly = true;
+            // 
+            // nip
+            // 
+            this.nip.HeaderText = "NIP";
+            this.nip.Name = "nip";
+            this.nip.ReadOnly = true;
+            // 
+            // insurance
+            // 
+            this.insurance.HeaderText = "Ubezpieczenie";
+            this.insurance.Name = "insurance";
+            this.insurance.ReadOnly = true;
+            this.insurance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.insurance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // city
+            // 
+            this.city.HeaderText = "Miasto";
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            // 
+            // street
+            // 
+            this.street.HeaderText = "Ulica";
+            this.street.Name = "street";
+            this.street.ReadOnly = true;
+            // 
+            // houseNr
+            // 
+            this.houseNr.HeaderText = "Nr. domu";
+            this.houseNr.Name = "houseNr";
+            this.houseNr.ReadOnly = true;
+            // 
+            // placeNr
+            // 
+            this.placeNr.HeaderText = "Nr. miejsca";
+            this.placeNr.Name = "placeNr";
+            this.placeNr.ReadOnly = true;
+            // 
+            // zipCode
+            // 
+            this.zipCode.HeaderText = "Kod pocztowy";
+            this.zipCode.Name = "zipCode";
+            this.zipCode.ReadOnly = true;
+            // 
+            // province
+            // 
+            this.province.HeaderText = "Województwo";
+            this.province.Name = "province";
+            this.province.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Telefon";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // dateOfRegistration
+            // 
+            this.dateOfRegistration.HeaderText = "Data rejestracji";
+            this.dateOfRegistration.Name = "dateOfRegistration";
+            this.dateOfRegistration.ReadOnly = true;
+            // 
+            // doctorName
+            // 
+            this.doctorName.HeaderText = "Lekarz prowadzący";
+            this.doctorName.Name = "doctorName";
+            this.doctorName.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // endCancelDate
+            // 
+            this.endCancelDate.HeaderText = "Data zakończenia";
+            this.endCancelDate.Name = "endCancelDate";
+            this.endCancelDate.ReadOnly = true;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,5 +519,23 @@
         private System.Windows.Forms.Button showAllButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRegistration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctorName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endCancelDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pesel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nip;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn insurance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn city;
+        private System.Windows.Forms.DataGridViewTextBoxColumn street;
+        private System.Windows.Forms.DataGridViewTextBoxColumn houseNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placeNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zipCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn province;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
     }
 }
