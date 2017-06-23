@@ -7,9 +7,9 @@ using DataLayer;
 
 namespace BusinessLayer
 {
-    class VisitsFacade
+    public static class VisitsFacade
     {
-        public IQueryable<Visit> GetVisits(Visit searchCrit)
+        public static IQueryable<Visit> GetVisits(Visit searchCrit)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -19,14 +19,14 @@ namespace BusinessLayer
                           &&
                           ((searchCrit.DoctorId == 0) || v.DoctorId == searchCrit.DoctorId)
                           &&
-                          ((searchCrit.DateOfRegistration == null) || v.DateOfRegistration == searchCrit.DateOfRegistration)
+                          ((searchCrit.DateOfRegistration == null) || (searchCrit.DateOfRegistration == DateTime.MinValue) || v.DateOfRegistration == searchCrit.DateOfRegistration)
                          orderby v.DateOfRegistration descending
                          select v;
 
             return result;
         }
 
-        public void AddNewVisit(Visit visit)
+        public static void AddNewVisit(Visit visit)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -34,7 +34,7 @@ namespace BusinessLayer
             dc.SubmitChanges();
         } 
 
-        public void UpdateVisit(Visit visit)
+        public static void UpdateVisit(Visit visit)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -55,7 +55,7 @@ namespace BusinessLayer
             }
         }
 
-        public void CancelVisit(int VisitId)
+        public static void CancelVisit(int VisitId)
         {
             var dc = new DataClassesClinicDataContext();
 

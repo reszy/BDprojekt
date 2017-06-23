@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
 
-namespace BusinessLayer.Exceptions
+namespace BusinessLayer
 {
-    class PatientsFacade
+    public static class PatientsFacade
     {
-        public IQueryable<Patient> GetPatients(Patient searchCrit)
+        public static IQueryable<Patient> GetPatients(Patient searchCrit)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -25,7 +25,7 @@ namespace BusinessLayer.Exceptions
             return result;
         }
 
-        public void AddNewPatient(Patient patient)
+        public static void AddNewPatient(Patient patient)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -33,7 +33,7 @@ namespace BusinessLayer.Exceptions
             dc.SubmitChanges();
         }
 
-        public void UpdatePatient(Patient patient)
+        public static void UpdatePatient(Patient patient)
         {
             var dc = new DataClassesClinicDataContext();
 

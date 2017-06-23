@@ -37,7 +37,7 @@ namespace PresentationLayer.Admin
             //this.dataGridView.Rows.Clear();
             if (getAll)
             {
-                users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
+                users = PersonelFacade.GetUsers(new DataLayer.User()).ToList();
 
                 foreach (var u in users)
                 {
@@ -120,7 +120,7 @@ namespace PresentationLayer.Admin
             searchCriteria.Uname = this.loginTextBox.Text;
             searchCriteria.Role = this.roleComboBox.Text;
 
-            users = AdministrationFacade.GetUsers(searchCriteria).ToList();
+            users = PersonelFacade.GetUsers(searchCriteria).ToList();
             this.refreshList(false);
         }
 

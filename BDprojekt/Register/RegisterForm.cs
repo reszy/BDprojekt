@@ -20,15 +20,13 @@ namespace PresentationLayer.Clinic
         private bool logout = false;
 
         private List<Patient> patients;
-        private List<Visit> visits;
-        RegistrationFacade rFacade;
+        private List<Visit> visits;        
 
         public RegisterForm(Form mainForm)
         {
             this.mainForm = mainForm;
 
-            InitializeComponent();
-            this.rFacade = new RegistrationFacade();
+            InitializeComponent();            
 
             this.refreshPatientList();
         }
@@ -36,7 +34,7 @@ namespace PresentationLayer.Clinic
         private void refreshPatientList(bool getAll = true)
         {
             if (getAll)
-                patients = rFacade.GetPatients(new DataLayer.Patient()).ToList();
+                patients = PatientsFacade.GetPatients(new Patient()).ToList();
 
             this.patientsDataGrid.DataSource = null;
             this.patientsDataGrid.DataSource = patients;
@@ -47,7 +45,7 @@ namespace PresentationLayer.Clinic
         {
             if (patientId > 0)
             {
-                visits = rFacade.GetVisits(patientId).ToList();
+                visits = VisitsFacade.GetVisits(new Visit { PatientId = patientId }).ToList();
             }
             else
             {
@@ -93,7 +91,7 @@ namespace PresentationLayer.Clinic
             patientCriteria.LastName = this.lastNameTextBox.Text;
             patientCriteria.Pesel = this.peselTextBox.Text;
 
-            rFacade.GetPatients(patientCriteria);
+            PatientsFacade.GetPatients(patientCriteria);
             refreshPatientList(false);
         }
 

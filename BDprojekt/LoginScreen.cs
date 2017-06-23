@@ -26,7 +26,7 @@ namespace PresentationLayer
 
             try
             {
-                role = AdministrationFacade.MakeLogin(
+                role = PersonelFacade.MakeLogin(
                     userNameTextBox.Text,
                     passwordTextBox.Text);
             }

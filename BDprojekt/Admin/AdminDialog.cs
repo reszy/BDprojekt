@@ -71,11 +71,11 @@ namespace PresentationLayer.Admin
 
             if (update)
             {
-                AdministrationFacade.UpdateUserData(editedUser);
+                PersonelFacade.UpdateUserData(editedUser);
             }
             else
             {
-                AdministrationFacade.AddNewUser(editedUser);
+                PersonelFacade.AddNewUser(editedUser);
             }
 
             this.Close();

@@ -8,15 +8,44 @@ using System.Security.Cryptography;
 
 namespace BusinessLayer
 {
-    class PersonelFacade
+    public static class PersonelFacade
     {
-        private string Hash(string input)
+        private static string Hash(string input)
         {
             var hash = (new SHA1Managed()).ComputeHash(Encoding.UTF8.GetBytes(input));
             return string.Join("", hash.Select(b => b.ToString("x2")).ToArray());
         }
 
-        public IQueryable<User> GetUsers(User searchCrit)
+        public static UserRole MakeLogin(String userName, String password)
+        {
+            var users = GetUsers(
+                new User { Uname = userName }
+                );
+
+            if (users.Count() == 1)
+            {
+                User authUser = users.SingleOrDefault();
+
+                if (authUser.Password == Hash(password) && authUser.Uname == userName)
+                {
+                    if (authUser.DateRetire == null || DateTime.Now.Date < authUser.DateRetire)
+                    {
+                        UserRole role = authUser.Role;
+                        if (role == UserRole.EMPTY)
+                            throw new Exceptions.LoginException("Temu kontu nie przydzelono roli");
+                        else
+                            return role;
+                    }
+                    else
+                        throw new Exceptions.LoginException("To konto wygasło");
+
+                }
+
+            }
+            throw new Exceptions.LoginException("Niepoprawne dane logowania");
+        }
+
+        public static IQueryable<User> GetUsers(User searchCrit)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -33,7 +62,7 @@ namespace BusinessLayer
             return result;
         }
 
-        public void UpdateUserData(User user)
+        public static void UpdateUserData(User user)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -55,7 +84,7 @@ namespace BusinessLayer
             }
         }
 
-        public void AddNewUser(User user)
+        public static void AddNewUser(User user)
         {
             var dc = new DataClassesClinicDataContext();
 
