@@ -37,7 +37,7 @@ namespace PresentationLayer.Admin
             this.dataGridView.Rows.Clear();
             if (getAll)
             {
-                users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
+                users = PersonelFacade.GetUsers(new DataLayer.User()).ToList();
             }
             if(users!=null)
             {
