@@ -34,11 +34,13 @@ namespace PresentationLayer.Admin
 
         private void refreshList(bool getAll = true)
         {
-            //this.dataGridView.Rows.Clear();
+            this.dataGridView.Rows.Clear();
             if (getAll)
             {
                 users = AdministrationFacade.GetUsers(new DataLayer.User()).ToList();
-
+            }
+            if(users!=null)
+            {
                 foreach (var u in users)
                 {
                     string Street = "";
@@ -63,7 +65,8 @@ namespace PresentationLayer.Admin
                     this.dataGridView.Rows.Add(
                         u.Uname, u.FirstName, u.LastName, u.Role, u.DateRetire.ToString(),
                         City, Street, HouseNr, PlaceNr, ZipCode, Province, Phone
-                        );                }
+                        );
+                }
             }
             this.dataGridView.Refresh();
         }
