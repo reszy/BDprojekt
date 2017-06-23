@@ -20,6 +20,11 @@ namespace PresentationLayer.Admin
         public AdminDialog(User user)
         {
             InitializeComponent();
+            
+            var roles = UserRole.Values.ToList();
+            roles.Insert(0, UserRole.EMPTY);
+            this.roleComboBox.DataSource = roles;
+
             editedUser = user;
 
             if (editedUser != null)

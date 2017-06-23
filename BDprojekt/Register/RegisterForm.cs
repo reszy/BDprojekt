@@ -128,7 +128,7 @@ namespace PresentationLayer.Clinic
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            //TODO
+            //TODO 
 
             var dialog = new RegisterDialog();
             dialog.ShowDialog();

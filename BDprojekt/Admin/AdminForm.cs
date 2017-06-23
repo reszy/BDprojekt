@@ -25,6 +25,10 @@ namespace PresentationLayer.Admin
             this.mainForm = mainForm;
             InitializeComponent();
 
+            var roles = UserRole.Values.ToList();
+            roles.Insert(0,UserRole.EMPTY);
+            this.roleComboBox.DataSource = roles;
+
             refreshList();
         }
 
@@ -86,12 +90,22 @@ namespace PresentationLayer.Admin
         {
             User searchCriteria = new User();
             searchCriteria.FirstName = this.firstNameTextBox.Text;
-            searchCriteria.LastName = this.LastNameTextBox.Text;
+            searchCriteria.LastName = this.lastnameTextBox.Text;
             searchCriteria.Uname = this.loginTextBox.Text;
             searchCriteria.Role = this.roleComboBox.Text;
 
             users = AdministrationFacade.GetUsers(searchCriteria).ToList();
             this.refreshList(false);
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            this.lastnameTextBox.Clear();
+            this.firstNameTextBox.Clear();
+            this.roleComboBox.SelectedIndex = 0;
+            this.loginTextBox.Clear();
+
+            refreshList();
         }
     }
 }

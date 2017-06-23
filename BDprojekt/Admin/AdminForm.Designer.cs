@@ -42,7 +42,7 @@
             this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.LastNameTextBox = new System.Windows.Forms.TextBox();
+            this.lastnameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
@@ -160,7 +160,7 @@
             // 
             // roleComboBox
             // 
-            this.roleComboBox.DataSource = System.Enum.GetValues(typeof(BusinessLayer.UserRole.Type));
+            this.roleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roleComboBox.FormattingEnabled = true;
             this.roleComboBox.Location = new System.Drawing.Point(264, 52);
             this.roleComboBox.Name = "roleComboBox";
@@ -185,12 +185,12 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Rola:";
             // 
-            // LastNameTextBox
+            // lastnameTextBox
             // 
-            this.LastNameTextBox.Location = new System.Drawing.Point(74, 53);
-            this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(136, 20);
-            this.LastNameTextBox.TabIndex = 10;
+            this.lastnameTextBox.Location = new System.Drawing.Point(74, 53);
+            this.lastnameTextBox.Name = "lastnameTextBox";
+            this.lastnameTextBox.Size = new System.Drawing.Size(136, 20);
+            this.lastnameTextBox.TabIndex = 10;
             // 
             // label3
             // 
@@ -225,6 +225,7 @@
             this.clearButton.TabIndex = 14;
             this.clearButton.Text = "Wyczyść";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // groupBox1
             // 
@@ -238,7 +239,7 @@
             this.groupBox1.Controls.Add(this.roleComboBox);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.LastNameTextBox);
+            this.groupBox1.Controls.Add(this.lastnameTextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
@@ -301,7 +302,7 @@
         private System.Windows.Forms.ComboBox roleComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox LastNameTextBox;
+        private System.Windows.Forms.TextBox lastnameTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox loginTextBox;
