@@ -37,7 +37,8 @@ namespace PresentationLayer
                     "Błąd logowania", 
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
-                    );
+                    );                
+                passwordTextBox.Clear();
                 return;
             }
 
@@ -47,21 +48,24 @@ namespace PresentationLayer
 
             switch (role.ToEnum())
             {
-                case UserRole.Type.ADMIN:
+                case UserRole.Type.Admin:
                     var a = new Admin.AdminForm(this);
                     a.Show();
                     break;
-                case UserRole.Type.DOCTOR:
+                case UserRole.Type.Doctor:
                     var d = new DoctorPanel();
                     d.Show();          
                     break;
-                case UserRole.Type.LABWORKER:
+                case UserRole.Type.LabWorker:
+                case UserRole.Type.LabManager:
                     var l = new Laboratory();
                     l.Show();
                     break;
-                case UserRole.Type.RECEPTIONIST:
+                case UserRole.Type.Receptionist:
                     var r = new RegisterForm(this);
                     r.Show();
+                    break;
+                default:
                     break;
             }                      
         }
