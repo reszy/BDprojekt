@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.retireDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HouseNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.province = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,13 +75,99 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.login,
+            this.firstname,
+            this.lastname,
+            this.role,
+            this.retireDate,
+            this.city,
+            this.street,
+            this.HouseNr,
+            this.placeNr,
+            this.ZipCode,
+            this.province,
+            this.phone});
             this.dataGridView.Location = new System.Drawing.Point(6, 19);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowTemplate.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(546, 360);
             this.dataGridView.TabIndex = 0;
+            // 
+            // login
+            // 
+            this.login.HeaderText = "Login";
+            this.login.Name = "login";
+            this.login.ReadOnly = true;
+            // 
+            // firstname
+            // 
+            this.firstname.HeaderText = "Imię";
+            this.firstname.Name = "firstname";
+            this.firstname.ReadOnly = true;
+            // 
+            // lastname
+            // 
+            this.lastname.HeaderText = "Nazwisko";
+            this.lastname.Name = "lastname";
+            this.lastname.ReadOnly = true;
+            // 
+            // role
+            // 
+            this.role.HeaderText = "Rola";
+            this.role.Name = "role";
+            this.role.ReadOnly = true;
+            // 
+            // retireDate
+            // 
+            this.retireDate.HeaderText = "Stan konta";
+            this.retireDate.Name = "retireDate";
+            this.retireDate.ReadOnly = true;
+            // 
+            // city
+            // 
+            this.city.HeaderText = "Miasto";
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            // 
+            // street
+            // 
+            this.street.HeaderText = "Ulica";
+            this.street.Name = "street";
+            this.street.ReadOnly = true;
+            // 
+            // HouseNr
+            // 
+            this.HouseNr.HeaderText = "Nr. domu";
+            this.HouseNr.Name = "HouseNr";
+            this.HouseNr.ReadOnly = true;
+            // 
+            // placeNr
+            // 
+            this.placeNr.HeaderText = "Nr. klatki";
+            this.placeNr.Name = "placeNr";
+            this.placeNr.ReadOnly = true;
+            // 
+            // ZipCode
+            // 
+            this.ZipCode.HeaderText = "Kod pocztowy";
+            this.ZipCode.Name = "ZipCode";
+            this.ZipCode.ReadOnly = true;
+            // 
+            // province
+            // 
+            this.province.HeaderText = "Województwo";
+            this.province.Name = "province";
+            this.province.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Telefon";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
             // 
             // searchButton
             // 
@@ -273,7 +371,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminForm";
-            this.Text = "AdminPanel";
+            this.Text = "Admin panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -309,5 +407,17 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn role;
+        private System.Windows.Forms.DataGridViewTextBoxColumn retireDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn city;
+        private System.Windows.Forms.DataGridViewTextBoxColumn street;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HouseNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placeNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ZipCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn province;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
     }
 }

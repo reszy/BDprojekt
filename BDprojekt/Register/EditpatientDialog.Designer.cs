@@ -104,7 +104,7 @@
             this.peselTextBox.Location = new System.Drawing.Point(109, 64);
             this.peselTextBox.Name = "peselTextBox";
             this.peselTextBox.Size = new System.Drawing.Size(100, 20);
-            this.peselTextBox.TabIndex = 14;
+            this.peselTextBox.TabIndex = 4;
             // 
             // EditpatientDialog
             // 

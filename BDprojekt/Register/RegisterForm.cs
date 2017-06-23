@@ -33,9 +33,10 @@ namespace PresentationLayer.Clinic
             this.refreshPatientList();
         }
 
-        private void refreshPatientList()
+        private void refreshPatientList(bool getAll = true)
         {
-            patients = rFacade.GetPatients(new DataLayer.Patient()).ToList();
+            if (getAll)
+                patients = rFacade.GetPatients(new DataLayer.Patient()).ToList();
 
             this.patientsDataGrid.DataSource = null;
             this.patientsDataGrid.DataSource = patients;
@@ -93,6 +94,7 @@ namespace PresentationLayer.Clinic
             patientCriteria.Pesel = this.peselTextBox.Text;
 
             rFacade.GetPatients(patientCriteria);
+            refreshPatientList(false);
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -100,6 +102,8 @@ namespace PresentationLayer.Clinic
             this.firstNameTextBox.Clear();
             this.lastNameTextBox.Clear();
             this.peselTextBox.Clear();
+
+            this.refreshPatientList();
         }
 
         private void editPatientButton_Click(object sender, EventArgs e)
