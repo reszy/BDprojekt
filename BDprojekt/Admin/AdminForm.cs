@@ -123,7 +123,7 @@ namespace PresentationLayer.Admin
             searchCriteria.Uname = this.loginTextBox.Text;
             searchCriteria.Role = this.roleComboBox.Text;
 
-            users = AdministrationFacade.GetUsers(searchCriteria).ToList();
+            users = PersonelFacade.GetUsers(searchCriteria).ToList();
             this.refreshList(false);
         }
 

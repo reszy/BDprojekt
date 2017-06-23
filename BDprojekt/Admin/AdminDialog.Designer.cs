@@ -202,7 +202,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "AdminDialog";
-            this.Text = "Użytkownik";
+            this.Text = "Edycja Użytkownika";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

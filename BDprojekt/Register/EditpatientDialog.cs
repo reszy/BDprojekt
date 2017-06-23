@@ -13,17 +13,15 @@ using BusinessLayer;
 
 namespace BDprojekt.Register
 {
-    public partial class EditpatientDialog : Form
-    {
-        RegistrationFacade rFacade;
+    public partial class EditPatientDialog : Form
+    {        
         Patient editedPatient;
 
         bool update = false;
 
-        public EditpatientDialog(Patient patient)
+        public EditPatientDialog(Patient patient)
         {
-            this.editedPatient = patient;
-            rFacade = new RegistrationFacade();
+            this.editedPatient = patient;            
             InitializeComponent();
             if (editedPatient != null)
             {
@@ -47,11 +45,11 @@ namespace BDprojekt.Register
             editedPatient.Pesel = this.peselTextBox.Text;
             if (update)
             {
-                this.rFacade.UpdatePatient(editedPatient);
+                PatientsFacade.UpdatePatient(editedPatient);
             }
             else
             {
-                this.rFacade.AddNewPatient(editedPatient);
+                PatientsFacade.AddNewPatient(editedPatient);
             }
 
             this.Close();

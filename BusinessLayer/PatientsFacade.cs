@@ -7,9 +7,9 @@ using DataLayer;
 
 namespace BusinessLayer
 {
-    public class RegistrationFacade
+    public static class PatientsFacade
     {
-        public IQueryable<Patient> GetPatients(Patient searchCrit)
+        public static IQueryable<Patient> GetPatients(Patient searchCrit)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -22,30 +22,18 @@ namespace BusinessLayer
                             (String.IsNullOrEmpty(searchCrit.Pesel) || p.Pesel.StartsWith(searchCrit.Pesel))
                          select p;
 
-            return result;            
+            return result;
         }
 
-        public IQueryable<Visit> GetVisits(int patiantId = 0)
-        {
-            var dc = new DataClassesClinicDataContext();
-
-            var result = from v in dc.Visits
-                             where
-                              ((patiantId == 0) || v.PatientId == patiantId)
-                         select v;
-
-                return result;            
-        }
-
-        public void AddNewPatient(Patient patient)
+        public static void AddNewPatient(Patient patient)
         {
             var dc = new DataClassesClinicDataContext();
 
             dc.Patients.InsertOnSubmit(patient);
-            dc.SubmitChanges();            
+            dc.SubmitChanges();
         }
 
-        public void UpdatePatient(Patient patient)
+        public static void UpdatePatient(Patient patient)
         {
             var dc = new DataClassesClinicDataContext();
 
@@ -64,7 +52,7 @@ namespace BusinessLayer
                 result.Insurance = patient.Insurance;
 
                 dc.SubmitChanges();
-            }            
+            }
         }
     }
 }

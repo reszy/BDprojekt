@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace BusinessLayer
 {
-    public static class AdministrationFacade
+    public static class PersonelFacade
     {
         private static string Hash(string input)
         {
@@ -17,7 +17,7 @@ namespace BusinessLayer
         }
 
         public static UserRole MakeLogin(String userName, String password)
-        {  
+        {
             var users = GetUsers(
                 new User { Uname = userName }
                 );
@@ -31,25 +31,24 @@ namespace BusinessLayer
                     if (authUser.DateRetire == null || DateTime.Now.Date < authUser.DateRetire)
                     {
                         UserRole role = authUser.Role;
-                        if(role == UserRole.EMPTY)
+                        if (role == UserRole.EMPTY)
                             throw new Exceptions.LoginException("Temu kontu nie przydzelono roli");
                         else
                             return role;
-                    }                       
-                    else                    
+                    }
+                    else
                         throw new Exceptions.LoginException("To konto wygasło");
-                    
+
                 }
 
             }
             throw new Exceptions.LoginException("Niepoprawne dane logowania");
         }
 
-
         public static IQueryable<User> GetUsers(User searchCrit)
         {
             var dc = new DataClassesClinicDataContext();
-      
+
             var result = from u in dc.Users
                          where
                             (String.IsNullOrEmpty(searchCrit.Role) || u.Role.StartsWith(searchCrit.Role))
@@ -60,13 +59,13 @@ namespace BusinessLayer
                             &&
                             (String.IsNullOrEmpty(searchCrit.Uname) || u.Uname.StartsWith(searchCrit.Uname))
                          select u;
-            return result;            
+            return result;
         }
 
         public static void UpdateUserData(User user)
         {
             var dc = new DataClassesClinicDataContext();
-    
+
             var result = (from u in dc.Users
                           where u.PersonId == user.PersonId
                           select u).SingleOrDefault();
@@ -96,3 +95,4 @@ namespace BusinessLayer
         }
     }
 }
+
