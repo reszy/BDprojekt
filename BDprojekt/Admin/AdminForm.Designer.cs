@@ -252,6 +252,7 @@
             // firstNameTextBox
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(74, 20);
+            this.firstNameTextBox.MaxLength = 50;
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.firstNameTextBox.TabIndex = 6;
@@ -286,6 +287,7 @@
             // lastnameTextBox
             // 
             this.lastnameTextBox.Location = new System.Drawing.Point(74, 53);
+            this.lastnameTextBox.MaxLength = 50;
             this.lastnameTextBox.Name = "lastnameTextBox";
             this.lastnameTextBox.Size = new System.Drawing.Size(136, 20);
             this.lastnameTextBox.TabIndex = 10;
@@ -311,6 +313,7 @@
             // loginTextBox
             // 
             this.loginTextBox.Location = new System.Drawing.Point(264, 20);
+            this.loginTextBox.MaxLength = 50;
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(136, 20);
             this.loginTextBox.TabIndex = 12;

@@ -15,6 +15,7 @@ namespace PresentationLayer.Admin
     public partial class AdminDialog : Form
     {
         private bool update;
+
         private User editedUser;
 
         public AdminDialog(User user)
@@ -30,10 +31,15 @@ namespace PresentationLayer.Admin
             if (editedUser != null)
             {
                 update = true;
+                
                 this.firstNameTextBox.Text = editedUser.FirstName;
                 this.lastNameTextBox.Text = editedUser.LastName;
-                this.userNameTextBox.Text = editedUser.Uname;
+                this.userNameTextBox.Text = editedUser.Uname;                
                 this.passwordTextBox.Text = "";
+
+                UserRole.Type index = ((UserRole)editedUser.Role).ToEnum();
+                this.roleComboBox.SelectedIndex = index == UserRole.Type.EMPTY ? 0 : (int)index+1;
+
                 if (editedUser.DateRetire != null)
                 {
                     this.accountStateDateTimePicker.Checked = true;
@@ -42,6 +48,17 @@ namespace PresentationLayer.Admin
                 else
                 {
                     this.accountStateDateTimePicker.Checked = false;
+                }
+
+                if(editedUser.Address != null)
+                {
+                    this.cityTextBox.Text = editedUser.Address.City;
+                    this.houseNoTextBox.Text = editedUser.Address.HouseNr;
+                    this.placeNoTextBox.Text = editedUser.Address.PlaceNr;
+                    this.phoneNoTextBox.Text = editedUser.Address.Phone;
+                    this.provinceTextBox.Text = editedUser.Address.Province;
+                    this.streetTextBox.Text = editedUser.Address.Street;
+                    this.zipCodeTextBox.Text = editedUser.Address.ZipCode;
                 }
             }
             else
@@ -68,6 +85,16 @@ namespace PresentationLayer.Admin
                 editedUser.DateRetire = null;
             }
 
+            if (editedUser.Address != null)
+            {
+                editedUser.Address.City = this.cityTextBox.Text;
+                editedUser.Address.HouseNr = this.houseNoTextBox.Text;
+                editedUser.Address.PlaceNr = this.placeNoTextBox.Text;
+                editedUser.Address.Phone = this.phoneNoTextBox.Text;
+                editedUser.Address.Province = this.provinceTextBox.Text;
+                editedUser.Address.Street = this.streetTextBox.Text;
+                editedUser.Address.ZipCode = this.zipCodeTextBox.Text;
+            }
 
             if (update)
             {
@@ -75,7 +102,20 @@ namespace PresentationLayer.Admin
             }
             else
             {
-                PersonelFacade.AddNewUser(editedUser);
+                Address address = new Address
+                {
+                    City = this.cityTextBox.Text,
+                    HouseNr = this.houseNoTextBox.Text,
+                    PlaceNr = this.placeNoTextBox.Text,
+                    Phone = this.phoneNoTextBox.Text,
+                    Province = this.provinceTextBox.Text,
+                    Street = this.streetTextBox.Text,
+                    ZipCode = this.zipCodeTextBox.Text
+
+                };
+
+                editedUser.Address = address;
+                PersonelFacade.AddNewUser(editedUser);        
             }
 
             this.Close();
