@@ -16,13 +16,13 @@ namespace PresentationLayer.Clinic
 {
     public partial class RegisterForm : Form
     {
-        private Form mainForm;
+        private LoginScreen mainForm;
         private bool logout = false;
 
         private List<Patient> patients;
         private List<Visit> visits;        
 
-        public RegisterForm(Form mainForm)
+        public RegisterForm(LoginScreen mainForm)
         {
             this.mainForm = mainForm;
 
@@ -68,6 +68,7 @@ namespace PresentationLayer.Clinic
                         );
                 }
             }
+            this.patientsDataGrid.ClearSelection();
             this.patientsDataGrid.Refresh();
         }
 
@@ -95,6 +96,7 @@ namespace PresentationLayer.Clinic
                         );
                 }
             }
+            this.visitDataGrid.ClearSelection();
             this.visitDataGrid.Refresh();
         }
 
@@ -168,13 +170,14 @@ namespace PresentationLayer.Clinic
         private void showAllButton_Click(object sender, EventArgs e)
         {
             refreshVisitList(-1);
+            patientsDataGrid.ClearSelection();
         }
 
         private void registerButton_Click(object sender, EventArgs e)
         {
             if (this.patientsDataGrid.SelectedRows.Count > 0)
             {
-                var dialog = new RegisterDialog(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
+                var dialog = new RegisterDialog(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId, mainForm.LoggedId);
                 dialog.ShowDialog();
 
                 refreshVisitList(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
@@ -194,7 +197,7 @@ namespace PresentationLayer.Clinic
                     MessageBoxIcon.Question
                     ))
                 {
-                    //rFacade.updateVisit(selected.PatientId); TODO add deleteing visit in DB
+                    VisitsFacade.CancelVisit(visits[this.visitDataGrid.CurrentCell.RowIndex].VisitId);
                     refreshVisitList(selected.PatientId);
                 }
             }

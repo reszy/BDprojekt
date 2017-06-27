@@ -20,6 +20,10 @@ namespace PresentationLayer
             InitializeComponent();
         }
 
+        private int loggedId = -1;
+
+        internal int LoggedId { get => loggedId; }
+
         private void loginButton_Click(object sender, EventArgs e)
         {
             UserRole role;
@@ -41,6 +45,9 @@ namespace PresentationLayer
                 passwordTextBox.Clear();
                 return;
             }
+
+            var users = PersonelFacade.GetUsers(new DataLayer.User { Uname = this.passwordTextBox.Text }).ToList();
+            loggedId = users[0].PersonId;
 
             this.Hide();
             this.passwordTextBox.Text = "";
