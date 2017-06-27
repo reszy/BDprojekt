@@ -36,6 +36,16 @@ namespace BDprojekt.Register
                 this.editedPatient = new Patient();
             }
 
+            if (editedPatient.Address != null)
+            {
+                this.cityTextBox.Text = editedPatient.Address.City;
+                this.houseNoTextBox.Text = editedPatient.Address.HouseNr;
+                this.placeNoTextBox.Text = editedPatient.Address.PlaceNr;
+                this.phoneNoTextBox.Text = editedPatient.Address.Phone;
+                this.provinceTextBox.Text = editedPatient.Address.Province;
+                this.streetTextBox.Text = editedPatient.Address.Street;
+                this.zipCodeTextBox.Text = editedPatient.Address.ZipCode;
+            }
         }
 
         private void applyButton_Click(object sender, EventArgs e)
@@ -43,12 +53,37 @@ namespace BDprojekt.Register
             editedPatient.FirstName = this.firstnameTextBox.Text;
             editedPatient.LastName = this.lastnameTextBox.Text;
             editedPatient.Pesel = this.peselTextBox.Text;
+
+            if (editedPatient.Address != null)
+            {
+                editedPatient.Address.City = this.cityTextBox.Text;
+                editedPatient.Address.HouseNr = this.houseNoTextBox.Text;
+                editedPatient.Address.PlaceNr = this.placeNoTextBox.Text;
+                editedPatient.Address.Phone = this.phoneNoTextBox.Text;
+                editedPatient.Address.Province = this.provinceTextBox.Text;
+                editedPatient.Address.Street = this.streetTextBox.Text;
+                editedPatient.Address.ZipCode = this.zipCodeTextBox.Text;
+            }
+
             if (update)
             {
                 PatientsFacade.UpdatePatient(editedPatient);
             }
             else
             {
+                Address address = new Address
+                {
+                    City = this.cityTextBox.Text,
+                    HouseNr = this.houseNoTextBox.Text,
+                    PlaceNr = this.placeNoTextBox.Text,
+                    Phone = this.phoneNoTextBox.Text,
+                    Province = this.provinceTextBox.Text,
+                    Street = this.streetTextBox.Text,
+                    ZipCode = this.zipCodeTextBox.Text
+
+                };
+
+                editedPatient.Address = address;
                 PatientsFacade.AddNewPatient(editedPatient);
             }
 

@@ -51,6 +51,32 @@ namespace BusinessLayer
                 result.NIP = patient.NIP;
                 result.Insurance = patient.Insurance;
 
+                if (result.Address != null)
+                {
+                    result.Address.City = patient.Address.City;
+                    result.Address.HouseNr = patient.Address.HouseNr;
+                    result.Address.PlaceNr = patient.Address.PlaceNr;
+                    result.Address.Phone = patient.Address.Phone;
+                    result.Address.Province = patient.Address.Province;
+                    result.Address.Street = patient.Address.Street;
+                    result.Address.ZipCode = patient.Address.ZipCode;
+                }
+                else
+                {
+                    Address address = new Address
+                    {
+                        City = patient.Address.City,
+                        HouseNr = patient.Address.HouseNr,
+                        PlaceNr = patient.Address.PlaceNr,
+                        Phone = patient.Address.Phone,
+                        Province = patient.Address.Province,
+                        Street = patient.Address.Street,
+                        ZipCode = patient.Address.ZipCode
+
+                    };
+                    result.Address = address;
+                }
+
                 dc.SubmitChanges();
             }
         }

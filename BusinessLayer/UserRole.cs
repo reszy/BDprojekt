@@ -15,7 +15,7 @@ namespace BusinessLayer
         public static readonly UserRole RECEPTIONIST = new UserRole("Receptionist", Type.RECEPTIONIST);
         public static readonly UserRole EMPTY = new UserRole("", Type.EMPTY);
 
-        public enum Type{ ADMIN, DOCTOR, LABWORKER, RECEPTIONIST, LABMANAGER, EMPTY }
+        public enum Type{ ADMIN, DOCTOR, LABWORKER, LABMANAGER, RECEPTIONIST, EMPTY }
 
         public static IEnumerable<UserRole> Values
         {
@@ -46,7 +46,7 @@ namespace BusinessLayer
         }
 
         public Type ToEnum()
-        {
+        {           
             return type;
         }
 

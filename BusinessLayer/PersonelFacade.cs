@@ -79,6 +79,31 @@ namespace BusinessLayer
                 result.DateRetire = user.DateRetire;
                 if (!String.IsNullOrEmpty(user.Password))
                     result.Password = Hash(user.Password);
+                if(result.Address != null)
+                {
+                    result.Address.City = user.Address.City;
+                    result.Address.HouseNr = user.Address.HouseNr;
+                    result.Address.PlaceNr = user.Address.PlaceNr;
+                    result.Address.Phone = user.Address.Phone;
+                    result.Address.Province = user.Address.Province;
+                    result.Address.Street = user.Address.Street;
+                    result.Address.ZipCode = user.Address.ZipCode;
+                }
+                else
+                {
+                    Address address = new Address
+                    {
+                        City = user.Address.City,
+                        HouseNr = user.Address.HouseNr,
+                        PlaceNr = user.Address.PlaceNr,
+                        Phone = user.Address.Phone,
+                        Province = user.Address.Province,
+                        Street = user.Address.Street,
+                        ZipCode = user.Address.ZipCode
+
+                     };
+                    result.Address = address;
+                }
 
                 dc.SubmitChanges();
             }
