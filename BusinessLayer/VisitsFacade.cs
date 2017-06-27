@@ -77,7 +77,7 @@ namespace BusinessLayer
             public int count;
         }
 
-        public static IQueryable<DoctorVisits> GetVisitDoctorCount()
+        public static IQueryable<DoctorVisits> GetVisitDoctorCount(DateTime startDate, DateTime endDate)
         {
             LinkedList<DoctorVisits> list = new LinkedList<DoctorVisits>();
 
@@ -94,8 +94,10 @@ namespace BusinessLayer
             foreach (var doctor in doctors)
             {
                 int visitCount = (from v in dc.Visits
-                             where v.DoctorId == doctor.PersonId
-                             select v).Count();    
+                             where 
+                                (v.DoctorId == doctor.PersonId) && 
+                                (v.DateOfRegistration >= startDate && v.DateOfRegistration <= endDate)
+                                  select v).Count();    
                 list.AddLast(new DoctorVisits { count = visitCount, name = (doctor.FirstName + " " + doctor.LastName) });
             }
 
