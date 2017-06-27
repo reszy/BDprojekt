@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
 
+
 namespace BusinessLayer
 {
     public static class VisitsFacade
@@ -68,6 +69,37 @@ namespace BusinessLayer
 
                 dc.SubmitChanges();
             }
+        }
+
+        public struct DoctorVisits
+        {
+            public string name;
+            public int count;
+        }
+
+        public static IQueryable<DoctorVisits> GetVisitDoctorCount()
+        {
+            LinkedList<DoctorVisits> list = new LinkedList<DoctorVisits>();
+
+
+            var doctors = PersonelFacade.GetUsers(
+                new User
+                {
+                    Role = UserRole.DOCTOR.Text
+                });
+
+
+            var dc = new DataClassesClinicDataContext();
+
+            foreach (var doctor in doctors)
+            {
+                int visitCount = (from v in dc.Visits
+                             where v.DoctorId == doctor.PersonId
+                             select v).Count();    
+                list.AddLast(new DoctorVisits { count = visitCount, name = (doctor.FirstName + " " + doctor.LastName) });
+            }
+
+            return list.AsQueryable();
         }
     }
 }

@@ -38,9 +38,7 @@ namespace BusinessLayer
                     }
                     else
                         throw new Exceptions.LoginException("To konto wygasło");
-
                 }
-
             }
             throw new Exceptions.LoginException("Niepoprawne dane logowania");
         }

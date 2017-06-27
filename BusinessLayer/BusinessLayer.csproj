@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\LoginException.cs" />
+    <Compile Include="LaboratoryFacade.cs" />
     <Compile Include="PatientsFacade.cs" />
     <Compile Include="PersonelFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
