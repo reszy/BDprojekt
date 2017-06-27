@@ -29,6 +29,18 @@ namespace BDprojekt.Register
                 this.firstnameTextBox.Text = editedPatient.FirstName;
                 this.lastnameTextBox.Text = editedPatient.LastName;
                 this.peselTextBox.Text = editedPatient.Pesel;
+                this.nipTextBox.Text = editedPatient.NIP;
+                this.insuranceCheckBox.Checked = (editedPatient.Insurance == 'Y');
+                    this.sexComboBox.Text = this.editedPatient.Sex.ToString();
+                if(editedPatient.BirthdayDate != null)
+                {
+                    this.birthdatePicker.Checked = true;
+                    this.birthdatePicker.Value = Convert.ToDateTime(editedPatient.BirthdayDate);
+                }
+                else
+                {
+                    this.birthdatePicker.Checked = false;
+                }
             }
             else
             {
@@ -53,6 +65,19 @@ namespace BDprojekt.Register
             editedPatient.FirstName = this.firstnameTextBox.Text;
             editedPatient.LastName = this.lastnameTextBox.Text;
             editedPatient.Pesel = this.peselTextBox.Text;
+            editedPatient.NIP = this.nipTextBox.Text;
+            editedPatient.Sex = this.sexComboBox.Text[0];
+            editedPatient.Insurance = this.insuranceCheckBox.Checked ? 'Y' : 'N';
+
+            if (this.birthdatePicker.Checked)
+            {
+                editedPatient.BirthdayDate = this.birthdatePicker.Value;
+            }
+            else
+            {
+                editedPatient.BirthdayDate = null;
+            }
+
 
             if (editedPatient.Address != null)
             {

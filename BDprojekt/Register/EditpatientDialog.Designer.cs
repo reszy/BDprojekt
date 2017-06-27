@@ -39,9 +39,9 @@
             this.sexComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.birthdatePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nipTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.adress = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -61,6 +61,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.zipCodeTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.insuranceCheckBox = new System.Windows.Forms.CheckBox();
             this.adress.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -166,13 +167,13 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Data Urodzenia:";
             // 
-            // dateTimePicker1
+            // birthdatePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 160);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
-            this.dateTimePicker1.TabIndex = 25;
+            this.birthdatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.birthdatePicker.Location = new System.Drawing.Point(101, 160);
+            this.birthdatePicker.Name = "birthdatePicker";
+            this.birthdatePicker.Size = new System.Drawing.Size(146, 20);
+            this.birthdatePicker.TabIndex = 25;
             // 
             // label6
             // 
@@ -183,13 +184,12 @@
             this.label6.TabIndex = 26;
             this.label6.Text = "Ubezpieczenie:";
             // 
-            // textBox2
+            // nipTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 195);
-            this.textBox2.MaxLength = 13;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 28;
+            this.nipTextBox.Location = new System.Drawing.Point(101, 195);
+            this.nipTextBox.Name = "nipTextBox";
+            this.nipTextBox.Size = new System.Drawing.Size(146, 20);
+            this.nipTextBox.TabIndex = 28;
             // 
             // label7
             // 
@@ -218,10 +218,10 @@
             this.tabPage1.Controls.Add(this.peselTextBox);
             this.tabPage1.Controls.Add(this.sexComboBox);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.birthdatePicker);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.lastnameTextBox);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.nipTextBox);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
@@ -389,6 +389,15 @@
             this.label20.TabIndex = 23;
             this.label20.Text = "Ulica:";
             // 
+            // insuranceCheckBox
+            // 
+            this.insuranceCheckBox.AutoSize = true;
+            this.insuranceCheckBox.Location = new System.Drawing.Point(152, 241);
+            this.insuranceCheckBox.Name = "insuranceCheckBox";
+            this.insuranceCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.insuranceCheckBox.TabIndex = 30;
+            this.insuranceCheckBox.UseVisualStyleBackColor = true;
+            // 
             // EditPatientDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,10 +430,11 @@
         private System.Windows.Forms.TextBox peselTextBox;
         private System.Windows.Forms.ComboBox sexComboBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox insuranceCheckBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker birthdatePicker;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nipTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabControl adress;
         private System.Windows.Forms.TabPage tabPage1;
