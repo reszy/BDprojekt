@@ -39,12 +39,12 @@
             this.sexComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.birthdatePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nipTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.insuraceCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,13 +145,13 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Data Urodzenia:";
             // 
-            // dateTimePicker1
+            // birthdatePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(92, 169);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
-            this.dateTimePicker1.TabIndex = 25;
+            this.birthdatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.birthdatePicker.Location = new System.Drawing.Point(92, 169);
+            this.birthdatePicker.Name = "birthdatePicker";
+            this.birthdatePicker.Size = new System.Drawing.Size(146, 20);
+            this.birthdatePicker.TabIndex = 25;
             // 
             // label6
             // 
@@ -162,19 +162,12 @@
             this.label6.TabIndex = 26;
             this.label6.Text = "Ubezpieczenie:";
             // 
-            // textBox1
+            // nipTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 239);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 27;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(92, 204);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 28;
+            this.nipTextBox.Location = new System.Drawing.Point(92, 204);
+            this.nipTextBox.Name = "nipTextBox";
+            this.nipTextBox.Size = new System.Drawing.Size(146, 20);
+            this.nipTextBox.TabIndex = 28;
             // 
             // label7
             // 
@@ -187,19 +180,19 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.insuraceCheckBox);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.peselTextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.nipTextBox);
             this.groupBox1.Controls.Add(this.firstnameTextBox);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lastnameTextBox);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.birthdatePicker);
             this.groupBox1.Controls.Add(this.sexComboBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -207,6 +200,15 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane Pacjenta:";
+            // 
+            // insuraceCheckBox
+            // 
+            this.insuraceCheckBox.AutoSize = true;
+            this.insuraceCheckBox.Location = new System.Drawing.Point(152, 241);
+            this.insuraceCheckBox.Name = "insuraceCheckBox";
+            this.insuraceCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.insuraceCheckBox.TabIndex = 30;
+            this.insuraceCheckBox.UseVisualStyleBackColor = true;
             // 
             // EditPatientDialog
             // 
@@ -238,11 +240,11 @@
         private System.Windows.Forms.ComboBox sexComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker birthdatePicker;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nipTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox insuraceCheckBox;
     }
 }

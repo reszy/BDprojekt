@@ -33,7 +33,17 @@ namespace BDprojekt.Register
 
         private void registerButton_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex < 0)
+                return;
 
+            Visit visit = new Visit
+            {
+                Status = VisitStatus.REGISTER.ToString(),
+                DoctorId = doctors[comboBox1.SelectedIndex].Doctor.DoctorId,
+                DateOfRegistration = dateTimePicker1.Value
+            };
+
+            VisitsFacade.AddNewVisit(visit);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
