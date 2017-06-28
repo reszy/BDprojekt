@@ -49,6 +49,8 @@ namespace BusinessLayer
 
             var result = from u in dc.Users
                          where
+                            ((searchCrit.PersonId == 0) || u.PersonId == searchCrit.PersonId)
+                            &&
                             (String.IsNullOrEmpty(searchCrit.Role) || u.Role.StartsWith(searchCrit.Role))
                             &&
                             (String.IsNullOrEmpty(searchCrit.FirstName) || u.FirstName.StartsWith(searchCrit.FirstName))

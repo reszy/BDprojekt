@@ -87,6 +87,12 @@
     <Compile Include="Examination\ExReultsDialog.Designer.cs">
       <DependentUpon>ExReultsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laboratory\Worker\LabWorkerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory\Worker\LabWorkerDialog.Designer.cs">
+      <DependentUpon>LabWorkerDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register\EditPatientDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,11 +111,11 @@
     <Compile Include="Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laboratory\Laboratory.cs">
+    <Compile Include="Laboratory\Worker\LabWorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laboratory\Laboratory.Designer.cs">
-      <DependentUpon>Laboratory.cs</DependentUpon>
+    <Compile Include="Laboratory\Worker\LabWorkerForm.Designer.cs">
+      <DependentUpon>LabWorkerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -140,6 +146,9 @@
     <EmbeddedResource Include="Examination\ExReultsDialog.resx">
       <DependentUpon>ExReultsDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory\Worker\LabWorkerDialog.resx">
+      <DependentUpon>LabWorkerDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Register\EditpatientDialog.resx">
       <DependentUpon>EditPatientDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,8 +158,8 @@
     <EmbeddedResource Include="Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laboratory\Laboratory.resx">
-      <DependentUpon>Laboratory.cs</DependentUpon>
+    <EmbeddedResource Include="Laboratory\Worker\LabWorkerForm.resx">
+      <DependentUpon>LabWorkerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
@@ -186,6 +195,9 @@
       <Project>{fa930c67-7717-4f8c-bf0a-29ce8328bc55}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Laboratory\Manager\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,6 +15,8 @@ namespace BusinessLayer
 
             var result = from p in dc.Patients
                          where
+                            ((searchCrit.PatientId == 0) || p.PatientId == searchCrit.PatientId)
+                            &&
                             (String.IsNullOrEmpty(searchCrit.FirstName) || p.FirstName.StartsWith(searchCrit.FirstName))
                             &&
                             (String.IsNullOrEmpty(searchCrit.LastName) || p.LastName.StartsWith(searchCrit.LastName))
