@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BusinessLayer.Enum;
 using BusinessLayer;
 using DataLayer;
 
@@ -46,7 +46,7 @@ namespace BDprojekt.Register
                 ReceptionistId = this.registrarId,
                 DoctorId = doctors[comboBox1.SelectedIndex].PersonId,
                 Description = "",
-                Status = Status.REGISTER.ToString(),
+                Status = VisitStatus.REGISTER.ToString(),
                 DateOfRegistration = dateTimePicker1.Value
             };
 

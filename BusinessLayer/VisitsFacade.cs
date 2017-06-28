@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
-
+using BusinessLayer.Enum;
 
 namespace BusinessLayer
 {
@@ -65,7 +65,7 @@ namespace BusinessLayer
                           select v).SingleOrDefault();
             if (result != null)
             {
-                result.Status = Status.CANCEL.Text;
+                result.Status = VisitStatus.CANCEL.Text;
 
                 dc.SubmitChanges();
             }

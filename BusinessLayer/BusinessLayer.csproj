@@ -41,14 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\ExaminationStatus.cs" />
     <Compile Include="Exceptions\LoginException.cs" />
     <Compile Include="LaboratoryFacade.cs" />
     <Compile Include="PatientsFacade.cs" />
     <Compile Include="PersonelFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserRole.cs" />
+    <Compile Include="Enum\UserRole.cs" />
     <Compile Include="VisitsFacade.cs" />
-    <Compile Include="VisitStatus.cs" />
+    <Compile Include="Enum\VisitStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

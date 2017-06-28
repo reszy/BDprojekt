@@ -4,18 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
+using BusinessLayer.Enum;
 
 namespace BusinessLayer
 {
     public static class LaboratoryFacade
     {
-        public static IQueryable<LaboratoryExamination> GetLaboratoryExamination(Status status)
+        public static IQueryable<LaboratoryExamination> GetLaboratoryExamination(ExaminationStatus status)
         {
             var dc = new DataClassesClinicDataContext();
 
             var result = from e in dc.LaboratoryExaminations
                          where
                             (String.IsNullOrEmpty(status.Text) || e.Status.StartsWith(status.Text))
+                         orderby e.OrderDate descending
                          select e;
 
             return result;

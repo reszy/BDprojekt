@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
 using System.Security.Cryptography;
+using BusinessLayer.Enum;
 
 namespace BusinessLayer
 {

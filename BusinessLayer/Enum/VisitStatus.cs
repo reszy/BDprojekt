@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer
+namespace BusinessLayer.Enum
 {
-    public class Status
+    public class VisitStatus
     {
-        public static readonly Status REGISTER = new Status("Register", Type.REGISTER);
-        public static readonly Status CANCEL = new Status("Cancel", Type.CANCEL);
-        public static readonly Status FINISH = new Status("Finish", Type.FINISH);
-        public static readonly Status READY = new Status("Ready", Type.READY);
+        public static readonly VisitStatus REGISTER = new VisitStatus("Register", Type.REGISTER);
+        public static readonly VisitStatus CANCEL = new VisitStatus("Cancel", Type.CANCEL);
+        public static readonly VisitStatus FINISH = new VisitStatus("Finish", Type.FINISH);
+        public static readonly VisitStatus READY = new VisitStatus("Ready", Type.READY);
 
 
         public enum Type { REGISTER, CANCEL, FINISH, READY }
 
-        public static IEnumerable<Status> Values
+        public static IEnumerable<VisitStatus> Values
         {
             get
             {
@@ -30,7 +30,7 @@ namespace BusinessLayer
         private readonly string text;
         private readonly Type type;
 
-        Status(string name, Type type)
+        VisitStatus(string name, Type type)
         {
             this.text = name;
             this.type = type;
@@ -48,17 +48,17 @@ namespace BusinessLayer
             return type;
         }
 
-        public static implicit operator Status(string s)
+        public static implicit operator VisitStatus(string s)
         {
             if (s.ToLower() == "register")
-                return Status.REGISTER;
+                return VisitStatus.REGISTER;
             else if (s.ToLower() == "cancel")
-                return Status.CANCEL;
+                return VisitStatus.CANCEL;
             else if (s.ToLower() == "finish")
-                return Status.FINISH;
+                return VisitStatus.FINISH;
             else if (s.ToLower() == "ready")
-                return Status.READY;
-            return Status.CANCEL;
+                return VisitStatus.READY;
+            return VisitStatus.CANCEL;
         }
     }
 }

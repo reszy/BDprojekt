@@ -1,5 +1,6 @@
 ﻿using DataLayer;
 using BusinessLayer;
+using BusinessLayer.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

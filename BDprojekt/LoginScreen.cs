@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BusinessLayer;
 using BusinessLayer.Exceptions;
 using PresentationLayer.Clinic; // TODO - Give the same namespace
+using BusinessLayer.Enum;
 
 namespace PresentationLayer
 {
