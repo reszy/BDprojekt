@@ -9,13 +9,13 @@ namespace BusinessLayer
 {
     public static class LaboratoryFacade
     {
-        public static IQueryable<LaboratoryExamination> GetLaboratoryExamination(LaboratoryExamination searchCrit)
+        public static IQueryable<LaboratoryExamination> GetLaboratoryExamination(Status status)
         {
             var dc = new DataClassesClinicDataContext();
 
             var result = from e in dc.LaboratoryExaminations
                          where
-                            (String.IsNullOrEmpty(searchCrit.Status) || e.Status.StartsWith(searchCrit.Status))
+                            (String.IsNullOrEmpty(status.Text) || e.Status.StartsWith(status.Text))
                          select e;
 
             return result;

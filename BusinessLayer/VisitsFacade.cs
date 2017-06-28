@@ -65,7 +65,7 @@ namespace BusinessLayer
                           select v).SingleOrDefault();
             if (result != null)
             {
-                result.Status = VisitStatus.CANCEL.Text;
+                result.Status = Status.CANCEL.Text;
 
                 dc.SubmitChanges();
             }
@@ -94,10 +94,11 @@ namespace BusinessLayer
             foreach (var doctor in doctors)
             {
                 int visitCount = (from v in dc.Visits
-                             where 
-                                (v.DoctorId == doctor.PersonId) && 
-                                (v.DateOfRegistration >= startDate && v.DateOfRegistration <= endDate)
-                                  select v).Count();    
+                                  where 
+                                    (v.DoctorId == doctor.PersonId) && 
+                                    (v.DateOfRegistration >= startDate && v.DateOfRegistration <= endDate)
+                                  select v).Count();   
+                
                 list.AddLast(new DoctorVisits { count = visitCount, name = (doctor.FirstName + " " + doctor.LastName) });
             }
 

@@ -46,7 +46,7 @@ namespace BDprojekt.Register
                 ReceptionistId = this.registrarId,
                 DoctorId = doctors[comboBox1.SelectedIndex].PersonId,
                 Description = "",
-                Status = VisitStatus.REGISTER.ToString(),
+                Status = Status.REGISTER.ToString(),
                 DateOfRegistration = dateTimePicker1.Value
             };
 
