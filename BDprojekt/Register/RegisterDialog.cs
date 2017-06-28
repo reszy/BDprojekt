@@ -58,5 +58,24 @@ namespace BDprojekt.Register
         {
             this.Close();
         }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            refreshDoctorsVisits();
+        }
+
+        private void refreshDoctorsVisits()
+        {
+            DateTime start = monthCalendar1.SelectionStart;
+            DateTime end = monthCalendar1.SelectionEnd;
+            var docs = VisitsFacade.GetVisitDoctorCount(start, end);
+            this.dataGridView1.Rows.Clear();
+            foreach (var doc in docs)
+            {
+                this.dataGridView1.Rows.Add(doc.name, doc.count);
+            }
+            this.dataGridView1.ClearSelection();
+            this.dataGridView1.Refresh();
+        }
     }
 }

@@ -45,7 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.adress = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.insuranceCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.houseNoTextBox = new System.Windows.Forms.TextBox();
@@ -61,7 +61,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.zipCodeTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.insuranceCheckBox = new System.Windows.Forms.CheckBox();
             this.adress.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -212,7 +211,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.firstnameTextBox);
             this.tabPage1.Controls.Add(this.peselTextBox);
@@ -226,6 +224,7 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.insuranceCheckBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -234,16 +233,14 @@
             this.tabPage1.Text = "Dane podstawowe";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // insuranceCheckBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Tak",
-            "Nie"});
-            this.comboBox1.Location = new System.Drawing.Point(101, 230);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 21);
-            this.comboBox1.TabIndex = 30;
+            this.insuranceCheckBox.AutoSize = true;
+            this.insuranceCheckBox.Location = new System.Drawing.Point(101, 233);
+            this.insuranceCheckBox.Name = "insuranceCheckBox";
+            this.insuranceCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.insuranceCheckBox.TabIndex = 30;
+            this.insuranceCheckBox.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -389,15 +386,6 @@
             this.label20.TabIndex = 23;
             this.label20.Text = "Ulica:";
             // 
-            // insuranceCheckBox
-            // 
-            this.insuranceCheckBox.AutoSize = true;
-            this.insuranceCheckBox.Location = new System.Drawing.Point(152, 241);
-            this.insuranceCheckBox.Name = "insuranceCheckBox";
-            this.insuranceCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.insuranceCheckBox.TabIndex = 30;
-            this.insuranceCheckBox.UseVisualStyleBackColor = true;
-            // 
             // EditPatientDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,6 +441,5 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox zipCodeTextBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

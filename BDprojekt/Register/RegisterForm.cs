@@ -29,6 +29,7 @@ namespace PresentationLayer.Clinic
             InitializeComponent();            
 
             this.refreshPatientList();
+            this.refreshVisitList(-1);
         }
 
         private void refreshPatientList(bool getAll = true)
@@ -89,10 +90,10 @@ namespace PresentationLayer.Clinic
             {
                 foreach (var visit in visits)
                 {
-                    var doctor = PersonelFacade.GetUsers(new User { Doctor = visit.Doctor });
+                    var doctor = PersonelFacade.GetUsers(new User { PersonId = visit.DoctorId }).ToList();
 
                     this.visitDataGrid.Rows.Add(
-                        visit.DateOfRegistration.ToString(), "Anon", visit.Status, visit.EndCancelDate.ToString() 
+                        visit.Patient.FirstName + " " + visit.Patient.LastName, visit.DateOfRegistration.ToString(), doctor[0].LastName, visit.Status, visit.EndCancelDate.ToString() 
                         );
                 }
             }
@@ -188,17 +189,17 @@ namespace PresentationLayer.Clinic
         {
             if (this.visitDataGrid.SelectedRows.Count > 0)
             {
-                Patient selected = patients[this.patientsDataGrid.CurrentCell.RowIndex];
+                Patient selected = visits[this.visitDataGrid.CurrentCell.RowIndex].Patient;
                 Visit toDelete = visits[this.visitDataGrid.CurrentCell.RowIndex];
                 if ( DialogResult.Yes == MessageBox.Show(
                     this,
-                    "Czy napewno usunąć wizytę pacjenta " + selected.FirstName + " " + selected.LastName + " w dniu " + toDelete.DateOfRegistration.ToShortDateString() + "?", "Usuwanie",
+                    "Czy napewno anulować wizytę pacjenta " + selected.FirstName + " " + selected.LastName + " w dniu " + toDelete.DateOfRegistration.ToShortDateString() + "?", "Usuwanie",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                     ))
                 {
-                    VisitsFacade.CancelVisit(visits[this.visitDataGrid.CurrentCell.RowIndex].VisitId);
-                    refreshVisitList(selected.PatientId);
+                    VisitsFacade.CancelVisit(toDelete.VisitId);
+                    refreshVisitList(this.patientsDataGrid.CurrentCell.RowIndex);
                 }
             }
         }
