@@ -109,6 +109,7 @@
             this.monthCalendar1.Location = new System.Drawing.Point(12, 25);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 20;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // groupBox1
             // 
