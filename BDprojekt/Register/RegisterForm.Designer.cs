@@ -446,21 +446,26 @@
             // 
             // patientName
             // 
+            this.patientName.FillWeight = 150F;
             this.patientName.HeaderText = "Pacjent";
             this.patientName.Name = "patientName";
             this.patientName.ReadOnly = true;
             // 
             // dateOfRegistration
             // 
+            this.dateOfRegistration.FillWeight = 150F;
             this.dateOfRegistration.HeaderText = "Data rejestracji";
             this.dateOfRegistration.Name = "dateOfRegistration";
             this.dateOfRegistration.ReadOnly = true;
+            this.dateOfRegistration.Width = 150;
             // 
             // doctorName
             // 
+            this.doctorName.FillWeight = 150F;
             this.doctorName.HeaderText = "Lekarz prowadzący";
             this.doctorName.Name = "doctorName";
             this.doctorName.ReadOnly = true;
+            this.doctorName.Width = 150;
             // 
             // status
             // 
@@ -470,9 +475,11 @@
             // 
             // endCancelDate
             // 
+            this.endCancelDate.FillWeight = 150F;
             this.endCancelDate.HeaderText = "Data zakończenia";
             this.endCancelDate.Name = "endCancelDate";
             this.endCancelDate.ReadOnly = true;
+            this.endCancelDate.Width = 150;
             // 
             // RegisterForm
             // 
