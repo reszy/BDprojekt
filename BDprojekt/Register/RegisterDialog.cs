@@ -32,6 +32,7 @@ namespace BDprojekt.Register
                 doctorNames.Add(doctor.LastName + " " + doctor.FirstName);
             }
             this.comboBox1.DataSource = doctorNames;
+            refreshDoctorsVisits();
         }
 
         private void registerButton_Click(object sender, EventArgs e)
