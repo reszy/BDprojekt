@@ -68,9 +68,12 @@ namespace PresentationLayer
 
         private void DoExaminationButton_Click(object sender, EventArgs e)
         {
-            var exDialog = new LabWorkerDialog(this.mainForm.LoggedId, examinations[this.labExaminationDataGridView.CurrentCell.RowIndex]);
-            exDialog.ShowDialog();
-            RefreshList();
+            if (this.labExaminationDataGridView.SelectedRows.Count == 1)
+            {
+                var exDialog = new LabWorkerDialog(this.mainForm.LoggedId, examinations[this.labExaminationDataGridView.CurrentCell.RowIndex]);
+                exDialog.ShowDialog();
+                RefreshList();
+            }
         }
     }
 }

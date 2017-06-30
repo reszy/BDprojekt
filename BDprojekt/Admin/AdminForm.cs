@@ -81,7 +81,7 @@ namespace PresentationLayer.Admin
 
         private void editUserButton_Click(object sender, EventArgs e)
         {
-            if(this.dataGridView.SelectedRows.Count > 0)
+            if(this.dataGridView.SelectedRows.Count == 1)
             {
                 var editDialog = new AdminDialog(users[this.dataGridView.CurrentCell.RowIndex]);
                 editDialog.ShowDialog();

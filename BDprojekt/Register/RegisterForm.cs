@@ -151,7 +151,7 @@ namespace PresentationLayer.Clinic
 
         private void EditPatientButton_Click(object sender, EventArgs e)
         {
-            if (this.patientsDataGrid.SelectedRows.Count > 0)
+            if (this.patientsDataGrid.SelectedRows.Count == 1)
             {
                 var editDialog = new EditPatientDialog(patients[this.patientsDataGrid.CurrentCell.RowIndex]);
                 editDialog.ShowDialog();
@@ -176,7 +176,7 @@ namespace PresentationLayer.Clinic
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            if (this.patientsDataGrid.SelectedRows.Count > 0)
+            if (this.patientsDataGrid.SelectedRows.Count == 1)
             {
                 var dialog = new RegisterDialog(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId, mainForm.LoggedId);
                 dialog.ShowDialog();
