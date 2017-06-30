@@ -68,14 +68,16 @@
             // wylogujToolStripMenuItem
             // 
             this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
-            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.wylogujToolStripMenuItem.Text = "Wyloguj";
+            this.wylogujToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
             // wyjścieToolStripMenuItem
             // 
             this.wyjścieToolStripMenuItem.Name = "wyjścieToolStripMenuItem";
-            this.wyjścieToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.wyjścieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.wyjścieToolStripMenuItem.Text = "Zakończ";
+            this.wyjścieToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // pomocToolStripMenuItem
             // 
@@ -143,15 +145,16 @@
             this.selectButton.Text = "Przeprowadz Badanie";
             this.selectButton.UseVisualStyleBackColor = true;
             // 
-            // Laboratory
+            // LabWorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 420);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Laboratory";
+            this.Name = "LabWorkerForm";
             this.Text = "Laboratory";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labExaminationDataGridView)).EndInit();

@@ -25,7 +25,7 @@ namespace PresentationLayer
 
         internal int LoggedId { get => loggedId; }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
             UserRole role;
 
@@ -81,21 +81,21 @@ namespace PresentationLayer
             }                      
         }
 
-        private void userNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void UserNameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyData == Keys.Enter)
             {
-                this.loginButton_Click(this, e);
+                this.LoginButton_Click(this, e);
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
         }
 
-        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void PasswordTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
             {
-                this.loginButton_Click(this, e);
+                this.LoginButton_Click(this, e);
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
