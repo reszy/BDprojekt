@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using DataLayer;
 using BusinessLayer;
+using BDprojekt.Laboratory.Manager;
 
 namespace PresentationLayer
 {
@@ -17,7 +18,7 @@ namespace PresentationLayer
     {
         private LoginScreen mainForm;
         List<LaboratoryExamination> examinations;
-        private bool logout;
+        private bool logout=false;
 
         public LabWorkerForm(LoginScreen mainForm)
         {
@@ -63,6 +64,13 @@ namespace PresentationLayer
                     Application.Exit();
                 }
             }
+        }
+
+        private void DoExaminationButton_Click(object sender, EventArgs e)
+        {
+            var exDialog = new LabWorkerDialog(this.mainForm.LoggedId, examinations[this.labExaminationDataGridView.CurrentCell.RowIndex]);
+            exDialog.ShowDialog();
+            RefreshList();
         }
     }
 }

@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.resultRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.doctorCommentsRichTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.resultsRichTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // resultRichTextBox
+            // doctorCommentsRichTextBox
             // 
-            this.resultRichTextBox.Location = new System.Drawing.Point(6, 19);
-            this.resultRichTextBox.Name = "resultRichTextBox";
-            this.resultRichTextBox.ReadOnly = true;
-            this.resultRichTextBox.Size = new System.Drawing.Size(468, 46);
-            this.resultRichTextBox.TabIndex = 0;
-            this.resultRichTextBox.Text = "";
+            this.doctorCommentsRichTextBox.Location = new System.Drawing.Point(6, 19);
+            this.doctorCommentsRichTextBox.Name = "doctorCommentsRichTextBox";
+            this.doctorCommentsRichTextBox.ReadOnly = true;
+            this.doctorCommentsRichTextBox.Size = new System.Drawing.Size(468, 46);
+            this.doctorCommentsRichTextBox.TabIndex = 0;
+            this.doctorCommentsRichTextBox.Text = "";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.resultRichTextBox);
+            this.groupBox1.Controls.Add(this.doctorCommentsRichTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(480, 74);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Wynik badania";
+            this.groupBox1.Text = "Notka doktora";
             // 
             // saveButton
             // 
@@ -65,6 +65,7 @@
             this.saveButton.TabIndex = 9;
             this.saveButton.Text = "Zapisz";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // cancelButton
             // 
@@ -74,10 +75,11 @@
             this.cancelButton.TabIndex = 10;
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.richTextBox2);
+            this.groupBox2.Controls.Add(this.resultsRichTextBox);
             this.groupBox2.Location = new System.Drawing.Point(12, 92);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(480, 149);
@@ -85,13 +87,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Wynik badania";
             // 
-            // richTextBox2
+            // resultsRichTextBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(6, 19);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(468, 116);
-            this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "";
+            this.resultsRichTextBox.Location = new System.Drawing.Point(6, 19);
+            this.resultsRichTextBox.Name = "resultsRichTextBox";
+            this.resultsRichTextBox.Size = new System.Drawing.Size(468, 116);
+            this.resultsRichTextBox.TabIndex = 0;
+            this.resultsRichTextBox.Text = "";
             // 
             // LabWorkerDialog
             // 
@@ -112,11 +114,11 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox resultRichTextBox;
+        private System.Windows.Forms.RichTextBox doctorCommentsRichTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox resultsRichTextBox;
     }
 }
