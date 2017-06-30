@@ -10,10 +10,13 @@ using System.Windows.Forms;
 
 namespace PresentationLayer
 {
-    public partial class Laboratory : Form
+    public partial class LabWorkerForm : Form
     {
-        public Laboratory()
+        private LoginScreen mainForm;
+
+        public LabWorkerForm(LoginScreen mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
         }
     }

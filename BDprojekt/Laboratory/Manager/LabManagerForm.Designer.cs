@@ -1,4 +1,4 @@
-﻿namespace BDprojekt.Laboratory.Manager
+﻿namespace PresentationLayer
 {
     partial class LabManagerForm
     {

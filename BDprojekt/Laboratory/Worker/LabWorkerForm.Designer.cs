@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer
 {
-    partial class Laboratory
+    partial class LabWorkerForm
     {
         /// <summary>
         /// Required designer variable.

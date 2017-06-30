@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BDprojekt.Laboratory.Manager
+namespace PresentationLayer
 {
     public partial class LabManagerForm : Form
     {
-        public LabManagerForm()
+        private LoginScreen mainForm;
+
+        public LabManagerForm(LoginScreen mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
         }
     }

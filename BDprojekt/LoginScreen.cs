@@ -61,13 +61,16 @@ namespace PresentationLayer
                     a.Show();
                     break;
                 case UserRole.Type.DOCTOR:
-                    var d = new DoctorPanel();
+                    var d = new DoctorPanel(this);
                     d.Show();          
                     break;
                 case UserRole.Type.LABWORKER:
+                    var lm = new LabManagerForm(this);
+                    lm.Show();
+                    break;
                 case UserRole.Type.LABMANAGER:
-                    var l = new Laboratory();
-                    l.Show();
+                    var lw = new LabWorkerForm(this);
+                    lw.Show();
                     break;
                 case UserRole.Type.RECEPTIONIST:
                     var r = new RegisterForm(this);

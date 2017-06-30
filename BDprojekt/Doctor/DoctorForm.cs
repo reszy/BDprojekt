@@ -12,8 +12,11 @@ namespace PresentationLayer
 {
     public partial class DoctorPanel : Form
     {
-        public DoctorPanel()
+        private LoginScreen mainForm;
+
+        public DoctorPanel(LoginScreen mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
         }
 
