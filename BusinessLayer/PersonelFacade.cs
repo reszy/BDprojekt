@@ -90,7 +90,7 @@ namespace BusinessLayer
                     result.Address.Street = user.Address.Street;
                     result.Address.ZipCode = user.Address.ZipCode;
                 }
-                else
+                else if(user.Address != null)
                 {
                     Address address = new Address
                     {

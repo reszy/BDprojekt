@@ -65,12 +65,12 @@ namespace PresentationLayer
                     d.Show();          
                     break;
                 case UserRole.Type.LABWORKER:
-                    var lm = new LabManagerForm(this);
-                    lm.Show();
-                    break;
-                case UserRole.Type.LABMANAGER:
                     var lw = new LabWorkerForm(this);
                     lw.Show();
+                    break;
+                case UserRole.Type.LABMANAGER:
+                    var lm = new LabManagerForm(this);
+                    lm.Show();
                     break;
                 case UserRole.Type.RECEPTIONIST:
                     var r = new RegisterForm(this);
