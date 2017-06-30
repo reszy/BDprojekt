@@ -105,14 +105,14 @@
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.logoutToolStripMenuItem.Text = "Wyloguj";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.exitToolStripMenuItem.Text = "Zakończ";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // pomocToolStripMenuItem
             // 
@@ -160,7 +160,7 @@
             this.cancelVisitButton.TabIndex = 25;
             this.cancelVisitButton.Text = "Anuluj wizytę";
             this.cancelVisitButton.UseVisualStyleBackColor = true;
-            this.cancelVisitButton.Click += new System.EventHandler(this.deleteVisitButton_Click);
+            this.cancelVisitButton.Click += new System.EventHandler(this.DeleteVisitButton_Click);
             // 
             // addNewPatientButton
             // 
@@ -170,7 +170,7 @@
             this.addNewPatientButton.TabIndex = 24;
             this.addNewPatientButton.Text = "Nowy pacjent";
             this.addNewPatientButton.UseVisualStyleBackColor = true;
-            this.addNewPatientButton.Click += new System.EventHandler(this.addNewPatientButton_Click);
+            this.addNewPatientButton.Click += new System.EventHandler(this.AddNewPatientButton_Click);
             // 
             // editPatientButton
             // 
@@ -180,7 +180,7 @@
             this.editPatientButton.TabIndex = 23;
             this.editPatientButton.Text = "Edytuj dane pacjenta";
             this.editPatientButton.UseVisualStyleBackColor = true;
-            this.editPatientButton.Click += new System.EventHandler(this.editPatientButton_Click);
+            this.editPatientButton.Click += new System.EventHandler(this.EditPatientButton_Click);
             // 
             // registerButton
             // 
@@ -191,7 +191,7 @@
             this.registerButton.TabIndex = 22;
             this.registerButton.Text = "Rejestruj";
             this.registerButton.UseVisualStyleBackColor = true;
-            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            this.registerButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // searchButton
             // 
@@ -202,7 +202,7 @@
             this.searchButton.TabIndex = 20;
             this.searchButton.Text = "Szukaj";
             this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // label3
             // 
@@ -283,7 +283,7 @@
             this.patientsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.patientsDataGrid.Size = new System.Drawing.Size(717, 237);
             this.patientsDataGrid.TabIndex = 28;
-            this.patientsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientsDataGrid_CellClick);
+            this.patientsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PatientsDataGrid_CellClick);
             // 
             // firstname
             // 
@@ -410,7 +410,7 @@
             this.showAllButton.TabIndex = 27;
             this.showAllButton.Text = "Pokaż wszytskie";
             this.showAllButton.UseVisualStyleBackColor = true;
-            this.showAllButton.Click += new System.EventHandler(this.showAllButton_Click);
+            this.showAllButton.Click += new System.EventHandler(this.ShowAllButton_Click);
             // 
             // groupBox3
             // 
@@ -442,7 +442,7 @@
             this.clearButton.TabIndex = 21;
             this.clearButton.Text = "Wyczyść";
             this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // patientName
             // 

@@ -25,7 +25,7 @@ namespace PresentationLayer
 
         internal int LoggedId { get => loggedId; }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
             UserRole role;
 
@@ -64,13 +64,13 @@ namespace PresentationLayer
                     var d = new DoctorPanel(this);
                     d.Show();          
                     break;
-                case UserRole.Type.LABWORKER:
-                    var lw = new LabWorkerForm(this);
-                    lw.Show();
-                    break;
                 case UserRole.Type.LABMANAGER:
                     var lm = new LabManagerForm(this);
                     lm.Show();
+                    break;
+                case UserRole.Type.LABWORKER:
+                    var lw = new LabWorkerForm(this);
+                    lw.Show();
                     break;
                 case UserRole.Type.RECEPTIONIST:
                     var r = new RegisterForm(this);
@@ -81,21 +81,21 @@ namespace PresentationLayer
             }                      
         }
 
-        private void userNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void UserNameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyData == Keys.Enter)
             {
-                this.loginButton_Click(this, e);
+                this.LoginButton_Click(this, e);
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
         }
 
-        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void PasswordTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
             {
-                this.loginButton_Click(this, e);
+                this.LoginButton_Click(this, e);
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }

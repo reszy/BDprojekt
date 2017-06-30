@@ -34,10 +34,10 @@ namespace BDprojekt.Register
                 doctorNames.Add(doctor.LastName + " " + doctor.FirstName);
             }
             this.comboBox1.DataSource = doctorNames;
-            refreshDoctorsVisits();
+            RefreshDoctorsVisits();
         }
 
-        private void registerButton_Click(object sender, EventArgs e)
+        private void RegisterButton_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex < 0)
                 return;
@@ -57,17 +57,17 @@ namespace BDprojekt.Register
             this.Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        private void MonthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
-            refreshDoctorsVisits();
+            RefreshDoctorsVisits();
         }
 
-        private void refreshDoctorsVisits()
+        private void RefreshDoctorsVisits()
         {
             DateTime start = monthCalendar1.SelectionStart;
             DateTime end = monthCalendar1.SelectionEnd;

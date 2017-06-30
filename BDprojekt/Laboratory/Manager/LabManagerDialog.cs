@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,43 @@ namespace BDprojekt.Laboratory.Manager
 {
     public partial class LabManagerDialog : Form
     {
-        public LabManagerDialog()
+        private int labManagerId;
+        private LaboratoryExamination examination;
+
+        public LabManagerDialog(int labManagerId, LaboratoryExamination examination)
         {
+            this.labManagerId = labManagerId;
+            this.examination = examination;
             InitializeComponent();
+
+            this.doctorCommentRichTextBox.Text = examination.DoctorAttention;
+            this.resultRichTextBox.Text = examination.Result;
+            this.nameRichTextBox.Text = examination.DictionaryMedicalExamination.Name;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            this.examination.Status = BusinessLayer.Enum.ExaminationStatus.READY.ToString();
+            this.examination.LaboratoryManagerId = this.labManagerId;
+
+            LaboratoryFacade.UpdateLaboratoryExamination(examination);
+
+            this.Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.examination.Status = BusinessLayer.Enum.ExaminationStatus.CANCEL.ToString();
+            this.examination.LaboratoryManagerId = this.labManagerId;
+
+            LaboratoryFacade.UpdateLaboratoryExamination(examination);
+
+            this.Close();
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

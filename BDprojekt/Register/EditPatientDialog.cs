@@ -60,7 +60,7 @@ namespace BDprojekt.Register
             }
         }
 
-        private void applyButton_Click(object sender, EventArgs e)
+        private void ApplyButton_Click(object sender, EventArgs e)
         {
             editedPatient.FirstName = this.firstnameTextBox.Text;
             editedPatient.LastName = this.lastnameTextBox.Text;
@@ -115,7 +115,7 @@ namespace BDprojekt.Register
             this.Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

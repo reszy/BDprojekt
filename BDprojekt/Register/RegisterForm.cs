@@ -28,11 +28,11 @@ namespace PresentationLayer.Clinic
 
             InitializeComponent();            
 
-            this.refreshPatientList();
-            this.refreshVisitList(-1);
+            this.RefreshPatientList();
+            this.RefreshVisitList(-1);
         }
 
-        private void refreshPatientList(bool getAll = true)
+        private void RefreshPatientList(bool getAll = true)
         {
             if (getAll)
                 patients = PatientsFacade.GetPatients(new Patient()).ToList();
@@ -73,7 +73,7 @@ namespace PresentationLayer.Clinic
             this.patientsDataGrid.Refresh();
         }
 
-        private void refreshVisitList(int patientId)
+        private void RefreshVisitList(int patientId)
         {
             if (patientId >= 0)
             {
@@ -101,13 +101,13 @@ namespace PresentationLayer.Clinic
             this.visitDataGrid.Refresh();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logout = true;
             this.Close();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logout = false;
             this.Close();
@@ -128,64 +128,64 @@ namespace PresentationLayer.Clinic
             }
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
-            Patient patientCriteria = new Patient();
-
-            patientCriteria.FirstName = this.firstNameTextBox.Text;
-            patientCriteria.LastName = this.lastNameTextBox.Text;
-            patientCriteria.Pesel = this.peselTextBox.Text;
-
+            Patient patientCriteria = new Patient()
+            {
+                FirstName = this.firstNameTextBox.Text,
+                LastName = this.lastNameTextBox.Text,
+                Pesel = this.peselTextBox.Text
+            };
             patients = PatientsFacade.GetPatients(patientCriteria).ToList();
-            refreshPatientList(false);
+            RefreshPatientList(false);
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e)
         {
             this.firstNameTextBox.Clear();
             this.lastNameTextBox.Clear();
             this.peselTextBox.Clear();
 
-            this.refreshPatientList();
+            this.RefreshPatientList();
         }
 
-        private void editPatientButton_Click(object sender, EventArgs e)
+        private void EditPatientButton_Click(object sender, EventArgs e)
         {
             if (this.patientsDataGrid.SelectedRows.Count > 0)
             {
                 var editDialog = new EditPatientDialog(patients[this.patientsDataGrid.CurrentCell.RowIndex]);
                 editDialog.ShowDialog();
-                refreshPatientList();
-                refreshVisitList(0);
+                RefreshPatientList();
+                RefreshVisitList(0);
             }
         }
 
-        private void addNewPatientButton_Click(object sender, EventArgs e)
+        private void AddNewPatientButton_Click(object sender, EventArgs e)
         {
             var editDialog = new EditPatientDialog(null);
             editDialog.ShowDialog();
-            refreshPatientList();
-            refreshVisitList(0);
+            RefreshPatientList();
+            RefreshVisitList(0);
         }
 
-        private void showAllButton_Click(object sender, EventArgs e)
+        private void ShowAllButton_Click(object sender, EventArgs e)
         {
-            refreshVisitList(-1);
+            RefreshVisitList(-1);
             patientsDataGrid.ClearSelection();
         }
 
-        private void registerButton_Click(object sender, EventArgs e)
+        private void RegisterButton_Click(object sender, EventArgs e)
         {
             if (this.patientsDataGrid.SelectedRows.Count > 0)
             {
                 var dialog = new RegisterDialog(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId, mainForm.LoggedId);
                 dialog.ShowDialog();
 
-                refreshVisitList(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
+                RefreshVisitList(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
             }
         }
 
-        private void deleteVisitButton_Click(object sender, EventArgs e)
+        private void DeleteVisitButton_Click(object sender, EventArgs e)
         {
             if (this.visitDataGrid.SelectedRows.Count > 0)
             {
@@ -199,14 +199,14 @@ namespace PresentationLayer.Clinic
                     ))
                 {
                     VisitsFacade.CancelVisit(toDelete.VisitId);
-                    refreshVisitList(this.patientsDataGrid.CurrentCell.RowIndex);
+                    RefreshVisitList(this.patientsDataGrid.CurrentCell.RowIndex);
                 }
             }
         }
 
-        private void patientsDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void PatientsDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            refreshVisitList(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
+            RefreshVisitList(patients[this.patientsDataGrid.CurrentCell.RowIndex].PatientId);
         }
     }
 }

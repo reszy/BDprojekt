@@ -39,7 +39,7 @@
             this.DoctorComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExaminationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.selectButton = new System.Windows.Forms.Button();
+            this.doExaminationButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labExaminationDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -70,12 +70,14 @@
             this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
             this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.wylogujToolStripMenuItem.Text = "Wyloguj";
+            this.wylogujToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
             // wyjścieToolStripMenuItem
             // 
             this.wyjścieToolStripMenuItem.Name = "wyjścieToolStripMenuItem";
             this.wyjścieToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.wyjścieToolStripMenuItem.Text = "Zakończ";
+            this.wyjścieToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // pomocToolStripMenuItem
             // 
@@ -101,7 +103,10 @@
             this.DoctorComment,
             this.ExaminationName});
             this.labExaminationDataGridView.Location = new System.Drawing.Point(6, 19);
+            this.labExaminationDataGridView.MultiSelect = false;
             this.labExaminationDataGridView.Name = "labExaminationDataGridView";
+            this.labExaminationDataGridView.ReadOnly = true;
+            this.labExaminationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.labExaminationDataGridView.Size = new System.Drawing.Size(624, 331);
             this.labExaminationDataGridView.TabIndex = 5;
             // 
@@ -125,7 +130,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.selectButton);
+            this.groupBox1.Controls.Add(this.doExaminationButton);
             this.groupBox1.Controls.Add(this.labExaminationDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
@@ -134,24 +139,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Zlecone Badania";
             // 
-            // selectButton
+            // doExaminationButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(6, 356);
-            this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(128, 23);
-            this.selectButton.TabIndex = 6;
-            this.selectButton.Text = "Przeprowadz Badanie";
-            this.selectButton.UseVisualStyleBackColor = true;
+            this.doExaminationButton.Location = new System.Drawing.Point(6, 356);
+            this.doExaminationButton.Name = "doExaminationButton";
+            this.doExaminationButton.Size = new System.Drawing.Size(128, 23);
+            this.doExaminationButton.TabIndex = 6;
+            this.doExaminationButton.Text = "Przeprowadz Badanie";
+            this.doExaminationButton.UseVisualStyleBackColor = true;
+            this.doExaminationButton.Click += new System.EventHandler(this.DoExaminationButton_Click);
             // 
-            // Laboratory
+            // LabWorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 420);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Laboratory";
+            this.Name = "LabWorkerForm";
             this.Text = "Laboratory";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labExaminationDataGridView)).EndInit();
@@ -171,7 +178,7 @@
         private System.Windows.Forms.ToolStripMenuItem oProgramieToolStripMenuItem;
         private System.Windows.Forms.DataGridView labExaminationDataGridView;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button selectButton;
+        private System.Windows.Forms.Button doExaminationButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DoctorComment;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExaminationName;
