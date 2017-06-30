@@ -25,6 +25,8 @@ namespace BDprojekt.Register
             InitializeComponent();
             this.registrarId = registrarId;
             this.patientId = patientId;
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             doctors = PersonelFacade.GetUsers(new User { Role = UserRole.DOCTOR.ToString() }).ToList();
             doctorNames = new List<string>();
             foreach (var doctor in doctors)
