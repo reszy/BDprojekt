@@ -69,11 +69,11 @@
     <Compile Include="Doctor\LaboratoryExaminationDialog.Designer.cs">
       <DependentUpon>LaboratoryExaminationDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\ListDialog.cs">
+    <Compile Include="Doctor\ExaminationListDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doctor\ListDialog.Designer.cs">
-      <DependentUpon>ListDialog.cs</DependentUpon>
+    <Compile Include="Doctor\ExaminationListDialog.Designer.cs">
+      <DependentUpon>ExaminationListDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctor\PhysicalExaminationDialog.cs">
       <SubType>Form</SubType>
@@ -167,8 +167,8 @@
     <EmbeddedResource Include="Doctor\LaboratoryExaminationDialog.resx">
       <DependentUpon>LaboratoryExaminationDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\ListDialog.resx">
-      <DependentUpon>ListDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Doctor\ExaminationListDialog.resx">
+      <DependentUpon>ExaminationListDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\PhysicalExaminationDialog.resx">
       <DependentUpon>PhysicalExaminationDialog.cs</DependentUpon>

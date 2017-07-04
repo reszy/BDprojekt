@@ -1,6 +1,6 @@
 ﻿namespace BDprojekt.Doctor
 {
-    partial class ListDialog
+    partial class ExaminationListDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.examinationListDataGridView = new System.Windows.Forms.DataGridView();
+            this.ExaminationType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExaminationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExaminationResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -48,11 +51,36 @@
             // 
             // examinationListDataGridView
             // 
+            this.examinationListDataGridView.AllowUserToAddRows = false;
+            this.examinationListDataGridView.AllowUserToDeleteRows = false;
             this.examinationListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.examinationListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ExaminationType,
+            this.ExaminationDate,
+            this.ExaminationResult});
+            this.examinationListDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.examinationListDataGridView.Location = new System.Drawing.Point(6, 19);
             this.examinationListDataGridView.Name = "examinationListDataGridView";
             this.examinationListDataGridView.Size = new System.Drawing.Size(391, 365);
             this.examinationListDataGridView.TabIndex = 0;
+            // 
+            // ExaminationType
+            // 
+            this.ExaminationType.HeaderText = "Typ badania";
+            this.ExaminationType.Name = "ExaminationType";
+            this.ExaminationType.ReadOnly = true;
+            // 
+            // ExaminationDate
+            // 
+            this.ExaminationDate.HeaderText = "Data wykonania";
+            this.ExaminationDate.Name = "ExaminationDate";
+            this.ExaminationDate.ReadOnly = true;
+            // 
+            // ExaminationResult
+            // 
+            this.ExaminationResult.HeaderText = "Wynik badania";
+            this.ExaminationResult.Name = "ExaminationResult";
+            this.ExaminationResult.ReadOnly = true;
             // 
             // selectButton
             // 
@@ -72,7 +100,7 @@
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
-            // ListDialog
+            // ExaminationListDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,7 +109,7 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "ListDialog";
+            this.Name = "ExaminationListDialog";
             this.Text = "ListDialog";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.examinationListDataGridView)).EndInit();
@@ -95,5 +123,8 @@
         private System.Windows.Forms.DataGridView examinationListDataGridView;
         private System.Windows.Forms.Button selectButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExaminationType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExaminationDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExaminationResult;
     }
 }
