@@ -101,7 +101,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 23);
             this.button1.TabIndex = 35;
-            this.button1.Text = "Wykaz badań fizykalnych";
+            this.button1.Text = "Wykonaj badanie fizykalne";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label6

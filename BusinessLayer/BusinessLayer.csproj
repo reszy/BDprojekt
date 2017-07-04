@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Enum\ExaminationStatus.cs" />
     <Compile Include="Exceptions\LoginException.cs" />
-    <Compile Include="LaboratoryFacade.cs" />
+    <Compile Include="ExaminationFacade.cs" />
     <Compile Include="PatientsFacade.cs" />
     <Compile Include="PersonelFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

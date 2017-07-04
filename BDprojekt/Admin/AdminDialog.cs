@@ -100,6 +100,7 @@ namespace PresentationLayer.Admin
             if (update)
             {
                 PersonelFacade.UpdateUserData(editedUser);
+                //TODO - what if address is null ?
             }
             else
             {

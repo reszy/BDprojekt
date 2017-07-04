@@ -8,7 +8,7 @@ using BusinessLayer.Enum;
 
 namespace BusinessLayer
 {
-    public static class LaboratoryFacade
+    public static class ExaminationFacade
     {
         public static IQueryable<LaboratoryExamination> GetLaboratoryExamination(ExaminationStatus status)
         {
@@ -56,6 +56,24 @@ namespace BusinessLayer
             var dc = new DataClassesClinicDataContext();
 
             dc.LaboratoryExaminations.InsertOnSubmit(examination);
+            dc.SubmitChanges();
+        }
+
+        public static IQueryable<PhysicalExamination> GetPhysicalExamination()
+        {
+            var dc = new DataClassesClinicDataContext();
+
+            var result = from e in dc.PhysicalExaminations
+                         select e;
+
+            return result;
+        }
+
+        public static void AddNewPhysicalExamination(PhysicalExamination examination)
+        {
+            var dc = new DataClassesClinicDataContext();
+
+            dc.PhysicalExaminations.InsertOnSubmit(examination);
             dc.SubmitChanges();
         }
     }

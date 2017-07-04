@@ -33,7 +33,7 @@ namespace BDprojekt.Laboratory.Manager
             this.examination.Status = BusinessLayer.Enum.ExaminationStatus.READY.ToString();
             this.examination.LaboratoryManagerId = this.labManagerId;
 
-            LaboratoryFacade.UpdateLaboratoryExamination(examination);
+            ExaminationFacade.UpdateLaboratoryExamination(examination);
 
             this.Close();
         }
@@ -43,7 +43,7 @@ namespace BDprojekt.Laboratory.Manager
             this.examination.Status = BusinessLayer.Enum.ExaminationStatus.CANCEL.ToString();
             this.examination.LaboratoryManagerId = this.labManagerId;
 
-            LaboratoryFacade.UpdateLaboratoryExamination(examination);
+            ExaminationFacade.UpdateLaboratoryExamination(examination);
 
             this.Close();
         }
