@@ -10,16 +10,17 @@ namespace BusinessLayer
 {
     public static class ExaminationFacade
     {
-        public static IQueryable<LaboratoryExamination> GetLaboratoryExamination(ExaminationStatus status)
+        public static IQueryable<LaboratoryExamination> GetLaboratoryExamination(LaboratoryExamination searchCrit)
         {
             var dc = new DataClassesClinicDataContext();
 
             var result = from e in dc.LaboratoryExaminations
                          where
-                            (String.IsNullOrEmpty(status.Text) || e.Status.StartsWith(status.Text))
+                            (String.IsNullOrEmpty(searchCrit.Status) || e.Status.StartsWith(searchCrit.Status))
+                            &&
+                            ((searchCrit.VisitId == 0) || e.VisitId == searchCrit.VisitId)
                          orderby e.OrderDate descending
                          select e;
-
             return result;
         }
 
@@ -59,11 +60,12 @@ namespace BusinessLayer
             dc.SubmitChanges();
         }
 
-        public static IQueryable<PhysicalExamination> GetPhysicalExamination()
+        public static IQueryable<PhysicalExamination> GetPhysicalExamination(int visitId)
         {
             var dc = new DataClassesClinicDataContext();
 
             var result = from e in dc.PhysicalExaminations
+                         where e.VisitId == visitId
                          select e;
 
             return result;
