@@ -8,12 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using DataLayer;
+using BusinessLayer;
+
 namespace BDprojekt.Doctor
 {
     public partial class VisitDialog : Form
     {
-        public VisitDialog()
+        Visit visit;
+        int doctorId;
+        public VisitDialog(Visit visit, int doctorId)
         {
+            this.visit = visit;
+            this.doctorId = doctorId;
             InitializeComponent();
         }
     }

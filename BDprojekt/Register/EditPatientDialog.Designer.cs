@@ -394,6 +394,7 @@
             this.Controls.Add(this.adress);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "EditPatientDialog";
             this.Text = "Edycja Pacienta";

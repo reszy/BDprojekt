@@ -30,7 +30,7 @@ namespace PresentationLayer
 
         private void RefreshList()
         {
-            examinations = ExaminationFacade.GetLaboratoryExamination(BusinessLayer.Enum.ExaminationStatus.TOCONFIRM).ToList();
+            examinations = ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { Status = BusinessLayer.Enum.ExaminationStatus.TOCONFIRM.ToString() }).ToList();
             this.labExaminationDataGridView.Rows.Clear();
             foreach (var exam in examinations)
             {

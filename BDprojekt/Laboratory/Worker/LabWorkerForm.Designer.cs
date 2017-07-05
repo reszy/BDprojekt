@@ -97,6 +97,9 @@
             // 
             this.labExaminationDataGridView.AllowUserToAddRows = false;
             this.labExaminationDataGridView.AllowUserToDeleteRows = false;
+            this.labExaminationDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labExaminationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.labExaminationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderDate,
@@ -130,6 +133,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.doExaminationButton);
             this.groupBox1.Controls.Add(this.labExaminationDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
@@ -141,6 +147,7 @@
             // 
             // doExaminationButton
             // 
+            this.doExaminationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.doExaminationButton.Location = new System.Drawing.Point(6, 356);
             this.doExaminationButton.Name = "doExaminationButton";
             this.doExaminationButton.Size = new System.Drawing.Size(128, 23);

@@ -64,7 +64,7 @@ namespace PresentationLayer.Clinic
                     }
 
                     this.patientsDataGrid.Rows.Add(
-                        patient.FirstName, patient.LastName, patient.Pesel, patient.Sex, patient.BirthdayDate.ToString(), patient.NIP, (patient.Insurance == 'Y'),
+                        patient.FirstName, patient.LastName, patient.Pesel, patient.Sex, patient.BirthdayDate.Value.ToShortDateString(), patient.NIP, (patient.Insurance == 'Y'),
                         City, Street, HouseNr, PlaceNr, ZipCode, Province, Phone
                         );
                 }

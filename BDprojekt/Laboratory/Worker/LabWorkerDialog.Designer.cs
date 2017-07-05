@@ -104,6 +104,7 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LabWorkerDialog";
             this.Text = "LabWorkerDialog";
             this.groupBox1.ResumeLayout(false);
