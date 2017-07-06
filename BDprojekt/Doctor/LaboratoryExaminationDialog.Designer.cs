@@ -116,7 +116,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.applyButton);
             this.Name = "LaboratoryExaminationDialog";
-            this.Text = "LaboratoryExaminationDialog";
+            this.Text = "Zleć badanie laboratoryjne";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

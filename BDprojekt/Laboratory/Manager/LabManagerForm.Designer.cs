@@ -180,7 +180,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "LabManagerForm";
-            this.Text = "LabManagerForm";
+            this.Text = "Panel managera";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.labExaminationDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

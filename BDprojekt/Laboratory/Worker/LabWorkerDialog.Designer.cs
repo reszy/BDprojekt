@@ -106,7 +106,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LabWorkerDialog";
-            this.Text = "LabWorkerDialog";
+            this.Text = "Wykonaj badanie";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -116,7 +116,7 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Name = "PhysicalExaminationDialog";
-            this.Text = "PhysicalExaminationDialog";
+            this.Text = "Wykonaj badanie fizykalne";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
