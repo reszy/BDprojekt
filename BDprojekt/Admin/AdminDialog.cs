@@ -119,10 +119,10 @@ namespace PresentationLayer.Admin
                         ZipCode = this.zipCodeTextBox.Text
                     };
 
-                    editedUser.Address = address;
-
-                    PersonelFacade.UpdateUserData(editedUser);
+                    editedUser.Address = address;                    
                 }
+
+                PersonelFacade.UpdateUserData(editedUser);
             }
             else
             {

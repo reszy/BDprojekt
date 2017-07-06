@@ -117,7 +117,7 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.groupBox1);
             this.Name = "VisitListDialog";
-            this.Text = "HistoryListDialog";
+            this.Text = "Historia wizyt";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.examinationListDataGridView)).EndInit();
             this.ResumeLayout(false);

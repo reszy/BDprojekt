@@ -279,7 +279,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "VisitDialog";
-            this.Text = "Wizyta";
+            this.Text = "Obsługa wizyty";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

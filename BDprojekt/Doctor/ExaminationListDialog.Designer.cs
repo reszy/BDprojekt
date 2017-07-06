@@ -51,7 +51,7 @@
             this.groupBox1.Size = new System.Drawing.Size(615, 390);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista";
+            this.groupBox1.Text = "Lista Badań";
             // 
             // examinationListDataGridView
             // 
@@ -128,7 +128,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "ExaminationListDialog";
-            this.Text = "ListDialog";
+            this.Text = "Historia Badań";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.examinationListDataGridView)).EndInit();
             this.ResumeLayout(false);

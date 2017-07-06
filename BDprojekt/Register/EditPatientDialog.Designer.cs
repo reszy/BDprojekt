@@ -397,7 +397,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "EditPatientDialog";
-            this.Text = "Edycja Pacienta";
+            this.Text = "Edycja pacienta";
             this.adress.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

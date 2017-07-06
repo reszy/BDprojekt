@@ -53,11 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.patientsDataGrid = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.showAllButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.clearButton = new System.Windows.Forms.Button();
             this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +67,11 @@
             this.zipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.province = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.showAllButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.clearButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGrid)).BeginInit();
@@ -322,79 +322,6 @@
             this.patientsDataGrid.TabIndex = 28;
             this.patientsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PatientsDataGrid_CellClick);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.patientsDataGrid);
-            this.groupBox1.Controls.Add(this.addNewPatientButton);
-            this.groupBox1.Controls.Add(this.editPatientButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 102);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(727, 286);
-            this.groupBox1.TabIndex = 29;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pacienci";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.showAllButton);
-            this.groupBox2.Controls.Add(this.visitDataGrid);
-            this.groupBox2.Controls.Add(this.registerButton);
-            this.groupBox2.Controls.Add(this.cancelVisitButton);
-            this.groupBox2.Location = new System.Drawing.Point(12, 391);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(727, 228);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Wizyty";
-            // 
-            // showAllButton
-            // 
-            this.showAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.showAllButton.Location = new System.Drawing.Point(252, 202);
-            this.showAllButton.Name = "showAllButton";
-            this.showAllButton.Size = new System.Drawing.Size(117, 23);
-            this.showAllButton.TabIndex = 27;
-            this.showAllButton.Text = "Pokaż wszytskie";
-            this.showAllButton.UseVisualStyleBackColor = true;
-            this.showAllButton.Click += new System.EventHandler(this.ShowAllButton_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBox3.Controls.Add(this.clearButton);
-            this.groupBox3.Controls.Add(this.searchButton);
-            this.groupBox3.Controls.Add(this.lastNameTextBox);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.firstNameTextBox);
-            this.groupBox3.Controls.Add(this.peselTextBox);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox3.Location = new System.Drawing.Point(12, 27);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox3.Size = new System.Drawing.Size(727, 69);
-            this.groupBox3.TabIndex = 31;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Wyszukiwanie pacjentów";
-            // 
-            // clearButton
-            // 
-            this.clearButton.Location = new System.Drawing.Point(615, 40);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 21;
-            this.clearButton.Text = "Wyczyść";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
-            // 
             // firstname
             // 
             this.firstname.HeaderText = "Imię";
@@ -481,6 +408,79 @@
             this.phone.Name = "phone";
             this.phone.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.patientsDataGrid);
+            this.groupBox1.Controls.Add(this.addNewPatientButton);
+            this.groupBox1.Controls.Add(this.editPatientButton);
+            this.groupBox1.Location = new System.Drawing.Point(12, 102);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(727, 286);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pacienci";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.showAllButton);
+            this.groupBox2.Controls.Add(this.visitDataGrid);
+            this.groupBox2.Controls.Add(this.registerButton);
+            this.groupBox2.Controls.Add(this.cancelVisitButton);
+            this.groupBox2.Location = new System.Drawing.Point(12, 391);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(727, 228);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Wizyty";
+            // 
+            // showAllButton
+            // 
+            this.showAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.showAllButton.Location = new System.Drawing.Point(252, 202);
+            this.showAllButton.Name = "showAllButton";
+            this.showAllButton.Size = new System.Drawing.Size(117, 23);
+            this.showAllButton.TabIndex = 27;
+            this.showAllButton.Text = "Pokaż wszytskie";
+            this.showAllButton.UseVisualStyleBackColor = true;
+            this.showAllButton.Click += new System.EventHandler(this.ShowAllButton_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox3.Controls.Add(this.clearButton);
+            this.groupBox3.Controls.Add(this.searchButton);
+            this.groupBox3.Controls.Add(this.lastNameTextBox);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.firstNameTextBox);
+            this.groupBox3.Controls.Add(this.peselTextBox);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox3.Location = new System.Drawing.Point(12, 27);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox3.Size = new System.Drawing.Size(727, 69);
+            this.groupBox3.TabIndex = 31;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Wyszukiwanie pacjentów";
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(615, 40);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 21;
+            this.clearButton.Text = "Wyczyść";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,7 +492,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RegisterForm";
-            this.Text = "RegisterPanel";
+            this.Text = "Panel rejestratorki";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

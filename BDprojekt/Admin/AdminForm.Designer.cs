@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.retireDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HouseNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.province = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,18 +61,6 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.retireDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HouseNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.province = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -96,6 +96,78 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(546, 360);
             this.dataGridView.TabIndex = 0;
+            // 
+            // login
+            // 
+            this.login.HeaderText = "Login";
+            this.login.Name = "login";
+            this.login.ReadOnly = true;
+            // 
+            // firstname
+            // 
+            this.firstname.HeaderText = "Imię";
+            this.firstname.Name = "firstname";
+            this.firstname.ReadOnly = true;
+            // 
+            // lastname
+            // 
+            this.lastname.HeaderText = "Nazwisko";
+            this.lastname.Name = "lastname";
+            this.lastname.ReadOnly = true;
+            // 
+            // role
+            // 
+            this.role.HeaderText = "Rola";
+            this.role.Name = "role";
+            this.role.ReadOnly = true;
+            // 
+            // retireDate
+            // 
+            this.retireDate.HeaderText = "Stan konta";
+            this.retireDate.Name = "retireDate";
+            this.retireDate.ReadOnly = true;
+            // 
+            // city
+            // 
+            this.city.HeaderText = "Miasto";
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            // 
+            // street
+            // 
+            this.street.HeaderText = "Ulica";
+            this.street.Name = "street";
+            this.street.ReadOnly = true;
+            // 
+            // HouseNr
+            // 
+            this.HouseNr.HeaderText = "Nr. domu";
+            this.HouseNr.Name = "HouseNr";
+            this.HouseNr.ReadOnly = true;
+            // 
+            // placeNr
+            // 
+            this.placeNr.HeaderText = "Nr. mieszkania";
+            this.placeNr.Name = "placeNr";
+            this.placeNr.ReadOnly = true;
+            // 
+            // ZipCode
+            // 
+            this.ZipCode.HeaderText = "Kod pocztowy";
+            this.ZipCode.Name = "ZipCode";
+            this.ZipCode.ReadOnly = true;
+            // 
+            // province
+            // 
+            this.province.HeaderText = "Województwo";
+            this.province.Name = "province";
+            this.province.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Telefon";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
             // 
             // searchButton
             // 
@@ -292,78 +364,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Użytkownicy";
             // 
-            // login
-            // 
-            this.login.HeaderText = "Login";
-            this.login.Name = "login";
-            this.login.ReadOnly = true;
-            // 
-            // firstname
-            // 
-            this.firstname.HeaderText = "Imię";
-            this.firstname.Name = "firstname";
-            this.firstname.ReadOnly = true;
-            // 
-            // lastname
-            // 
-            this.lastname.HeaderText = "Nazwisko";
-            this.lastname.Name = "lastname";
-            this.lastname.ReadOnly = true;
-            // 
-            // role
-            // 
-            this.role.HeaderText = "Rola";
-            this.role.Name = "role";
-            this.role.ReadOnly = true;
-            // 
-            // retireDate
-            // 
-            this.retireDate.HeaderText = "Stan konta";
-            this.retireDate.Name = "retireDate";
-            this.retireDate.ReadOnly = true;
-            // 
-            // city
-            // 
-            this.city.HeaderText = "Miasto";
-            this.city.Name = "city";
-            this.city.ReadOnly = true;
-            // 
-            // street
-            // 
-            this.street.HeaderText = "Ulica";
-            this.street.Name = "street";
-            this.street.ReadOnly = true;
-            // 
-            // HouseNr
-            // 
-            this.HouseNr.HeaderText = "Nr. domu";
-            this.HouseNr.Name = "HouseNr";
-            this.HouseNr.ReadOnly = true;
-            // 
-            // placeNr
-            // 
-            this.placeNr.HeaderText = "Nr. mieszkania";
-            this.placeNr.Name = "placeNr";
-            this.placeNr.ReadOnly = true;
-            // 
-            // ZipCode
-            // 
-            this.ZipCode.HeaderText = "Kod pocztowy";
-            this.ZipCode.Name = "ZipCode";
-            this.ZipCode.ReadOnly = true;
-            // 
-            // province
-            // 
-            this.province.HeaderText = "Województwo";
-            this.province.Name = "province";
-            this.province.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.HeaderText = "Telefon";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,7 +374,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminForm";
-            this.Text = "Admin panel";
+            this.Text = "Panel Administartora";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
