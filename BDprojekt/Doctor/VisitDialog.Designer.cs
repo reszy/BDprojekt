@@ -80,6 +80,7 @@
             this.laboratoryExamButton.TabIndex = 38;
             this.laboratoryExamButton.Text = "Zleć badanie laboratoryjne";
             this.laboratoryExamButton.UseVisualStyleBackColor = true;
+            this.laboratoryExamButton.Click += new System.EventHandler(this.laboratoryExamButton_Click);
             // 
             // showExaminationsButton
             // 

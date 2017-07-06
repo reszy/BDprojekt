@@ -79,24 +79,28 @@
             this.ExaminationC1.HeaderText = "Column1";
             this.ExaminationC1.Name = "ExaminationC1";
             this.ExaminationC1.ReadOnly = true;
+            this.ExaminationC1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ExaminationC2
             // 
             this.ExaminationC2.HeaderText = "Column2";
             this.ExaminationC2.Name = "ExaminationC2";
             this.ExaminationC2.ReadOnly = true;
+            this.ExaminationC2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ExaminationC3
             // 
             this.ExaminationC3.HeaderText = "Column3";
             this.ExaminationC3.Name = "ExaminationC3";
             this.ExaminationC3.ReadOnly = true;
+            this.ExaminationC3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // C4
             // 
             this.C4.HeaderText = "Column4";
             this.C4.Name = "C4";
             this.C4.ReadOnly = true;
+            this.C4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // selectButton
             // 
@@ -107,6 +111,7 @@
             this.selectButton.TabIndex = 11;
             this.selectButton.Text = "Wybierz";
             this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.ChooseButton_Click);
             // 
             // cancelButton
             // 
@@ -117,6 +122,7 @@
             this.cancelButton.TabIndex = 12;
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // ExaminationListDialog
             // 

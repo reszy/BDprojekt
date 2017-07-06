@@ -133,7 +133,7 @@ namespace PresentationLayer
             this.RefreshVisitList();
         }
 
-        private void openVisitButton_Click(object sender, EventArgs e)
+        private void OpenVisitButton_Click(object sender, EventArgs e)
         {
             if (this.visitDataGrid.SelectedRows.Count == 1)
             {

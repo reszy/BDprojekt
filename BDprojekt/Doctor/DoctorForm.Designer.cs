@@ -147,7 +147,7 @@
             this.openVisitButton.TabIndex = 25;
             this.openVisitButton.Text = "Otwórz wizyte";
             this.openVisitButton.UseVisualStyleBackColor = true;
-            this.openVisitButton.Click += new System.EventHandler(this.openVisitButton_Click);
+            this.openVisitButton.Click += new System.EventHandler(this.OpenVisitButton_Click);
             // 
             // label2
             // 

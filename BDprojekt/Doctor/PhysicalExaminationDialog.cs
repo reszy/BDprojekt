@@ -12,9 +12,33 @@ namespace BDprojekt.Doctor
 {
     public partial class PhysicalExaminationDialog : Form
     {
-        public PhysicalExaminationDialog()
+        private int visitId;
+        private int doctorId;
+        private int patientId;
+
+        private string choosenExamType;
+
+        public PhysicalExaminationDialog(int visitId, int patientId, int doctorId)
         {
             InitializeComponent();
+        }
+
+        private void ChooseExamButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new ExaminationListDialog(ExaminationListDialog.Type.PH_DICTIONARY, 0);
+            dialog.ShowDialog();
+            choosenExamType = dialog.ResultCode;
+            this.textBox1.Text = dialog.ResultText;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

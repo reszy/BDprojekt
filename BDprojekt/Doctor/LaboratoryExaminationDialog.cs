@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using BusinessLayer;
+using DataLayer;
+
 namespace BDprojekt.Doctor
 {
     public partial class LaboratoryExaminationDialog : Form
@@ -16,7 +19,7 @@ namespace BDprojekt.Doctor
         private int doctorId;
         private int patientId;
 
-        private int choosenExamTypeId;
+        private string choosenExamType;
 
         public LaboratoryExaminationDialog(int visitId, int patientId, int doctorId)
         {
@@ -28,8 +31,20 @@ namespace BDprojekt.Doctor
 
         private void ChooseExamButton_Click(object sender, EventArgs e)
         {
-            var dialog = new ExaminationListDialog(ExaminationListDialog.Type.LAB_EXAM, 0);
+            var dialog = new ExaminationListDialog(ExaminationListDialog.Type.LAB_DICTIONARY, 0);
             dialog.ShowDialog();
+            choosenExamType = dialog.ResultCode;
+            this.textBox1.Text = dialog.ResultText;
+        }
+
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+            ExaminationFacade.AddNewLaboratoryExamination(new LaboratoryExamination { DoctorAttention = this.richTextBox1.Text, OrderDate = DateTime.Now });
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

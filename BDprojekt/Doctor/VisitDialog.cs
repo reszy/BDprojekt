@@ -30,6 +30,7 @@ namespace BDprojekt.Doctor
                 this.groupBox1.Enabled = false;
                 this.saveButton.Enabled = false;
                 this.saveButton.Visible = false;
+                this.showExaminationsButton.Visible = true;
             }
 
             this.firstnameTextBox.Text = visit.Patient.FirstName;
@@ -40,7 +41,7 @@ namespace BDprojekt.Doctor
 
         private void PhysicalExamButton_Click(object sender, EventArgs e)
         {
-            var dialog = new PhysicalExaminationDialog();
+            var dialog = new PhysicalExaminationDialog(visit.VisitId, visit.PatientId, visit.DoctorId);
             dialog.ShowDialog();
         }
 
@@ -58,6 +59,12 @@ namespace BDprojekt.Doctor
         private void ShowVisitsButton_Click(object sender, EventArgs e)
         {
             var dialog = new ExaminationListDialog(ExaminationListDialog.Type.VISITS, visit.PatientId);
+            dialog.ShowDialog();
+        }
+
+        private void laboratoryExamButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new LaboratoryExaminationDialog(visit.VisitId, visit.PatientId, visit.DoctorId);
             dialog.ShowDialog();
         }
     }

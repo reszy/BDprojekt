@@ -33,8 +33,8 @@
             this.chooseExamButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             this.chooseExamButton.TabIndex = 0;
             this.chooseExamButton.Text = "Wybierz badanie";
             this.chooseExamButton.UseVisualStyleBackColor = true;
+            this.chooseExamButton.Click += new System.EventHandler(this.ChooseExamButton_Click);
             // 
             // groupBox1
             // 
@@ -85,23 +86,25 @@
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
-            // button3
+            // cancelButton
             // 
-            this.button3.Location = new System.Drawing.Point(282, 249);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Anuluj";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(282, 249);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 8;
+            this.cancelButton.Text = "Anuluj";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // button2
+            // saveButton
             // 
-            this.button2.Location = new System.Drawing.Point(193, 249);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Zapisz";
-            this.button2.UseVisualStyleBackColor = true;
+            this.saveButton.Location = new System.Drawing.Point(193, 249);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(83, 23);
+            this.saveButton.TabIndex = 7;
+            this.saveButton.Text = "Zapisz";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // PhysicalExaminationDialog
             // 
@@ -110,8 +113,8 @@
             this.ClientSize = new System.Drawing.Size(368, 277);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveButton);
             this.Name = "PhysicalExaminationDialog";
             this.Text = "PhysicalExaminationDialog";
             this.groupBox2.ResumeLayout(false);
@@ -128,7 +131,7 @@
         private System.Windows.Forms.Button chooseExamButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }

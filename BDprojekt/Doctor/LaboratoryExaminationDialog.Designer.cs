@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.chooseExamButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.applyButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -49,14 +49,15 @@
             this.chooseExamButton.UseVisualStyleBackColor = true;
             this.chooseExamButton.Click += new System.EventHandler(this.ChooseExamButton_Click);
             // 
-            // button2
+            // applyButton
             // 
-            this.button2.Location = new System.Drawing.Point(193, 249);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Zleć badanie";
-            this.button2.UseVisualStyleBackColor = true;
+            this.applyButton.Location = new System.Drawing.Point(193, 249);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(83, 23);
+            this.applyButton.TabIndex = 1;
+            this.applyButton.Text = "Zleć badanie";
+            this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // button3
             // 
@@ -66,6 +67,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Anuluj";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // richTextBox1
             // 
@@ -112,7 +114,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.applyButton);
             this.Name = "LaboratoryExaminationDialog";
             this.Text = "LaboratoryExaminationDialog";
             this.groupBox1.ResumeLayout(false);
@@ -125,7 +127,7 @@
         #endregion
 
         private System.Windows.Forms.Button chooseExamButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox1;
