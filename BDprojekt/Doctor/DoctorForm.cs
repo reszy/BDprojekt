@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BusinessLayer;
 using DataLayer;
 using BDprojekt.Doctor;
+using BusinessLayer.Enum;
 
 namespace PresentationLayer
 {
@@ -39,8 +40,6 @@ namespace PresentationLayer
             }
             else
             {
-                bool skipPatient = true;
-
                 Patient patientCriteria = new Patient()
                 {
                     FirstName = this.firstNameTextBox.Text,
@@ -48,18 +47,15 @@ namespace PresentationLayer
                     Pesel = this.peselTextBox.Text
                 };
                 List<Patient> patient = null;
-                if (String.IsNullOrEmpty(patientCriteria.FirstName) && String.IsNullOrEmpty(patientCriteria.LastName) && String.IsNullOrEmpty(patientCriteria.Pesel))
+                if (!(String.IsNullOrEmpty(patientCriteria.FirstName) && String.IsNullOrEmpty(patientCriteria.LastName) && String.IsNullOrEmpty(patientCriteria.Pesel)))
                 {
                     patient = PatientsFacade.GetPatients(patientCriteria).ToList();
-                }
-                else
-                {
-                    skipPatient = false;
                 }
 
                 Visit visitCriteria = new Visit()
                 {
-                    DoctorId = mainForm.LoggedId
+                    DoctorId = mainForm.LoggedId,
+                    Status = VisitStatus.REGISTER.ToString()
                 };
 
                 if (patient != null && patient.Count > 0)

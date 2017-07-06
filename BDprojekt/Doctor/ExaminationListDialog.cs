@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using DataLayer;
 using BusinessLayer;
+using BusinessLayer.Enum;
 
 namespace BDprojekt.Doctor
 {
@@ -54,7 +55,8 @@ namespace BDprojekt.Doctor
                     this.examinationListDataGridView.Columns[1].HeaderText = "Data wykoniania";
                     this.examinationListDataGridView.Columns[2].HeaderText = "Wynik";
                     this.examinationListDataGridView.Columns[3].HeaderText = "Typ";
-                    examsLab = ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = patientOrVisitId }).ToList();
+                    examsLab = ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = patientOrVisitId , Status = ExaminationStatus.PENDING.ToString()}).ToList();
+                    examsLab.AddRange(ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = patientOrVisitId, Status = ExaminationStatus.READY.ToString() }).ToList());
                     examsPhy = ExaminationFacade.GetPhysicalExamination(patientOrVisitId).ToList();
                     foreach (var exam in examsLab)
                     {
@@ -111,7 +113,7 @@ namespace BDprojekt.Doctor
                 if (dialogType == Type.LAB_DICTIONARY || dialogType == Type.PH_DICTIONARY)
                 {
                     var choosed = examDictionary[coosedRow];
-                    ResultCode = choosed.Type;
+                    ResultCode = choosed.MedicalExaminationCode;
                     ResultText = choosed.Name;
                     this.Close();
                 }

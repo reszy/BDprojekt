@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,13 @@ namespace BDprojekt.Doctor
         private int doctorId;
         private int patientId;
 
-        private string choosenExamType;
+        private string choosenExamCode;
 
         public PhysicalExaminationDialog(int visitId, int patientId, int doctorId)
         {
+            this.visitId = visitId;
+            this.patientId = patientId;
+            this.doctorId = doctorId;
             InitializeComponent();
         }
 
@@ -27,13 +31,14 @@ namespace BDprojekt.Doctor
         {
             var dialog = new ExaminationListDialog(ExaminationListDialog.Type.PH_DICTIONARY, 0);
             dialog.ShowDialog();
-            choosenExamType = dialog.ResultCode;
+            choosenExamCode = dialog.ResultCode;
             this.textBox1.Text = dialog.ResultText;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
+            ExaminationFacade.AddNewPhysicalExamination(new DataLayer.PhysicalExamination { Result = this.richTextBox1.Text, VisitId = visitId, MedicalExaminationCode = choosenExamCode });
+            this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

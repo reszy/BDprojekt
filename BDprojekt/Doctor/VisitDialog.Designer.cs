@@ -70,6 +70,7 @@
             this.saveButton.TabIndex = 39;
             this.saveButton.Text = "Zapisz";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // laboratoryExamButton
             // 
@@ -80,7 +81,7 @@
             this.laboratoryExamButton.TabIndex = 38;
             this.laboratoryExamButton.Text = "Zleć badanie laboratoryjne";
             this.laboratoryExamButton.UseVisualStyleBackColor = true;
-            this.laboratoryExamButton.Click += new System.EventHandler(this.laboratoryExamButton_Click);
+            this.laboratoryExamButton.Click += new System.EventHandler(this.LaboratoryExamButton_Click);
             // 
             // showExaminationsButton
             // 
