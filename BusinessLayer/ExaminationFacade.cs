@@ -80,5 +80,16 @@ namespace BusinessLayer
             dc.PhysicalExaminations.InsertOnSubmit(examination);
             dc.SubmitChanges();
         }
+
+        public static IQueryable<DictionaryMedicalExamination> GetDictionaryMedicalExamination(String type)
+        {
+            var dc = new DataClassesClinicDataContext();
+
+            var result = from e in dc.DictionaryMedicalExaminations
+                         where e.Type == type
+                         select e;
+
+            return result;
+        }
     }
 }

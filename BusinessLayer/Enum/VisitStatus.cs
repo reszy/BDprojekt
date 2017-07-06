@@ -11,9 +11,8 @@ namespace BusinessLayer.Enum
         public static readonly VisitStatus REGISTER = new VisitStatus("Register", Type.REGISTER);
         public static readonly VisitStatus CANCEL = new VisitStatus("Cancel", Type.CANCEL);
         public static readonly VisitStatus FINISH = new VisitStatus("Finish", Type.FINISH);
-        public static readonly VisitStatus READY = new VisitStatus("Ready", Type.READY);
 
-        public enum Type { REGISTER, CANCEL, FINISH, READY }
+        public enum Type { REGISTER, CANCEL, FINISH }
 
         public static IEnumerable<VisitStatus> Values
         {
@@ -22,7 +21,6 @@ namespace BusinessLayer.Enum
                 yield return REGISTER;
                 yield return CANCEL;
                 yield return FINISH;
-                yield return READY;
             }
         }
 
@@ -55,8 +53,6 @@ namespace BusinessLayer.Enum
                 return VisitStatus.CANCEL;
             else if (s.ToLower() == "finish")
                 return VisitStatus.FINISH;
-            else if (s.ToLower() == "ready")
-                return VisitStatus.READY;
             return VisitStatus.CANCEL;
         }
     }
