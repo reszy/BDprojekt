@@ -63,6 +63,12 @@
     <Compile Include="Doctor\DoctorForm.Designer.cs">
       <DependentUpon>DoctorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\VisitListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\VisitListDialog.Designer.cs">
+      <DependentUpon>VisitListDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\LaboratoryExaminationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,24 +92,6 @@
     </Compile>
     <Compile Include="Doctor\VisitDialog.Designer.cs">
       <DependentUpon>VisitDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Examination\ExaminationDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Examination\ExaminationDialog.Designer.cs">
-      <DependentUpon>ExaminationDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Examination\ExListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Examination\ExListDialog.Designer.cs">
-      <DependentUpon>ExListDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Examination\ExReultsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Examination\ExReultsDialog.Designer.cs">
-      <DependentUpon>ExReultsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratory\Manager\LabManagerDialog.cs">
       <SubType>Form</SubType>
@@ -164,6 +152,9 @@
     <EmbeddedResource Include="Doctor\DoctorForm.resx">
       <DependentUpon>DoctorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\VisitListDialog.resx">
+      <DependentUpon>VisitListDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\LaboratoryExaminationDialog.resx">
       <DependentUpon>LaboratoryExaminationDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,15 +166,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\VisitDialog.resx">
       <DependentUpon>VisitDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Examination\ExaminationDialog.resx">
-      <DependentUpon>ExaminationDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Examination\ExListDialog.resx">
-      <DependentUpon>ExListDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Examination\ExReultsDialog.resx">
-      <DependentUpon>ExReultsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratory\Manager\LabManagerDialog.resx">
       <DependentUpon>LabManagerDialog.cs</DependentUpon>

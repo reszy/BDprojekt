@@ -38,12 +38,14 @@ namespace BusinessLayer
 
                 if (examination.EndCancelDate != null || examination.EndCancelDate != DateTime.MinValue)
                 {
+                    result.LabWorkerId = examination.LabWorkerId;
                     result.EndCancelDate = examination.EndCancelDate;
                     result.Result = examination.Result;
                 }
 
                 if(examination.ApprovalCancelDate != null || examination.ApprovalCancelDate != DateTime.MinValue)
                 {
+                    result.LaboratoryManagerId = examination.LaboratoryManagerId;
                     result.MenagerAttention = examination.MenagerAttention;
                     result.ApprovalCancelDate = examination.ApprovalCancelDate;
                 }

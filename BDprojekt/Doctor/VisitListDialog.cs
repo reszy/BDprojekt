@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BDprojekt.Examination
+namespace BDprojekt.Doctor
 {
-    public partial class ExaminationDialog : Form
+    public partial class VisitListDialog : Form
     {
-        public ExaminationDialog()
+        public VisitListDialog()
         {
             InitializeComponent();
         }
