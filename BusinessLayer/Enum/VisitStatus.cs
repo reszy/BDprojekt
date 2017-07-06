@@ -13,7 +13,6 @@ namespace BusinessLayer.Enum
         public static readonly VisitStatus FINISH = new VisitStatus("Finish", Type.FINISH);
         public static readonly VisitStatus READY = new VisitStatus("Ready", Type.READY);
 
-
         public enum Type { REGISTER, CANCEL, FINISH, READY }
 
         public static IEnumerable<VisitStatus> Values
