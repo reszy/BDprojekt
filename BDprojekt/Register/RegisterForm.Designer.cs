@@ -36,6 +36,11 @@
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.visitDataGrid = new System.Windows.Forms.DataGridView();
+            this.patientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfRegistration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endCancelDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cancelVisitButton = new System.Windows.Forms.Button();
             this.addNewPatientButton = new System.Windows.Forms.Button();
             this.editPatientButton = new System.Windows.Forms.Button();
@@ -48,6 +53,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.patientsDataGrid = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.showAllButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.clearButton = new System.Windows.Forms.Button();
             this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,16 +72,6 @@
             this.zipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.province = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.showAllButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.clearButton = new System.Windows.Forms.Button();
-            this.patientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfRegistration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endCancelDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGrid)).BeginInit();
@@ -150,6 +150,43 @@
             this.visitDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.visitDataGrid.Size = new System.Drawing.Size(717, 179);
             this.visitDataGrid.TabIndex = 26;
+            // 
+            // patientName
+            // 
+            this.patientName.FillWeight = 150F;
+            this.patientName.HeaderText = "Pacjent";
+            this.patientName.Name = "patientName";
+            this.patientName.ReadOnly = true;
+            // 
+            // dateOfRegistration
+            // 
+            this.dateOfRegistration.FillWeight = 150F;
+            this.dateOfRegistration.HeaderText = "Data rejestracji";
+            this.dateOfRegistration.Name = "dateOfRegistration";
+            this.dateOfRegistration.ReadOnly = true;
+            this.dateOfRegistration.Width = 150;
+            // 
+            // doctorName
+            // 
+            this.doctorName.FillWeight = 150F;
+            this.doctorName.HeaderText = "Lekarz prowadzący";
+            this.doctorName.Name = "doctorName";
+            this.doctorName.ReadOnly = true;
+            this.doctorName.Width = 150;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // endCancelDate
+            // 
+            this.endCancelDate.FillWeight = 150F;
+            this.endCancelDate.HeaderText = "Data zakończenia";
+            this.endCancelDate.Name = "endCancelDate";
+            this.endCancelDate.ReadOnly = true;
+            this.endCancelDate.Width = 150;
             // 
             // cancelVisitButton
             // 
@@ -285,92 +322,6 @@
             this.patientsDataGrid.TabIndex = 28;
             this.patientsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PatientsDataGrid_CellClick);
             // 
-            // firstname
-            // 
-            this.firstname.HeaderText = "Imię";
-            this.firstname.Name = "firstname";
-            this.firstname.ReadOnly = true;
-            // 
-            // lastname
-            // 
-            this.lastname.HeaderText = "Nazwisko";
-            this.lastname.Name = "lastname";
-            this.lastname.ReadOnly = true;
-            // 
-            // pesel
-            // 
-            this.pesel.HeaderText = "Pesel";
-            this.pesel.Name = "pesel";
-            this.pesel.ReadOnly = true;
-            // 
-            // sex
-            // 
-            this.sex.HeaderText = "Płeć";
-            this.sex.Name = "sex";
-            this.sex.ReadOnly = true;
-            // 
-            // birthdayDate
-            // 
-            this.birthdayDate.HeaderText = "Data urodzenia";
-            this.birthdayDate.Name = "birthdayDate";
-            this.birthdayDate.ReadOnly = true;
-            // 
-            // nip
-            // 
-            this.nip.HeaderText = "NIP";
-            this.nip.Name = "nip";
-            this.nip.ReadOnly = true;
-            // 
-            // insurance
-            // 
-            this.insurance.HeaderText = "Ubezpieczenie";
-            this.insurance.Name = "insurance";
-            this.insurance.ReadOnly = true;
-            this.insurance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.insurance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // city
-            // 
-            this.city.HeaderText = "Miasto";
-            this.city.Name = "city";
-            this.city.ReadOnly = true;
-            // 
-            // street
-            // 
-            this.street.HeaderText = "Ulica";
-            this.street.Name = "street";
-            this.street.ReadOnly = true;
-            // 
-            // houseNr
-            // 
-            this.houseNr.HeaderText = "Nr. domu";
-            this.houseNr.Name = "houseNr";
-            this.houseNr.ReadOnly = true;
-            // 
-            // placeNr
-            // 
-            this.placeNr.HeaderText = "Nr. miejsca";
-            this.placeNr.Name = "placeNr";
-            this.placeNr.ReadOnly = true;
-            // 
-            // zipCode
-            // 
-            this.zipCode.HeaderText = "Kod pocztowy";
-            this.zipCode.Name = "zipCode";
-            this.zipCode.ReadOnly = true;
-            // 
-            // province
-            // 
-            this.province.HeaderText = "Województwo";
-            this.province.Name = "province";
-            this.province.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.HeaderText = "Telefon";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -444,42 +395,91 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // patientName
+            // firstname
             // 
-            this.patientName.FillWeight = 150F;
-            this.patientName.HeaderText = "Pacjent";
-            this.patientName.Name = "patientName";
-            this.patientName.ReadOnly = true;
+            this.firstname.HeaderText = "Imię";
+            this.firstname.Name = "firstname";
+            this.firstname.ReadOnly = true;
             // 
-            // dateOfRegistration
+            // lastname
             // 
-            this.dateOfRegistration.FillWeight = 150F;
-            this.dateOfRegistration.HeaderText = "Data rejestracji";
-            this.dateOfRegistration.Name = "dateOfRegistration";
-            this.dateOfRegistration.ReadOnly = true;
-            this.dateOfRegistration.Width = 150;
+            this.lastname.HeaderText = "Nazwisko";
+            this.lastname.Name = "lastname";
+            this.lastname.ReadOnly = true;
             // 
-            // doctorName
+            // pesel
             // 
-            this.doctorName.FillWeight = 150F;
-            this.doctorName.HeaderText = "Lekarz prowadzący";
-            this.doctorName.Name = "doctorName";
-            this.doctorName.ReadOnly = true;
-            this.doctorName.Width = 150;
+            this.pesel.HeaderText = "Pesel";
+            this.pesel.Name = "pesel";
+            this.pesel.ReadOnly = true;
             // 
-            // status
+            // sex
             // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
+            this.sex.HeaderText = "Płeć";
+            this.sex.Name = "sex";
+            this.sex.ReadOnly = true;
             // 
-            // endCancelDate
+            // birthdayDate
             // 
-            this.endCancelDate.FillWeight = 150F;
-            this.endCancelDate.HeaderText = "Data zakończenia";
-            this.endCancelDate.Name = "endCancelDate";
-            this.endCancelDate.ReadOnly = true;
-            this.endCancelDate.Width = 150;
+            this.birthdayDate.HeaderText = "Data urodzenia";
+            this.birthdayDate.Name = "birthdayDate";
+            this.birthdayDate.ReadOnly = true;
+            // 
+            // nip
+            // 
+            this.nip.HeaderText = "NIP";
+            this.nip.Name = "nip";
+            this.nip.ReadOnly = true;
+            // 
+            // insurance
+            // 
+            this.insurance.HeaderText = "Ubezpieczenie";
+            this.insurance.Name = "insurance";
+            this.insurance.ReadOnly = true;
+            this.insurance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.insurance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // city
+            // 
+            this.city.HeaderText = "Miasto";
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            // 
+            // street
+            // 
+            this.street.HeaderText = "Ulica";
+            this.street.Name = "street";
+            this.street.ReadOnly = true;
+            // 
+            // houseNr
+            // 
+            this.houseNr.HeaderText = "Nr. domu";
+            this.houseNr.Name = "houseNr";
+            this.houseNr.ReadOnly = true;
+            // 
+            // placeNr
+            // 
+            this.placeNr.HeaderText = "Nr. mieszkania";
+            this.placeNr.Name = "placeNr";
+            this.placeNr.ReadOnly = true;
+            // 
+            // zipCode
+            // 
+            this.zipCode.HeaderText = "Kod pocztowy";
+            this.zipCode.Name = "zipCode";
+            this.zipCode.ReadOnly = true;
+            // 
+            // province
+            // 
+            this.province.HeaderText = "Województwo";
+            this.province.Name = "province";
+            this.province.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Telefon";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
             // 
             // RegisterForm
             // 
@@ -534,6 +534,11 @@
         private System.Windows.Forms.Button showAllButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRegistration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctorName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endCancelDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastname;
         private System.Windows.Forms.DataGridViewTextBoxColumn pesel;
@@ -548,10 +553,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn zipCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn province;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRegistration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endCancelDate;
     }
 }

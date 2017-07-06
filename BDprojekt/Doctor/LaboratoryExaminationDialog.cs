@@ -12,9 +12,24 @@ namespace BDprojekt.Doctor
 {
     public partial class LaboratoryExaminationDialog : Form
     {
-        public LaboratoryExaminationDialog()
+        private int visitId;
+        private int doctorId;
+        private int patientId;
+
+        private int choosenExamTypeId;
+
+        public LaboratoryExaminationDialog(int visitId, int patientId, int doctorId)
         {
+            this.visitId = visitId;
+            this.patientId = patientId;
+            this.doctorId = doctorId;
             InitializeComponent();
+        }
+
+        private void ChooseExamButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new ExaminationListDialog(ExaminationListDialog.Type.LAB_EXAM, 0);
+            dialog.ShowDialog();
         }
     }
 }

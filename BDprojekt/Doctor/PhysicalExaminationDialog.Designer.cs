@@ -30,7 +30,7 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.chooseExamButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.chooseExamButton);
             this.groupBox2.Location = new System.Drawing.Point(12, 153);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(345, 90);
@@ -58,14 +58,14 @@
             this.textBox1.Size = new System.Drawing.Size(333, 20);
             this.textBox1.TabIndex = 4;
             // 
-            // button1
+            // chooseExamButton
             // 
-            this.button1.Location = new System.Drawing.Point(112, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Wybierz badanie";
-            this.button1.UseVisualStyleBackColor = true;
+            this.chooseExamButton.Location = new System.Drawing.Point(112, 45);
+            this.chooseExamButton.Name = "chooseExamButton";
+            this.chooseExamButton.Size = new System.Drawing.Size(121, 23);
+            this.chooseExamButton.TabIndex = 0;
+            this.chooseExamButton.Text = "Wybierz badanie";
+            this.chooseExamButton.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -125,7 +125,7 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button chooseExamButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button3;

@@ -17,11 +17,48 @@ namespace BDprojekt.Doctor
     {
         Visit visit;
         int doctorId;
-        public VisitDialog(Visit visit, int doctorId)
+        public VisitDialog(Visit visit, int doctorId, bool readOnly = false)
         {
             this.visit = visit;
             this.doctorId = doctorId;
             InitializeComponent();
+
+            if(readOnly)
+            {
+                this.diagnosisTextBox.Text = visit.Diagnosis;
+                this.DescriptionTextBox.Text = visit.Description;
+                this.groupBox1.Enabled = false;
+                this.saveButton.Enabled = false;
+                this.saveButton.Visible = false;
+            }
+
+            this.firstnameTextBox.Text = visit.Patient.FirstName;
+            this.lastnameTextBox.Text = visit.Patient.LastName;
+            this.registrationDateTextBox.Text = Convert.ToDateTime(visit.DateOfRegistration).ToString();
+            this.statusTextBox.Text = visit.Status.ToString();
+        }
+
+        private void PhysicalExamButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new PhysicalExaminationDialog();
+            dialog.ShowDialog();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ShowExaminationsButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new ExaminationListDialog(ExaminationListDialog.Type.EXAMS, visit.PatientId);
+            dialog.ShowDialog();
+        }
+
+        private void ShowVisitsButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new ExaminationListDialog(ExaminationListDialog.Type.VISITS, visit.PatientId);
+            dialog.ShowDialog();
         }
     }
 }

@@ -28,81 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.laboratoryExamButton = new System.Windows.Forms.Button();
+            this.showExaminationsButton = new System.Windows.Forms.Button();
+            this.showVisitsButton = new System.Windows.Forms.Button();
+            this.physicalExamButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.diagnosisTextBox = new System.Windows.Forms.TextBox();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.firstnameTextBox = new System.Windows.Forms.TextBox();
+            this.registrationDateTextBox = new System.Windows.Forms.TextBox();
+            this.statusTextBox = new System.Windows.Forms.TextBox();
+            this.lastnameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button6
+            // cancelButton
             // 
-            this.button6.Location = new System.Drawing.Point(603, 329);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(107, 23);
-            this.button6.TabIndex = 40;
-            this.button6.Text = "Anuluj";
-            this.button6.UseVisualStyleBackColor = true;
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.Location = new System.Drawing.Point(603, 329);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(107, 23);
+            this.cancelButton.TabIndex = 40;
+            this.cancelButton.Text = "Anuluj";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // button5
+            // saveButton
             // 
-            this.button5.Location = new System.Drawing.Point(490, 329);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 23);
-            this.button5.TabIndex = 39;
-            this.button5.Text = "Zapisz";
-            this.button5.UseVisualStyleBackColor = true;
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveButton.Location = new System.Drawing.Point(490, 329);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(107, 23);
+            this.saveButton.TabIndex = 39;
+            this.saveButton.Text = "Zapisz";
+            this.saveButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // laboratoryExamButton
             // 
-            this.button4.Location = new System.Drawing.Point(207, 272);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(171, 23);
-            this.button4.TabIndex = 38;
-            this.button4.Text = "Zleć badanie laboratoryjne";
-            this.button4.UseVisualStyleBackColor = true;
+            this.laboratoryExamButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.laboratoryExamButton.Location = new System.Drawing.Point(207, 272);
+            this.laboratoryExamButton.Name = "laboratoryExamButton";
+            this.laboratoryExamButton.Size = new System.Drawing.Size(171, 23);
+            this.laboratoryExamButton.TabIndex = 38;
+            this.laboratoryExamButton.Text = "Zleć badanie laboratoryjne";
+            this.laboratoryExamButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // showExaminationsButton
             // 
-            this.button3.Location = new System.Drawing.Point(407, 272);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 23);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Pokaż badania";
-            this.button3.UseVisualStyleBackColor = true;
+            this.showExaminationsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.showExaminationsButton.Location = new System.Drawing.Point(407, 272);
+            this.showExaminationsButton.Name = "showExaminationsButton";
+            this.showExaminationsButton.Size = new System.Drawing.Size(120, 23);
+            this.showExaminationsButton.TabIndex = 37;
+            this.showExaminationsButton.Text = "Pokaż badania";
+            this.showExaminationsButton.UseVisualStyleBackColor = true;
+            this.showExaminationsButton.Click += new System.EventHandler(this.ShowExaminationsButton_Click);
             // 
-            // button2
+            // showVisitsButton
             // 
-            this.button2.Location = new System.Drawing.Point(559, 272);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 23);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Pokaż wizyty";
-            this.button2.UseVisualStyleBackColor = true;
+            this.showVisitsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.showVisitsButton.Location = new System.Drawing.Point(559, 272);
+            this.showVisitsButton.Name = "showVisitsButton";
+            this.showVisitsButton.Size = new System.Drawing.Size(120, 23);
+            this.showVisitsButton.TabIndex = 36;
+            this.showVisitsButton.Text = "Pokaż wizyty";
+            this.showVisitsButton.UseVisualStyleBackColor = true;
+            this.showVisitsButton.Click += new System.EventHandler(this.ShowVisitsButton_Click);
             // 
-            // button1
+            // physicalExamButton
             // 
-            this.button1.Location = new System.Drawing.Point(6, 272);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Wykonaj badanie fizykalne";
-            this.button1.UseVisualStyleBackColor = true;
+            this.physicalExamButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.physicalExamButton.Location = new System.Drawing.Point(6, 272);
+            this.physicalExamButton.Name = "physicalExamButton";
+            this.physicalExamButton.Size = new System.Drawing.Size(171, 23);
+            this.physicalExamButton.TabIndex = 35;
+            this.physicalExamButton.Text = "Wykonaj badanie fizykalne";
+            this.physicalExamButton.UseVisualStyleBackColor = true;
+            this.physicalExamButton.Click += new System.EventHandler(this.PhysicalExamButton_Click);
             // 
             // label6
             // 
@@ -124,23 +134,29 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "Opis:";
             // 
-            // textBox6
+            // diagnosisTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(6, 115);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox6.Size = new System.Drawing.Size(339, 137);
-            this.textBox6.TabIndex = 32;
+            this.diagnosisTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.diagnosisTextBox.Location = new System.Drawing.Point(6, 115);
+            this.diagnosisTextBox.Multiline = true;
+            this.diagnosisTextBox.Name = "diagnosisTextBox";
+            this.diagnosisTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.diagnosisTextBox.Size = new System.Drawing.Size(339, 137);
+            this.diagnosisTextBox.TabIndex = 32;
             // 
-            // textBox5
+            // DescriptionTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(355, 115);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(336, 137);
-            this.textBox5.TabIndex = 31;
+            this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DescriptionTextBox.Location = new System.Drawing.Point(355, 115);
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DescriptionTextBox.Size = new System.Drawing.Size(336, 137);
+            this.DescriptionTextBox.TabIndex = 31;
             // 
             // label4
             // 
@@ -172,37 +188,45 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Nazwisko:";
             // 
-            // textBox4
+            // firstnameTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(153, 21);
-            this.textBox4.TabIndex = 27;
+            this.firstnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.firstnameTextBox.Location = new System.Drawing.Point(6, 49);
+            this.firstnameTextBox.Name = "firstnameTextBox";
+            this.firstnameTextBox.ReadOnly = true;
+            this.firstnameTextBox.Size = new System.Drawing.Size(153, 21);
+            this.firstnameTextBox.TabIndex = 27;
             // 
-            // textBox3
+            // registrationDateTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(355, 49);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(153, 21);
-            this.textBox3.TabIndex = 26;
+            this.registrationDateTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.registrationDateTextBox.Location = new System.Drawing.Point(355, 49);
+            this.registrationDateTextBox.Name = "registrationDateTextBox";
+            this.registrationDateTextBox.ReadOnly = true;
+            this.registrationDateTextBox.Size = new System.Drawing.Size(153, 21);
+            this.registrationDateTextBox.TabIndex = 26;
             // 
-            // textBox2
+            // statusTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(526, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(153, 21);
-            this.textBox2.TabIndex = 25;
+            this.statusTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statusTextBox.Location = new System.Drawing.Point(526, 49);
+            this.statusTextBox.Name = "statusTextBox";
+            this.statusTextBox.ReadOnly = true;
+            this.statusTextBox.Size = new System.Drawing.Size(153, 21);
+            this.statusTextBox.TabIndex = 25;
             // 
-            // textBox1
+            // lastnameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(153, 21);
-            this.textBox1.TabIndex = 24;
+            this.lastnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lastnameTextBox.Location = new System.Drawing.Point(177, 49);
+            this.lastnameTextBox.Name = "lastnameTextBox";
+            this.lastnameTextBox.ReadOnly = true;
+            this.lastnameTextBox.Size = new System.Drawing.Size(153, 21);
+            this.lastnameTextBox.TabIndex = 24;
             // 
             // label1
             // 
@@ -216,20 +240,23 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.diagnosisTextBox);
+            this.groupBox1.Controls.Add(this.DescriptionTextBox);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.laboratoryExamButton);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.firstnameTextBox);
+            this.groupBox1.Controls.Add(this.showExaminationsButton);
+            this.groupBox1.Controls.Add(this.lastnameTextBox);
+            this.groupBox1.Controls.Add(this.showVisitsButton);
+            this.groupBox1.Controls.Add(this.statusTextBox);
+            this.groupBox1.Controls.Add(this.physicalExamButton);
+            this.groupBox1.Controls.Add(this.registrationDateTextBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -245,9 +272,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 359);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveButton);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "VisitDialog";
             this.Text = "Wizyta";
@@ -258,23 +287,23 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button laboratoryExamButton;
+        private System.Windows.Forms.Button showExaminationsButton;
+        private System.Windows.Forms.Button showVisitsButton;
+        private System.Windows.Forms.Button physicalExamButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox diagnosisTextBox;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox firstnameTextBox;
+        private System.Windows.Forms.TextBox registrationDateTextBox;
+        private System.Windows.Forms.TextBox statusTextBox;
+        private System.Windows.Forms.TextBox lastnameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
     }
