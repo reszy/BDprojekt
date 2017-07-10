@@ -124,7 +124,7 @@
             this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // saveButton
             // 
@@ -134,7 +134,7 @@
             this.saveButton.TabIndex = 7;
             this.saveButton.Text = "Zapisz";
             this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // label4
             // 
@@ -183,6 +183,7 @@
             // 
             // accountStateDateTimePicker
             // 
+            this.accountStateDateTimePicker.Checked = false;
             this.accountStateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.accountStateDateTimePicker.Location = new System.Drawing.Point(82, 202);
             this.accountStateDateTimePicker.Name = "accountStateDateTimePicker";

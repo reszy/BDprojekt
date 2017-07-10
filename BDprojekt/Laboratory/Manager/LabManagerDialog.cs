@@ -32,6 +32,8 @@ namespace BDprojekt.Laboratory.Manager
         {
             this.examination.Status = BusinessLayer.Enum.ExaminationStatus.READY.ToString();
             this.examination.LaboratoryManagerId = this.labManagerId;
+            this.examination.ApprovalCancelDate = DateTime.Now;
+            this.examination.MenagerAttention = this.managerCommentRichTextBox.Text;
 
             ExaminationFacade.UpdateLaboratoryExamination(examination);
 
@@ -42,13 +44,15 @@ namespace BDprojekt.Laboratory.Manager
         {
             this.examination.Status = BusinessLayer.Enum.ExaminationStatus.CANCEL.ToString();
             this.examination.LaboratoryManagerId = this.labManagerId;
+            this.examination.ApprovalCancelDate = DateTime.Now;
+            this.examination.MenagerAttention = this.managerCommentRichTextBox.Text;
 
             ExaminationFacade.UpdateLaboratoryExamination(examination);
 
             this.Close();
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

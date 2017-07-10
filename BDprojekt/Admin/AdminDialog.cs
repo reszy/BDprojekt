@@ -70,7 +70,7 @@ namespace PresentationLayer.Admin
 
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             editedUser.FirstName = this.firstNameTextBox.Text;
             editedUser.LastName = this.lastNameTextBox.Text;
@@ -145,7 +145,7 @@ namespace PresentationLayer.Admin
             this.Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

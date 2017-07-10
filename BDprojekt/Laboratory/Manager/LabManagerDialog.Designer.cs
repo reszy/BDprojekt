@@ -148,7 +148,7 @@
             this.closeButton.TabIndex = 13;
             this.closeButton.Text = "Zamknij";
             this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // LabManagerDialog
             // 

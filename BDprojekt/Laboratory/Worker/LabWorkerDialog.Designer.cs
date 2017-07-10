@@ -34,6 +34,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.resultsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.closeButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(336, 247);
+            this.saveButton.Location = new System.Drawing.Point(255, 247);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 9;
@@ -69,7 +70,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(417, 247);
+            this.cancelButton.Location = new System.Drawing.Point(336, 247);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 10;
@@ -95,11 +96,22 @@
             this.resultsRichTextBox.TabIndex = 0;
             this.resultsRichTextBox.Text = "";
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(417, 247);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(75, 23);
+            this.closeButton.TabIndex = 16;
+            this.closeButton.Text = "Zamknij";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
             // LabWorkerDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 278);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.cancelButton);
@@ -121,5 +133,6 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RichTextBox resultsRichTextBox;
+        private System.Windows.Forms.Button closeButton;
     }
 }
