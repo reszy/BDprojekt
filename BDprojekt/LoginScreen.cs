@@ -47,7 +47,7 @@ namespace PresentationLayer
                 return;
             }
 
-            var users = PersonelFacade.GetUsers(new DataLayer.User { Uname = this.passwordTextBox.Text }).ToList();
+            var users = PersonelFacade.GetUsers(new DataLayer.User { Uname = this.userNameTextBox.Text }).ToList();
             loggedId = users[0].PersonId;
 
             this.Hide();
