@@ -29,6 +29,9 @@ namespace PresentationLayer
 
             InitializeComponent();
 
+            var visitStatuses = VisitStatus.Values.ToList();
+            this.visitStatusComboBox.DataSource = visitStatuses;
+
             this.RefreshVisitList();
         }
 
@@ -54,9 +57,13 @@ namespace PresentationLayer
 
                 Visit visitCriteria = new Visit()
                 {
-                    DoctorId = mainForm.LoggedId,
-                    Status = VisitStatus.REGISTER.ToString()
+                    Status = this.visitStatusComboBox.Text
                 };
+
+                if(myVisitsCheckBox.Checked)
+                {
+                    visitCriteria.DoctorId = mainForm.LoggedId;
+                }
 
                 if (patient != null && patient.Count > 0)
                 {
@@ -116,14 +123,13 @@ namespace PresentationLayer
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-
             RefreshVisitList(false);
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
             this.firstNameTextBox.Clear();
-            this.peselTextBox.Clear();
+            this.lastnameTextBox.Clear();
             this.peselTextBox.Clear();
 
             this.RefreshVisitList();
@@ -133,10 +139,11 @@ namespace PresentationLayer
         {
             if (this.visitDataGrid.SelectedRows.Count == 1)
             {
-                var dialog = new VisitDialog(visits[this.visitDataGrid.CurrentCell.RowIndex], mainForm.LoggedId);
+                var choosedVisit = visits[this.visitDataGrid.CurrentCell.RowIndex];
+                var dialog = new VisitDialog(choosedVisit, mainForm.LoggedId, (choosedVisit.DoctorId != mainForm.LoggedId));
                 dialog.ShowDialog();
 
-                RefreshVisitList();
+                RefreshVisitList(false);
             }
         }
     }
