@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DataLayer;
 using BusinessLayer;
 using BusinessLayer.Enum;
+using BDprojekt.Laboratory.Manager;
 
 namespace BDprojekt.Doctor
 {
@@ -100,19 +101,28 @@ namespace BDprojekt.Doctor
         {
             if (this.examinationListDataGridView.SelectedRows.Count == 1)
             {
-                int coosedRow = this.examinationListDataGridView.CurrentCell.RowIndex;
+                int choosedRow = this.examinationListDataGridView.CurrentCell.RowIndex;
                 if (dialogType == Type.EXAMS)
                 {
-                    this.Close();
+                    if (choosedRow >= examsLab.Count)
+                    {
+                        var dialog = new PhysicalExaminationDialog(0, 0, 0, examsPhy[choosedRow - examsLab.Count]);
+                        dialog.ShowDialog();
+                    }
+                    else
+                    {
+                        var dialog = new LabManagerDialog(0, examsLab[choosedRow], true);
+                        dialog.ShowDialog();
+                    }
                 }
                 if (dialogType == Type.VISITS)
                 {
-                    var dialog = new VisitDialog(visits[coosedRow], 0, true);
+                    var dialog = new VisitDialog(visits[choosedRow], 0, true);
                     dialog.ShowDialog();
                 }
                 if (dialogType == Type.LAB_DICTIONARY || dialogType == Type.PH_DICTIONARY)
                 {
-                    var choosed = examDictionary[coosedRow];
+                    var choosed = examDictionary[choosedRow];
                     ResultCode = choosed.MedicalExaminationCode;
                     ResultText = choosed.Name;
                     this.Close();

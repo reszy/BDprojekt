@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.examinationTextBox = new System.Windows.Forms.TextBox();
             this.chooseExamButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.resultTextBox = new System.Windows.Forms.RichTextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
@@ -41,7 +41,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.examinationTextBox);
             this.groupBox2.Controls.Add(this.chooseExamButton);
             this.groupBox2.Location = new System.Drawing.Point(12, 153);
             this.groupBox2.Name = "groupBox2";
@@ -50,13 +50,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Wybieranie badania";
             // 
-            // textBox1
+            // examinationTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(333, 20);
-            this.textBox1.TabIndex = 4;
+            this.examinationTextBox.Location = new System.Drawing.Point(6, 19);
+            this.examinationTextBox.Name = "examinationTextBox";
+            this.examinationTextBox.ReadOnly = true;
+            this.examinationTextBox.Size = new System.Drawing.Size(333, 20);
+            this.examinationTextBox.TabIndex = 4;
             // 
             // chooseExamButton
             // 
@@ -70,7 +70,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.resultTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(345, 135);
@@ -78,13 +78,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wynik badania";
             // 
-            // richTextBox1
+            // resultTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 19);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(333, 110);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.resultTextBox.Location = new System.Drawing.Point(6, 19);
+            this.resultTextBox.Name = "resultTextBox";
+            this.resultTextBox.Size = new System.Drawing.Size(333, 110);
+            this.resultTextBox.TabIndex = 3;
+            this.resultTextBox.Text = "";
             // 
             // cancelButton
             // 
@@ -127,10 +127,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox examinationTextBox;
         private System.Windows.Forms.Button chooseExamButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox resultTextBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
     }

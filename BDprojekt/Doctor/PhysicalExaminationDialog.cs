@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DataLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,12 +20,20 @@ namespace BDprojekt.Doctor
 
         private string choosenExamCode;
 
-        public PhysicalExaminationDialog(int visitId, int patientId, int doctorId)
+        public PhysicalExaminationDialog(int visitId, int patientId, int doctorId, PhysicalExamination exam = null)
         {
             this.visitId = visitId;
             this.patientId = patientId;
             this.doctorId = doctorId;
             InitializeComponent();
+
+            if(exam != null)
+            {
+                this.examinationTextBox.Text = exam.MedicalExaminationCode.ToString() + ' ' + exam.DictionaryMedicalExamination.Name;
+                this.resultTextBox.Text = exam.Result;
+                this.chooseExamButton.Visible = false;
+                this.groupBox2.Text = "Badanie";
+            }
         }
 
         private void ChooseExamButton_Click(object sender, EventArgs e)
@@ -32,12 +41,12 @@ namespace BDprojekt.Doctor
             var dialog = new ExaminationListDialog(ExaminationListDialog.Type.PH_DICTIONARY, 0);
             dialog.ShowDialog();
             choosenExamCode = dialog.ResultCode;
-            this.textBox1.Text = dialog.ResultText;
+            this.examinationTextBox.Text = dialog.ResultText;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            ExaminationFacade.AddNewPhysicalExamination(new DataLayer.PhysicalExamination { Result = this.richTextBox1.Text, VisitId = visitId, MedicalExaminationCode = choosenExamCode });
+            ExaminationFacade.AddNewPhysicalExamination(new PhysicalExamination { Result = this.resultTextBox.Text, VisitId = visitId, MedicalExaminationCode = choosenExamCode });
             this.Close();
         }
 

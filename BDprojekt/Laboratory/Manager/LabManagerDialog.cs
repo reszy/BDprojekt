@@ -17,7 +17,7 @@ namespace BDprojekt.Laboratory.Manager
         private int labManagerId;
         private LaboratoryExamination examination;
 
-        public LabManagerDialog(int labManagerId, LaboratoryExamination examination)
+        public LabManagerDialog(int labManagerId, LaboratoryExamination examination, bool viewOnly = false)
         {
             this.labManagerId = labManagerId;
             this.examination = examination;
@@ -26,6 +26,11 @@ namespace BDprojekt.Laboratory.Manager
             this.doctorCommentRichTextBox.Text = examination.DoctorAttention;
             this.resultRichTextBox.Text = examination.Result;
             this.nameRichTextBox.Text = examination.DictionaryMedicalExamination.Name;
+            this.managerCommentRichTextBox.Enabled = false;
+            this.saveButton.Visible = false;
+            this.saveButton.Visible = false;
+            this.saveButton.Enabled = false;
+            this.saveButton.Enabled = false;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
