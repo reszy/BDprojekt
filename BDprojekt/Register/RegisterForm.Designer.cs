@@ -53,6 +53,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.patientsDataGrid = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.showAllButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.clearButton = new System.Windows.Forms.Button();
             this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,11 +72,6 @@
             this.zipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.province = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.showAllButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.clearButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGrid)).BeginInit();
@@ -322,92 +322,6 @@
             this.patientsDataGrid.TabIndex = 28;
             this.patientsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PatientsDataGrid_CellClick);
             // 
-            // firstname
-            // 
-            this.firstname.HeaderText = "Imię";
-            this.firstname.Name = "firstname";
-            this.firstname.ReadOnly = true;
-            // 
-            // lastname
-            // 
-            this.lastname.HeaderText = "Nazwisko";
-            this.lastname.Name = "lastname";
-            this.lastname.ReadOnly = true;
-            // 
-            // pesel
-            // 
-            this.pesel.HeaderText = "Pesel";
-            this.pesel.Name = "pesel";
-            this.pesel.ReadOnly = true;
-            // 
-            // sex
-            // 
-            this.sex.HeaderText = "Płeć";
-            this.sex.Name = "sex";
-            this.sex.ReadOnly = true;
-            // 
-            // birthdayDate
-            // 
-            this.birthdayDate.HeaderText = "Data urodzenia";
-            this.birthdayDate.Name = "birthdayDate";
-            this.birthdayDate.ReadOnly = true;
-            // 
-            // nip
-            // 
-            this.nip.HeaderText = "NIP";
-            this.nip.Name = "nip";
-            this.nip.ReadOnly = true;
-            // 
-            // insurance
-            // 
-            this.insurance.HeaderText = "Ubezpieczenie";
-            this.insurance.Name = "insurance";
-            this.insurance.ReadOnly = true;
-            this.insurance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.insurance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // city
-            // 
-            this.city.HeaderText = "Miasto";
-            this.city.Name = "city";
-            this.city.ReadOnly = true;
-            // 
-            // street
-            // 
-            this.street.HeaderText = "Ulica";
-            this.street.Name = "street";
-            this.street.ReadOnly = true;
-            // 
-            // houseNr
-            // 
-            this.houseNr.HeaderText = "Nr. domu";
-            this.houseNr.Name = "houseNr";
-            this.houseNr.ReadOnly = true;
-            // 
-            // placeNr
-            // 
-            this.placeNr.HeaderText = "Nr. mieszkania";
-            this.placeNr.Name = "placeNr";
-            this.placeNr.ReadOnly = true;
-            // 
-            // zipCode
-            // 
-            this.zipCode.HeaderText = "Kod pocztowy";
-            this.zipCode.Name = "zipCode";
-            this.zipCode.ReadOnly = true;
-            // 
-            // province
-            // 
-            this.province.HeaderText = "Województwo";
-            this.province.Name = "province";
-            this.province.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.HeaderText = "Telefon";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -480,6 +394,94 @@
             this.clearButton.Text = "Wyczyść";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
+            // firstname
+            // 
+            this.firstname.HeaderText = "Imię";
+            this.firstname.Name = "firstname";
+            this.firstname.ReadOnly = true;
+            // 
+            // lastname
+            // 
+            this.lastname.HeaderText = "Nazwisko";
+            this.lastname.Name = "lastname";
+            this.lastname.ReadOnly = true;
+            // 
+            // pesel
+            // 
+            this.pesel.HeaderText = "Pesel";
+            this.pesel.Name = "pesel";
+            this.pesel.ReadOnly = true;
+            // 
+            // sex
+            // 
+            this.sex.HeaderText = "Płeć";
+            this.sex.Name = "sex";
+            this.sex.ReadOnly = true;
+            this.sex.Width = 80;
+            // 
+            // birthdayDate
+            // 
+            this.birthdayDate.HeaderText = "Data urodzenia";
+            this.birthdayDate.Name = "birthdayDate";
+            this.birthdayDate.ReadOnly = true;
+            this.birthdayDate.Width = 125;
+            // 
+            // nip
+            // 
+            this.nip.HeaderText = "NIP";
+            this.nip.Name = "nip";
+            this.nip.ReadOnly = true;
+            // 
+            // insurance
+            // 
+            this.insurance.HeaderText = "Ubezpieczenie";
+            this.insurance.Name = "insurance";
+            this.insurance.ReadOnly = true;
+            this.insurance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.insurance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // city
+            // 
+            this.city.HeaderText = "Miasto";
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            // 
+            // street
+            // 
+            this.street.HeaderText = "Ulica";
+            this.street.Name = "street";
+            this.street.ReadOnly = true;
+            // 
+            // houseNr
+            // 
+            this.houseNr.HeaderText = "Nr. domu";
+            this.houseNr.Name = "houseNr";
+            this.houseNr.ReadOnly = true;
+            // 
+            // placeNr
+            // 
+            this.placeNr.HeaderText = "Nr. mieszkania";
+            this.placeNr.Name = "placeNr";
+            this.placeNr.ReadOnly = true;
+            // 
+            // zipCode
+            // 
+            this.zipCode.HeaderText = "Kod pocztowy";
+            this.zipCode.Name = "zipCode";
+            this.zipCode.ReadOnly = true;
+            // 
+            // province
+            // 
+            this.province.HeaderText = "Województwo";
+            this.province.Name = "province";
+            this.province.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Telefon";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
             // 
             // RegisterForm
             // 

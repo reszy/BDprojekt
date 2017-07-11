@@ -261,6 +261,7 @@
             this.patientName.Name = "patientName";
             this.patientName.ReadOnly = true;
             this.patientName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.patientName.Width = 170;
             // 
             // pesel
             // 
@@ -268,6 +269,7 @@
             this.pesel.Name = "pesel";
             this.pesel.ReadOnly = true;
             this.pesel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.pesel.Width = 150;
             // 
             // date
             // 

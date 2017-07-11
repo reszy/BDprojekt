@@ -19,14 +19,10 @@ namespace BusinessLayer
 
         public static UserRole MakeLogin(String userName, String password)
         {
-            var users = GetUsers(
-                new User { Uname = userName }
-                );
+            var authUser = GetSpecyficUser(userName);
 
-            if (users.Count() == 1)
+            if (authUser != null)
             {
-                User authUser = users.SingleOrDefault();
-
                 if (authUser.Password == Hash(password) && authUser.Uname == userName)
                 {
                     if (authUser.DateRetire == null || DateTime.Now.Date < authUser.DateRetire)
@@ -42,6 +38,17 @@ namespace BusinessLayer
                 }
             }
             throw new Exceptions.LoginException("Niepoprawne dane logowania");
+        }
+
+        public static User GetSpecyficUser(String uname)
+        {
+            var dc = new DataClassesClinicDataContext();
+
+            var result = from u in dc.Users
+                         where
+                            u.Uname.Equals(uname)
+                         select u;
+            return result.SingleOrDefault();
         }
 
         public static IQueryable<User> GetUsers(User searchCrit)

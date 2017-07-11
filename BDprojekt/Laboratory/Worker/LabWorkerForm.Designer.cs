@@ -35,11 +35,11 @@
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labExaminationDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.doExaminationButton = new System.Windows.Forms.Button();
             this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DoctorComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExaminationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.doExaminationButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labExaminationDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -52,7 +52,7 @@
             this.pomocToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(661, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(617, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -110,26 +110,8 @@
             this.labExaminationDataGridView.Name = "labExaminationDataGridView";
             this.labExaminationDataGridView.ReadOnly = true;
             this.labExaminationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.labExaminationDataGridView.Size = new System.Drawing.Size(624, 331);
+            this.labExaminationDataGridView.Size = new System.Drawing.Size(580, 331);
             this.labExaminationDataGridView.TabIndex = 5;
-            // 
-            // OrderDate
-            // 
-            this.OrderDate.HeaderText = "Data Zlecenia";
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.ReadOnly = true;
-            // 
-            // DoctorComment
-            // 
-            this.DoctorComment.HeaderText = "Komentarz Doktora";
-            this.DoctorComment.Name = "DoctorComment";
-            this.DoctorComment.ReadOnly = true;
-            // 
-            // ExaminationName
-            // 
-            this.ExaminationName.HeaderText = "Nazwa Badania";
-            this.ExaminationName.Name = "ExaminationName";
-            this.ExaminationName.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -140,7 +122,7 @@
             this.groupBox1.Controls.Add(this.labExaminationDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(637, 385);
+            this.groupBox1.Size = new System.Drawing.Size(593, 385);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Zlecone Badania";
@@ -156,11 +138,31 @@
             this.doExaminationButton.UseVisualStyleBackColor = true;
             this.doExaminationButton.Click += new System.EventHandler(this.DoExaminationButton_Click);
             // 
+            // OrderDate
+            // 
+            this.OrderDate.HeaderText = "Data Zlecenia";
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.ReadOnly = true;
+            // 
+            // DoctorComment
+            // 
+            this.DoctorComment.HeaderText = "Komentarz Doktora";
+            this.DoctorComment.Name = "DoctorComment";
+            this.DoctorComment.ReadOnly = true;
+            this.DoctorComment.Width = 200;
+            // 
+            // ExaminationName
+            // 
+            this.ExaminationName.HeaderText = "Nazwa Badania";
+            this.ExaminationName.Name = "ExaminationName";
+            this.ExaminationName.ReadOnly = true;
+            this.ExaminationName.Width = 150;
+            // 
             // LabWorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 420);
+            this.ClientSize = new System.Drawing.Size(617, 420);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "LabWorkerForm";

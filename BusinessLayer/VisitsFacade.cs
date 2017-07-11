@@ -16,6 +16,8 @@ namespace BusinessLayer
 
             var result = from v in dc.Visits
                          where
+                          (String.IsNullOrEmpty(searchCrit.Status) || v.Status.StartsWith(searchCrit.Status))
+                          &&
                           ((searchCrit.PatientId == 0) || v.PatientId == searchCrit.PatientId)
                           &&
                           ((searchCrit.DoctorId == 0) || v.DoctorId == searchCrit.DoctorId)

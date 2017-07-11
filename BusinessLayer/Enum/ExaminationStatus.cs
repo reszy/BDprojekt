@@ -9,19 +9,21 @@ namespace BusinessLayer.Enum
     public class ExaminationStatus
     {
         public static readonly ExaminationStatus PENDING = new ExaminationStatus("Pending", Type.PENDING);
-        public static readonly ExaminationStatus CANCEL = new ExaminationStatus("Cancel", Type.CANCEL);
+        public static readonly ExaminationStatus CANCEL_MAN = new ExaminationStatus("Cancel by Manager", Type.CANCEL_MAN);
+        public static readonly ExaminationStatus CANCEL_WOR = new ExaminationStatus("Cancel by Worker", Type.CANCEL_WOR);
         public static readonly ExaminationStatus READY = new ExaminationStatus("Finish", Type.READY);
         public static readonly ExaminationStatus TOCONFIRM = new ExaminationStatus("ToConfirm", Type.TOCONFIRM);
 
 
-        public enum Type { PENDING, CANCEL, READY, TOCONFIRM }
+        public enum Type { PENDING, CANCEL_MAN, CANCEL_WOR, READY, TOCONFIRM }
 
         public static IEnumerable<ExaminationStatus> Values
         {
             get
             {
                 yield return PENDING;
-                yield return CANCEL;
+                yield return CANCEL_MAN;
+                yield return CANCEL_WOR;
                 yield return READY;
                 yield return TOCONFIRM;
             }
@@ -52,13 +54,15 @@ namespace BusinessLayer.Enum
         {
             if (s.ToLower() == "pending")
                 return ExaminationStatus.PENDING;
-            else if (s.ToLower() == "cancel")
-                return ExaminationStatus.CANCEL;
+            else if (s.ToLower() == "cancel_men")
+                return ExaminationStatus.CANCEL_MAN;
+            else if (s.ToLower() == "cancel_wor")
+                return ExaminationStatus.CANCEL_WOR;
             else if (s.ToLower() == "ready")
                 return ExaminationStatus.READY;
             else if (s.ToLower() == "toconfirm")
                 return ExaminationStatus.TOCONFIRM;
-            return ExaminationStatus.CANCEL;
+            return ExaminationStatus.CANCEL_MAN;
         }
     }
 }

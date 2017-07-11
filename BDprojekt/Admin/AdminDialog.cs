@@ -96,17 +96,15 @@ namespace PresentationLayer.Admin
                 editedUser.Address.Street = this.streetTextBox.Text;
                 editedUser.Address.ZipCode = this.zipCodeTextBox.Text;
             }
-
-            if (update)
-            {            
-                
-                if( this.cityTextBox.Text != "" || 
-                    this.houseNoTextBox.Text != "" ||
-                    this.placeNoTextBox.Text != "" ||
-                    this.phoneNoTextBox.Text != "" ||
-                    this.provinceTextBox.Text != "" ||
-                    this.streetTextBox.Text != "" ||
-                    this.zipCodeTextBox.Text != "" )
+            else
+            {
+                if (!String.IsNullOrEmpty(this.cityTextBox.Text) ||
+                    !String.IsNullOrEmpty(this.houseNoTextBox.Text) ||
+                    !String.IsNullOrEmpty(this.placeNoTextBox.Text) ||
+                    !String.IsNullOrEmpty(this.phoneNoTextBox.Text) ||
+                    !String.IsNullOrEmpty(this.provinceTextBox.Text) ||
+                    !String.IsNullOrEmpty(this.streetTextBox.Text) ||
+                    !String.IsNullOrEmpty(this.zipCodeTextBox.Text))
                 {
                     Address address = new Address
                     {
@@ -119,26 +117,16 @@ namespace PresentationLayer.Admin
                         ZipCode = this.zipCodeTextBox.Text
                     };
 
-                    editedUser.Address = address;                    
+                    editedUser.Address = address;
                 }
+            }
 
+            if (update)
+            {       
                 PersonelFacade.UpdateUserData(editedUser);
             }
             else
             {
-                Address address = new Address
-                {
-                    City = this.cityTextBox.Text,
-                    HouseNr = this.houseNoTextBox.Text,
-                    PlaceNr = this.placeNoTextBox.Text,
-                    Phone = this.phoneNoTextBox.Text,
-                    Province = this.provinceTextBox.Text,
-                    Street = this.streetTextBox.Text,
-                    ZipCode = this.zipCodeTextBox.Text
-
-                };
-
-                editedUser.Address = address;
                 PersonelFacade.AddNewUser(editedUser);        
             }
 
