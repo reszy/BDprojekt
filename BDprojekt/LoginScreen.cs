@@ -11,6 +11,7 @@ using BusinessLayer;
 using BusinessLayer.Exceptions;
 using PresentationLayer.Clinic; // TODO - Give the same namespace
 using BusinessLayer.Enum;
+using DataLayer;
 
 namespace PresentationLayer
 {
@@ -27,11 +28,11 @@ namespace PresentationLayer
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            UserRole role;
+            User authUser;
 
             try
             {
-                role = PersonelFacade.MakeLogin(
+                authUser = PersonelFacade.MakeLogin(
                     userNameTextBox.Text,
                     passwordTextBox.Text);
             }
@@ -47,13 +48,14 @@ namespace PresentationLayer
                 return;
             }
 
-            var users = PersonelFacade.GetUsers(new DataLayer.User { Uname = this.userNameTextBox.Text }).ToList();
-            loggedId = users[0].PersonId;
+            this.loggedId = authUser.PersonId;
 
             this.Hide();
             this.passwordTextBox.Text = "";
             this.userNameTextBox.Text = "";
 
+
+            UserRole role = authUser.Role;
             switch (role.ToEnum())
             {
                 case UserRole.Type.ADMIN:

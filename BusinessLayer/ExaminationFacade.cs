@@ -19,7 +19,7 @@ namespace BusinessLayer
                             (String.IsNullOrEmpty(searchCrit.Status) || e.Status.StartsWith(searchCrit.Status))
                             &&
                             ((searchCrit.VisitId == 0) || e.VisitId == searchCrit.VisitId)
-                         orderby e.OrderDate descending
+                         orderby e.OrderDate ascending
                          select e;
             return result;
         }
