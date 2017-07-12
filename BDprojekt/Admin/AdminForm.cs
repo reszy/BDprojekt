@@ -30,10 +30,10 @@ namespace PresentationLayer.Admin
             roles.Insert(0,UserRole.EMPTY);
             this.roleComboBox.DataSource = roles;
 
-            refreshList();
+            RefreshList();
         }
 
-        private void refreshList(bool getAll = true)
+        private void RefreshList(bool getAll = true)
         {
             this.dataGridView.Rows.Clear();
             if (getAll)
@@ -72,20 +72,20 @@ namespace PresentationLayer.Admin
             this.dataGridView.Refresh();
         }
 
-        private void addUserButton_Click(object sender, EventArgs e)
+        private void AddUserButton_Click(object sender, EventArgs e)
         {
             var editDialog = new AdminDialog(null);
             editDialog.ShowDialog();
-            refreshList();
+            RefreshList();
         }
 
-        private void editUserButton_Click(object sender, EventArgs e)
+        private void EditUserButton_Click(object sender, EventArgs e)
         {
             if(this.dataGridView.SelectedRows.Count == 1)
             {
                 var editDialog = new AdminDialog(users[this.dataGridView.CurrentCell.RowIndex]);
                 editDialog.ShowDialog();
-                refreshList();
+                RefreshList();
             }
         }
 
@@ -104,38 +104,39 @@ namespace PresentationLayer.Admin
             }
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logout = true;
             this.Close();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logout = false;
             this.Close();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
-            User searchCriteria = new User();
-            searchCriteria.FirstName = this.firstNameTextBox.Text;
-            searchCriteria.LastName = this.lastnameTextBox.Text;
-            searchCriteria.Uname = this.loginTextBox.Text;
-            searchCriteria.Role = this.roleComboBox.Text;
-
+            User searchCriteria = new User()
+            {
+                FirstName = this.firstNameTextBox.Text,
+                LastName = this.lastnameTextBox.Text,
+                Uname = this.loginTextBox.Text,
+                Role = this.roleComboBox.Text
+            };
             users = PersonelFacade.GetUsers(searchCriteria).ToList();
-            this.refreshList(false);
+            this.RefreshList(false);
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e)
         {
             this.lastnameTextBox.Clear();
             this.firstNameTextBox.Clear();
             this.roleComboBox.SelectedIndex = 0;
             this.loginTextBox.Clear();
 
-            refreshList();
+            RefreshList();
         }
     }
 }

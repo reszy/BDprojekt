@@ -32,6 +32,7 @@ namespace BDprojekt.Doctor
                 this.examinationTextBox.Text = exam.MedicalExaminationCode.ToString() + ' ' + exam.DictionaryMedicalExamination.Name;
                 this.resultTextBox.Text = exam.Result;
                 this.chooseExamButton.Visible = false;
+                this.saveButton.Visible = false;
                 this.groupBox2.Text = "Badanie";
             }
         }

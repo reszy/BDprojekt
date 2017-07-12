@@ -9,8 +9,8 @@ namespace BusinessLayer.Enum
     public class ExaminationStatus
     {
         public static readonly ExaminationStatus PENDING = new ExaminationStatus("Pending", Type.PENDING);
-        public static readonly ExaminationStatus CANCEL_MAN = new ExaminationStatus("Cancel by Manager", Type.CANCEL_MAN);
-        public static readonly ExaminationStatus CANCEL_WOR = new ExaminationStatus("Cancel by Worker", Type.CANCEL_WOR);
+        public static readonly ExaminationStatus CANCEL_MAN = new ExaminationStatus("Cancel_Man", Type.CANCEL_MAN);
+        public static readonly ExaminationStatus CANCEL_WOR = new ExaminationStatus("Cancel_Wor", Type.CANCEL_WOR);
         public static readonly ExaminationStatus READY = new ExaminationStatus("Finish", Type.READY);
         public static readonly ExaminationStatus TOCONFIRM = new ExaminationStatus("ToConfirm", Type.TOCONFIRM);
 

@@ -156,7 +156,7 @@
             this.examinationHistoryButton.TabIndex = 26;
             this.examinationHistoryButton.Text = "Pokaż historię badań";
             this.examinationHistoryButton.UseVisualStyleBackColor = true;
-            this.examinationHistoryButton.Click += new System.EventHandler(this.examinationHistoryButton_Click);
+            this.examinationHistoryButton.Click += new System.EventHandler(this.ExaminationHistoryButton_Click);
             // 
             // openVisitButton
             // 

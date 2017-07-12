@@ -30,6 +30,7 @@ namespace BDprojekt.Laboratory.Manager
         private void SaveButton_Click(object sender, EventArgs e)
         {
             this.examination.Result = this.resultsRichTextBox.Text;
+            this.examination.EndCancelDate = DateTime.Now;
             this.examination.Status = BusinessLayer.Enum.ExaminationStatus.TOCONFIRM.ToString();
             this.examination.LabWorkerId = labWorkerId;
 
@@ -41,6 +42,7 @@ namespace BDprojekt.Laboratory.Manager
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.examination.Result = this.resultsRichTextBox.Text;
+            this.examination.EndCancelDate = DateTime.Now;
             this.examination.Status = BusinessLayer.Enum.ExaminationStatus.CANCEL_WOR.ToString();
             this.examination.LabWorkerId = labWorkerId;
 
