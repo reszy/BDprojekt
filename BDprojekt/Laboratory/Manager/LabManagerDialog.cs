@@ -47,7 +47,7 @@ namespace BDprojekt.Laboratory.Manager
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            this.examination.Status = BusinessLayer.Enum.ExaminationStatus.CANCEL.ToString();
+            this.examination.Status = BusinessLayer.Enum.ExaminationStatus.CANCEL_MAN.ToString();
             this.examination.LaboratoryManagerId = this.labManagerId;
             this.examination.ApprovalCancelDate = DateTime.Now;
             this.examination.MenagerAttention = this.managerCommentRichTextBox.Text;

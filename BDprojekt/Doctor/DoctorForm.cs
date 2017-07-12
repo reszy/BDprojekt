@@ -35,47 +35,40 @@ namespace PresentationLayer
             this.RefreshVisitList();
         }
 
-        private void RefreshVisitList(bool getAll = true)
+        private void RefreshVisitList()
         {
-            if (getAll)
+            Patient patientCriteria = new Patient()
             {
-                visits = VisitsFacade.GetVisits(new Visit { DoctorId = mainForm.LoggedId }).ToList();
-            }
-            else
+                FirstName = this.firstNameTextBox.Text,
+                LastName = this.lastnameTextBox.Text,
+                Pesel = this.peselTextBox.Text
+            };
+            List<Patient> patient = null;
+            if (!(String.IsNullOrEmpty(patientCriteria.FirstName) && String.IsNullOrEmpty(patientCriteria.LastName) && String.IsNullOrEmpty(patientCriteria.Pesel)))
             {
-                Patient patientCriteria = new Patient()
-                {
-                    FirstName = this.firstNameTextBox.Text,
-                    LastName = this.lastnameTextBox.Text,
-                    Pesel = this.peselTextBox.Text
-                };
-                List<Patient> patient = null;
-                if (!(String.IsNullOrEmpty(patientCriteria.FirstName) && String.IsNullOrEmpty(patientCriteria.LastName) && String.IsNullOrEmpty(patientCriteria.Pesel)))
-                {
-                    patient = PatientsFacade.GetPatients(patientCriteria).ToList();
-                }
-
-                Visit visitCriteria = new Visit()
-                {
-                    Status = this.visitStatusComboBox.Text
-                };
-
-                if(myVisitsCheckBox.Checked)
-                {
-                    visitCriteria.DoctorId = mainForm.LoggedId;
-                }
-
-                if (patient != null && patient.Count > 0)
-                {
-                    visitCriteria.PatientId = patient[0].PatientId;
-                }
-                if (this.dateTimePicker.Checked)
-                {
-                    visitCriteria.DateOfRegistration = dateTimePicker.Value;
-                }
-
-                visits = VisitsFacade.GetVisits(visitCriteria).ToList();
+                patient = PatientsFacade.GetPatients(patientCriteria).ToList();
             }
+
+            Visit visitCriteria = new Visit()
+            {
+                Status = this.visitStatusComboBox.Text
+            };
+
+            if(myVisitsCheckBox.Checked)
+            {
+                visitCriteria.DoctorId = mainForm.LoggedId;
+            }
+
+            if (patient != null && patient.Count > 0)
+            {
+                visitCriteria.PatientId = patient[0].PatientId;
+            }
+            if (this.dateTimePicker.Checked)
+            {
+                visitCriteria.DateOfRegistration = dateTimePicker.Value;
+            }
+
+            visits = VisitsFacade.GetVisits(visitCriteria).ToList();
 
 
             this.visitDataGrid.Rows.Clear();
@@ -86,7 +79,10 @@ namespace PresentationLayer
                     var doctor = PersonelFacade.GetUsers(new User { PersonId = mainForm.LoggedId }).ToList();
 
                     this.visitDataGrid.Rows.Add(
-                        visit.Patient.FirstName + " " + visit.Patient.LastName, visit.Patient.Pesel, visit.DateOfRegistration.ToString()
+                        visit.Patient.FirstName + " " + visit.Patient.LastName, 
+                        visit.Patient.Pesel, 
+                        visit.DateOfRegistration.ToString(),
+                        visit.Status
                         );
                 }
             }
@@ -123,7 +119,7 @@ namespace PresentationLayer
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            RefreshVisitList(false);
+            RefreshVisitList();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -131,6 +127,9 @@ namespace PresentationLayer
             this.firstNameTextBox.Clear();
             this.lastnameTextBox.Clear();
             this.peselTextBox.Clear();
+            this.dateTimePicker.Checked = false;
+            this.myVisitsCheckBox.Checked = true;
+            this.visitStatusComboBox.SelectedIndex = 0;
 
             this.RefreshVisitList();
         }
@@ -143,8 +142,13 @@ namespace PresentationLayer
                 var dialog = new VisitDialog(choosedVisit, mainForm.LoggedId, (choosedVisit.DoctorId != mainForm.LoggedId));
                 dialog.ShowDialog();
 
-                RefreshVisitList(false);
+                RefreshVisitList();
             }
+        }
+
+        private void examinationHistoryButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

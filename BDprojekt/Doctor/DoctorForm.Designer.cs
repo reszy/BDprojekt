@@ -35,9 +35,6 @@
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visitDataGrid = new System.Windows.Forms.DataGridView();
-            this.patientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.examinationHistoryButton = new System.Windows.Forms.Button();
             this.openVisitButton = new System.Windows.Forms.Button();
@@ -51,10 +48,14 @@
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.myVisitsCheckBox = new System.Windows.Forms.CheckBox();
             this.visitStatusComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
-            this.myVisitsCheckBox = new System.Windows.Forms.CheckBox();
+            this.patientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -120,34 +121,16 @@
             this.visitDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.patientName,
             this.pesel,
-            this.date});
+            this.date,
+            this.status});
             this.visitDataGrid.Location = new System.Drawing.Point(6, 19);
+            this.visitDataGrid.MultiSelect = false;
             this.visitDataGrid.Name = "visitDataGrid";
             this.visitDataGrid.ReadOnly = true;
+            this.visitDataGrid.RowHeadersVisible = false;
             this.visitDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.visitDataGrid.Size = new System.Drawing.Size(602, 298);
             this.visitDataGrid.TabIndex = 0;
-            // 
-            // patientName
-            // 
-            this.patientName.HeaderText = "Imię i Nazwisko";
-            this.patientName.Name = "patientName";
-            this.patientName.ReadOnly = true;
-            this.patientName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // pesel
-            // 
-            this.pesel.HeaderText = "PESEL";
-            this.pesel.Name = "pesel";
-            this.pesel.ReadOnly = true;
-            this.pesel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Data";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // groupBox2
             // 
@@ -173,6 +156,7 @@
             this.examinationHistoryButton.TabIndex = 26;
             this.examinationHistoryButton.Text = "Pokaż historię badań";
             this.examinationHistoryButton.UseVisualStyleBackColor = true;
+            this.examinationHistoryButton.Click += new System.EventHandler(this.examinationHistoryButton_Click);
             // 
             // openVisitButton
             // 
@@ -207,7 +191,7 @@
             // 
             this.peselTextBox.Location = new System.Drawing.Point(97, 54);
             this.peselTextBox.Name = "peselTextBox";
-            this.peselTextBox.Size = new System.Drawing.Size(131, 20);
+            this.peselTextBox.Size = new System.Drawing.Size(143, 20);
             this.peselTextBox.TabIndex = 7;
             // 
             // dateTimePicker
@@ -217,7 +201,7 @@
             this.dateTimePicker.Location = new System.Drawing.Point(337, 54);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.ShowCheckBox = true;
-            this.dateTimePicker.Size = new System.Drawing.Size(131, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(141, 20);
             this.dateTimePicker.TabIndex = 2;
             // 
             // label3
@@ -233,7 +217,7 @@
             // 
             this.lastnameTextBox.Location = new System.Drawing.Point(337, 18);
             this.lastnameTextBox.Name = "lastnameTextBox";
-            this.lastnameTextBox.Size = new System.Drawing.Size(131, 20);
+            this.lastnameTextBox.Size = new System.Drawing.Size(141, 20);
             this.lastnameTextBox.TabIndex = 1;
             // 
             // label4
@@ -249,7 +233,7 @@
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(97, 18);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(131, 20);
+            this.firstNameTextBox.Size = new System.Drawing.Size(143, 20);
             this.firstNameTextBox.TabIndex = 0;
             // 
             // searchButton
@@ -285,12 +269,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wyszukiwarka";
             // 
+            // myVisitsCheckBox
+            // 
+            this.myVisitsCheckBox.AutoSize = true;
+            this.myVisitsCheckBox.Checked = true;
+            this.myVisitsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.myVisitsCheckBox.Location = new System.Drawing.Point(269, 95);
+            this.myVisitsCheckBox.Name = "myVisitsCheckBox";
+            this.myVisitsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.myVisitsCheckBox.Size = new System.Drawing.Size(80, 17);
+            this.myVisitsCheckBox.TabIndex = 18;
+            this.myVisitsCheckBox.Text = "Moje wizyty";
+            this.myVisitsCheckBox.UseVisualStyleBackColor = true;
+            // 
             // visitStatusComboBox
             // 
             this.visitStatusComboBox.FormattingEnabled = true;
             this.visitStatusComboBox.Location = new System.Drawing.Point(97, 91);
             this.visitStatusComboBox.Name = "visitStatusComboBox";
-            this.visitStatusComboBox.Size = new System.Drawing.Size(131, 21);
+            this.visitStatusComboBox.Size = new System.Drawing.Size(143, 21);
             this.visitStatusComboBox.TabIndex = 17;
             // 
             // label5
@@ -320,6 +317,7 @@
             this.patientName.Name = "patientName";
             this.patientName.ReadOnly = true;
             this.patientName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.patientName.Width = 200;
             // 
             // pesel
             // 
@@ -330,16 +328,17 @@
             // 
             // date
             // 
-            this.myVisitsCheckBox.AutoSize = true;
-            this.myVisitsCheckBox.Checked = true;
-            this.myVisitsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.myVisitsCheckBox.Location = new System.Drawing.Point(269, 95);
-            this.myVisitsCheckBox.Name = "myVisitsCheckBox";
-            this.myVisitsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.myVisitsCheckBox.Size = new System.Drawing.Size(80, 17);
-            this.myVisitsCheckBox.TabIndex = 18;
-            this.myVisitsCheckBox.Text = "Moje wizyty";
-            this.myVisitsCheckBox.UseVisualStyleBackColor = true;
+            this.date.HeaderText = "Data";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.date.Width = 150;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // DoctorPanel
             // 
@@ -385,12 +384,13 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button clearButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pesel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.Button examinationHistoryButton;
         private System.Windows.Forms.ComboBox visitStatusComboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox myVisitsCheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pesel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }

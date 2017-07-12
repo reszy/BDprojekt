@@ -70,6 +70,7 @@
             this.examinationListDataGridView.Location = new System.Drawing.Point(6, 19);
             this.examinationListDataGridView.Name = "examinationListDataGridView";
             this.examinationListDataGridView.ReadOnly = true;
+            this.examinationListDataGridView.RowHeadersVisible = false;
             this.examinationListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.examinationListDataGridView.Size = new System.Drawing.Size(603, 365);
             this.examinationListDataGridView.TabIndex = 0;

@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.labExaminationDataGridView = new System.Windows.Forms.DataGridView();
+            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Result = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoctorComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExaminationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ManagerComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.inspectionButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -37,11 +42,6 @@
             this.wyjścieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Result = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoctorComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExaminationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ManagerComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.labExaminationDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -65,9 +65,47 @@
             this.labExaminationDataGridView.MultiSelect = false;
             this.labExaminationDataGridView.Name = "labExaminationDataGridView";
             this.labExaminationDataGridView.ReadOnly = true;
+            this.labExaminationDataGridView.RowHeadersVisible = false;
             this.labExaminationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.labExaminationDataGridView.Size = new System.Drawing.Size(744, 331);
             this.labExaminationDataGridView.TabIndex = 5;
+            // 
+            // OrderDate
+            // 
+            this.OrderDate.HeaderText = "Data Zlecenia";
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.ReadOnly = true;
+            // 
+            // Result
+            // 
+            this.Result.FillWeight = 150F;
+            this.Result.HeaderText = "Wynik Badania";
+            this.Result.Name = "Result";
+            this.Result.ReadOnly = true;
+            this.Result.Width = 150;
+            // 
+            // DoctorComment
+            // 
+            this.DoctorComment.FillWeight = 150F;
+            this.DoctorComment.HeaderText = "Komentarz Doktora";
+            this.DoctorComment.Name = "DoctorComment";
+            this.DoctorComment.ReadOnly = true;
+            this.DoctorComment.Width = 150;
+            // 
+            // ExaminationName
+            // 
+            this.ExaminationName.HeaderText = "Nazwa Badania";
+            this.ExaminationName.Name = "ExaminationName";
+            this.ExaminationName.ReadOnly = true;
+            this.ExaminationName.Width = 150;
+            // 
+            // ManagerComment
+            // 
+            this.ManagerComment.FillWeight = 150F;
+            this.ManagerComment.HeaderText = "Komentarz Managera";
+            this.ManagerComment.Name = "ManagerComment";
+            this.ManagerComment.ReadOnly = true;
+            this.ManagerComment.Width = 150;
             // 
             // groupBox1
             // 
@@ -141,43 +179,6 @@
             this.oProgramieToolStripMenuItem.Name = "oProgramieToolStripMenuItem";
             this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.oProgramieToolStripMenuItem.Text = "O programie...";
-            // 
-            // OrderDate
-            // 
-            this.OrderDate.HeaderText = "Data Zlecenia";
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.ReadOnly = true;
-            // 
-            // Result
-            // 
-            this.Result.FillWeight = 150F;
-            this.Result.HeaderText = "Wynik Badania";
-            this.Result.Name = "Result";
-            this.Result.ReadOnly = true;
-            this.Result.Width = 150;
-            // 
-            // DoctorComment
-            // 
-            this.DoctorComment.FillWeight = 150F;
-            this.DoctorComment.HeaderText = "Komentarz Doktora";
-            this.DoctorComment.Name = "DoctorComment";
-            this.DoctorComment.ReadOnly = true;
-            this.DoctorComment.Width = 150;
-            // 
-            // ExaminationName
-            // 
-            this.ExaminationName.HeaderText = "Nazwa Badania";
-            this.ExaminationName.Name = "ExaminationName";
-            this.ExaminationName.ReadOnly = true;
-            this.ExaminationName.Width = 150;
-            // 
-            // ManagerComment
-            // 
-            this.ManagerComment.FillWeight = 150F;
-            this.ManagerComment.HeaderText = "Komentarz Managera";
-            this.ManagerComment.Name = "ManagerComment";
-            this.ManagerComment.ReadOnly = true;
-            this.ManagerComment.Width = 150;
             // 
             // LabManagerForm
             // 

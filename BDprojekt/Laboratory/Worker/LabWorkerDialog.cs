@@ -41,7 +41,7 @@ namespace BDprojekt.Laboratory.Manager
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.examination.Result = this.resultsRichTextBox.Text;
-            this.examination.Status = BusinessLayer.Enum.ExaminationStatus.CANCEL.ToString();//TODO ADD SPECIAL TYPE OF CANCEL FOR LAB WORKER
+            this.examination.Status = BusinessLayer.Enum.ExaminationStatus.CANCEL_WOR.ToString();//TODO ADD SPECIAL TYPE OF CANCEL FOR LAB WORKER
             this.examination.LabWorkerId = labWorkerId;
 
             ExaminationFacade.UpdateLaboratoryExamination(examination);
