@@ -17,7 +17,7 @@ namespace BusinessLayer
             return string.Join("", hash.Select(b => b.ToString("x2")).ToArray());
         }
 
-        public static UserRole MakeLogin(String userName, String password)
+        public static User MakeLogin(String userName, String password)
         {
             var authUser = GetSpecyficUser(userName);
 
@@ -31,7 +31,7 @@ namespace BusinessLayer
                         if (role == UserRole.EMPTY)
                             throw new Exceptions.LoginException("Temu kontu nie przydzelono roli");
                         else
-                            return role;
+                            return authUser;
                     }
                     else
                         throw new Exceptions.LoginException("To konto wygasło");

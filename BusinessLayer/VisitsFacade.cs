@@ -23,7 +23,7 @@ namespace BusinessLayer
                           ((searchCrit.DoctorId == 0) || v.DoctorId == searchCrit.DoctorId)
                           &&
                           ((searchCrit.DateOfRegistration == null) || (searchCrit.DateOfRegistration == DateTime.MinValue) || v.DateOfRegistration == searchCrit.DateOfRegistration)
-                         orderby v.DateOfRegistration descending
+                         orderby v.DateOfRegistration ascending
                          select v;
 
             return result;
