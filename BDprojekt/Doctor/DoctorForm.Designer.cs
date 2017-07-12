@@ -314,7 +314,21 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // myVisitsCheckBox
+            // patientName
+            // 
+            this.patientName.HeaderText = "Imię i Nazwisko";
+            this.patientName.Name = "patientName";
+            this.patientName.ReadOnly = true;
+            this.patientName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // pesel
+            // 
+            this.pesel.HeaderText = "PESEL";
+            this.pesel.Name = "pesel";
+            this.pesel.ReadOnly = true;
+            this.pesel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // date
             // 
             this.myVisitsCheckBox.AutoSize = true;
             this.myVisitsCheckBox.Checked = true;
