@@ -47,35 +47,55 @@ namespace BDprojekt.Doctor
             this.lastnameTextBox.Text = visit.Patient.LastName;
             this.registrationDateTextBox.Text = Convert.ToDateTime(visit.DateOfRegistration).ToString();
             this.statusTextBox.Text = visit.Status.ToString();
+            QuickSave();
         }
 
         private void PhysicalExamButton_Click(object sender, EventArgs e)
         {
+            QuickSave();
             var dialog = new PhysicalExaminationDialog(visit.VisitId, visit.PatientId, visit.DoctorId);
             dialog.ShowDialog();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            QuickSave();
             this.Close();
         }
 
         private void ShowExaminationsButton_Click(object sender, EventArgs e)
         {
+            QuickSave();
             var dialog = new ExaminationListDialog(ExaminationListDialog.Type.EXAMS, visit.VisitId);
             dialog.ShowDialog();
         }
 
         private void ShowVisitsButton_Click(object sender, EventArgs e)
         {
+            QuickSave();
             var dialog = new ExaminationListDialog(ExaminationListDialog.Type.VISITS, visit.PatientId);
             dialog.ShowDialog();
         }
 
         private void LaboratoryExamButton_Click(object sender, EventArgs e)
         {
+            QuickSave();
             var dialog = new LaboratoryExaminationDialog(visit.VisitId, visit.PatientId, visit.DoctorId);
             dialog.ShowDialog();
+        }
+
+        private void QuickSave()
+        {
+            if(doctorId == visit.DoctorId)
+            {
+                if(visit.Status == VisitStatus.REGISTER.ToString())
+                    visit.Status = VisitStatus.INPROGRESS.ToString();
+                
+                visit.DoctorId = doctorId;
+                visit.Description = this.DescriptionTextBox.Text;
+                visit.Diagnosis = this.diagnosisTextBox.Text;
+                VisitsFacade.UpdateVisit(visit);
+            }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)

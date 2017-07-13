@@ -63,6 +63,12 @@
     <Compile Include="Doctor\DoctorForm.Designer.cs">
       <DependentUpon>DoctorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\FullExaminationListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\FullExaminationListDialog.Designer.cs">
+      <DependentUpon>FullExaminationListDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\LaboratoryExaminationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\DoctorForm.resx">
       <DependentUpon>DoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\FullExaminationListDialog.resx">
+      <DependentUpon>FullExaminationListDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\LaboratoryExaminationDialog.resx">
       <DependentUpon>LaboratoryExaminationDialog.cs</DependentUpon>

@@ -92,6 +92,7 @@
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(546, 360);
@@ -177,7 +178,7 @@
             this.searchButton.TabIndex = 1;
             this.searchButton.Text = "Szukaj";
             this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // menuStrip1
             // 
@@ -204,14 +205,14 @@
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.logoutToolStripMenuItem.Text = "Wyloguj";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.exitToolStripMenuItem.Text = "Zakończ";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -236,7 +237,7 @@
             this.addUserButton.TabIndex = 4;
             this.addUserButton.Text = "Dodaj użytkownika";
             this.addUserButton.UseVisualStyleBackColor = true;
-            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
+            this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // editUserButton
             // 
@@ -247,7 +248,7 @@
             this.editUserButton.TabIndex = 5;
             this.editUserButton.Text = "Edytuj użytkownika";
             this.editUserButton.UseVisualStyleBackColor = true;
-            this.editUserButton.Click += new System.EventHandler(this.editUserButton_Click);
+            this.editUserButton.Click += new System.EventHandler(this.EditUserButton_Click);
             // 
             // firstNameTextBox
             // 
@@ -326,7 +327,7 @@
             this.clearButton.TabIndex = 14;
             this.clearButton.Text = "Wyczyść";
             this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // groupBox1
             // 

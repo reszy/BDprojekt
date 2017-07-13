@@ -1,6 +1,6 @@
 ﻿namespace BDprojekt.Doctor
 {
-    partial class ExaminationListDialog
+    partial class FullExaminationListDialog
     {
         /// <summary>
         /// Required designer variable.

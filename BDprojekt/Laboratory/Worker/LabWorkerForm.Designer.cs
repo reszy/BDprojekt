@@ -35,11 +35,11 @@
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labExaminationDataGridView = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.doExaminationButton = new System.Windows.Forms.Button();
             this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DoctorComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExaminationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.doExaminationButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labExaminationDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -109,9 +109,30 @@
             this.labExaminationDataGridView.MultiSelect = false;
             this.labExaminationDataGridView.Name = "labExaminationDataGridView";
             this.labExaminationDataGridView.ReadOnly = true;
+            this.labExaminationDataGridView.RowHeadersVisible = false;
             this.labExaminationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.labExaminationDataGridView.Size = new System.Drawing.Size(580, 331);
             this.labExaminationDataGridView.TabIndex = 5;
+            // 
+            // OrderDate
+            // 
+            this.OrderDate.HeaderText = "Data Zlecenia";
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.ReadOnly = true;
+            // 
+            // DoctorComment
+            // 
+            this.DoctorComment.HeaderText = "Komentarz Doktora";
+            this.DoctorComment.Name = "DoctorComment";
+            this.DoctorComment.ReadOnly = true;
+            this.DoctorComment.Width = 200;
+            // 
+            // ExaminationName
+            // 
+            this.ExaminationName.HeaderText = "Nazwa Badania";
+            this.ExaminationName.Name = "ExaminationName";
+            this.ExaminationName.ReadOnly = true;
+            this.ExaminationName.Width = 150;
             // 
             // groupBox1
             // 
@@ -137,26 +158,6 @@
             this.doExaminationButton.Text = "Przeprowadz Badanie";
             this.doExaminationButton.UseVisualStyleBackColor = true;
             this.doExaminationButton.Click += new System.EventHandler(this.DoExaminationButton_Click);
-            // 
-            // OrderDate
-            // 
-            this.OrderDate.HeaderText = "Data Zlecenia";
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.ReadOnly = true;
-            // 
-            // DoctorComment
-            // 
-            this.DoctorComment.HeaderText = "Komentarz Doktora";
-            this.DoctorComment.Name = "DoctorComment";
-            this.DoctorComment.ReadOnly = true;
-            this.DoctorComment.Width = 200;
-            // 
-            // ExaminationName
-            // 
-            this.ExaminationName.HeaderText = "Nazwa Badania";
-            this.ExaminationName.Name = "ExaminationName";
-            this.ExaminationName.ReadOnly = true;
-            this.ExaminationName.Width = 150;
             // 
             // LabWorkerForm
             // 
