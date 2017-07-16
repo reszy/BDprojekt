@@ -30,13 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.examinationListDataGridView = new System.Windows.Forms.DataGridView();
-            this.visitDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diagnosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.examType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.examCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.examName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.examResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.showVisitButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.firstnameTextBox = new System.Windows.Forms.TextBox();
@@ -44,6 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lastnameTextBox = new System.Windows.Forms.TextBox();
             this.showExamButton = new System.Windows.Forms.Button();
+            this.visitDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diagnosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.examType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.examCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.examName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.examResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examinationListDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -86,58 +86,6 @@
             this.examinationListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.examinationListDataGridView.Size = new System.Drawing.Size(826, 453);
             this.examinationListDataGridView.TabIndex = 0;
-            // 
-            // visitDate
-            // 
-            this.visitDate.HeaderText = "Data wizyty";
-            this.visitDate.Name = "visitDate";
-            this.visitDate.ReadOnly = true;
-            this.visitDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.visitDate.Width = 150;
-            // 
-            // description
-            // 
-            this.description.HeaderText = "Opis";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Diagnosis
-            // 
-            this.Diagnosis.HeaderText = "Diagnoza";
-            this.Diagnosis.Name = "Diagnosis";
-            this.Diagnosis.ReadOnly = true;
-            this.Diagnosis.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // examType
-            // 
-            this.examType.HeaderText = "Typ badania";
-            this.examType.Name = "examType";
-            this.examType.ReadOnly = true;
-            this.examType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.examType.Width = 70;
-            // 
-            // examCode
-            // 
-            this.examCode.HeaderText = "Kod badania";
-            this.examCode.Name = "examCode";
-            this.examCode.ReadOnly = true;
-            this.examCode.Width = 50;
-            // 
-            // examName
-            // 
-            this.examName.HeaderText = "Nazwa badania";
-            this.examName.Name = "examName";
-            this.examName.ReadOnly = true;
-            this.examName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // examResult
-            // 
-            this.examResult.HeaderText = "Wynik badania";
-            this.examResult.Name = "examResult";
-            this.examResult.ReadOnly = true;
-            this.examResult.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.examResult.Width = 200;
             // 
             // showVisitButton
             // 
@@ -208,6 +156,59 @@
             this.showExamButton.Text = "Podgląd badania";
             this.showExamButton.UseVisualStyleBackColor = true;
             this.showExamButton.Click += new System.EventHandler(this.ShowExamButton_Click);
+            // 
+            // visitDate
+            // 
+            this.visitDate.HeaderText = "Data wizyty";
+            this.visitDate.Name = "visitDate";
+            this.visitDate.ReadOnly = true;
+            this.visitDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.visitDate.Width = 150;
+            // 
+            // description
+            // 
+            this.description.HeaderText = "Opis";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Diagnosis
+            // 
+            this.Diagnosis.HeaderText = "Diagnoza";
+            this.Diagnosis.Name = "Diagnosis";
+            this.Diagnosis.ReadOnly = true;
+            this.Diagnosis.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // examType
+            // 
+            this.examType.HeaderText = "Typ badania";
+            this.examType.Name = "examType";
+            this.examType.ReadOnly = true;
+            this.examType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.examType.Width = 70;
+            // 
+            // examCode
+            // 
+            this.examCode.HeaderText = "Kod badania";
+            this.examCode.Name = "examCode";
+            this.examCode.ReadOnly = true;
+            this.examCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.examCode.Width = 50;
+            // 
+            // examName
+            // 
+            this.examName.HeaderText = "Nazwa badania";
+            this.examName.Name = "examName";
+            this.examName.ReadOnly = true;
+            this.examName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // examResult
+            // 
+            this.examResult.HeaderText = "Wynik badania";
+            this.examResult.Name = "examResult";
+            this.examResult.ReadOnly = true;
+            this.examResult.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.examResult.Width = 200;
             // 
             // FullExaminationListDialog
             // 
