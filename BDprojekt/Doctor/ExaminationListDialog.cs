@@ -56,8 +56,7 @@ namespace BDprojekt.Doctor
                     this.examinationListDataGridView.Columns[1].HeaderText = "Data wykoniania";
                     this.examinationListDataGridView.Columns[2].HeaderText = "Wynik";
                     this.examinationListDataGridView.Columns[3].HeaderText = "Typ";
-                    examsLab = ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = patientOrVisitId , Status = ExaminationStatus.PENDING.ToString()}).ToList();
-                    examsLab.AddRange(ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = patientOrVisitId, Status = ExaminationStatus.READY.ToString() }).ToList());
+                    examsLab = ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = patientOrVisitId}).ToList();
                     examsPhy = ExaminationFacade.GetPhysicalExamination(patientOrVisitId).ToList();
                     foreach (var exam in examsLab)
                     {

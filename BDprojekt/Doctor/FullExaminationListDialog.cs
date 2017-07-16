@@ -17,57 +17,101 @@ namespace BDprojekt.Doctor
 {
     public partial class FullExaminationListDialog : Form
     {
-        private string resultText;
-        private int resultId;
-        private string resultCode;
 
-        public string ResultText { get => resultText; set => resultText = value; }
-        public int ResultId { get => resultId; set => resultId = value; }
-        public string ResultCode { get => resultCode; set => resultCode = value; }
+        List<Row> examsList;
 
-        List<Visit> visits;
-        List<LaboratoryExamination> examsLab;
-        List<PhysicalExamination> examsPhy;
-        List<DictionaryMedicalExamination> examDictionary;
+        private struct Row
+        {
+            public Visit visit;
+            public LaboratoryExamination labExamination;
+            public PhysicalExamination phyExamination;
+        }
 
         public FullExaminationListDialog(int patientId)
         {
             InitializeComponent();
 
-            visits = VisitsFacade.GetVisits(new Visit { PatientId = patientId }).ToList();
+            List<Visit> visits = VisitsFacade.GetVisits(new Visit { PatientId = patientId }).ToList();
+
+            if(visits.Count > 0)
+            {
+                firstnameTextBox.Text = visits[0].Patient.FirstName;
+                lastnameTextBox.Text = visits[0].Patient.LastName;
+            }
+
+            examsList = new List<Row>();
 
             foreach (var visit in visits)
             {
-                examsLab = ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = patientId, Status = ExaminationStatus.PENDING.ToString() }).ToList();
-                examsLab.AddRange(ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = patientId, Status = ExaminationStatus.READY.ToString() }).ToList());
-                examsPhy = ExaminationFacade.GetPhysicalExamination(patientId).ToList();
+                List<LaboratoryExamination> examsLab = ExaminationFacade.GetLaboratoryExamination(new LaboratoryExamination { VisitId = visit.VisitId }).ToList();
+                List<PhysicalExamination> examsPhy = ExaminationFacade.GetPhysicalExamination(visit.VisitId).ToList();
                 foreach (var exam in examsLab)
                 {
-                    this.examinationListDataGridView.Rows.Add(exam.DictionaryMedicalExamination.Name, exam.EndCancelDate, exam.Result, "Laboratoryjne");
+                    examsList.Add(new Row { visit = visit, labExamination = exam, phyExamination = null });
                 }
                 foreach (var exam in examsPhy)
                 {
-                    this.examinationListDataGridView.Rows.Add(exam.DictionaryMedicalExamination.Name, "", exam.Result, "Fizykalne");
+                    examsList.Add(new Row { visit = visit, labExamination = null, phyExamination = exam });
                 }
+            }
+
+            foreach (var row in examsList)
+            {
+                string examType = "";
+                string examCode = "";
+                string examName = "";
+                string examResult = "";
+
+                if (row.labExamination != null)
+                {
+                    examType = "Lab";
+                    examCode = row.labExamination.DictionaryMedicalExamination.MedicalExaminationCode;
+                    examName = row.labExamination.DictionaryMedicalExamination.Name;
+                    examResult = row.labExamination.Result;
+                }
+                else
+                {
+                    if (row.phyExamination != null)
+                    {
+                        examType = "Fiz";
+                        examCode = row.phyExamination.DictionaryMedicalExamination.MedicalExaminationCode;
+                        examName = row.phyExamination.DictionaryMedicalExamination.Name;
+                        examResult = row.phyExamination.Result;
+                    }
+                }
+                this.examinationListDataGridView.Rows.Add(row.visit.EndCancelDate, row.visit.Description, row.visit.Diagnosis, examType, examCode, examName, examResult);
             }
         }
 
-        private void ChooseButton_Click(object sender, EventArgs e)
+        private void ShowExamButton_Click(object sender, EventArgs e)
         {
             if (this.examinationListDataGridView.SelectedRows.Count == 1)
             {
                 int choosedRow = this.examinationListDataGridView.CurrentCell.RowIndex;
 
-                if (choosedRow >= examsLab.Count)
+                if (examsList[choosedRow].labExamination != null)
                 {
-                    var dialog = new PhysicalExaminationDialog(0, 0, 0, examsPhy[choosedRow - examsLab.Count]);
+                    var dialog = new LabManagerDialog(0, examsList[choosedRow].labExamination, true);
                     dialog.ShowDialog();
                 }
                 else
                 {
-                    var dialog = new LabManagerDialog(0, examsLab[choosedRow], true);
-                    dialog.ShowDialog();
+                    if (examsList[choosedRow].phyExamination != null)
+                    {
+                        var dialog = new PhysicalExaminationDialog(0, 0, 0, examsList[choosedRow].phyExamination);
+                        dialog.ShowDialog();
+                    }
                 }
+            }
+        }
+        private void ShowVisitButton_Click(object sender, EventArgs e)
+        {
+            if (this.examinationListDataGridView.SelectedRows.Count == 1)
+            {
+                int choosedRow = this.examinationListDataGridView.CurrentCell.RowIndex;
+
+                var dialog = new VisitDialog(examsList[choosedRow].visit, 0, true);
+                dialog.ShowDialog();
 
             }
         }
