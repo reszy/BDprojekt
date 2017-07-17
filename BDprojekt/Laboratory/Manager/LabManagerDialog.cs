@@ -29,9 +29,9 @@ namespace BDprojekt.Laboratory.Manager
             if (viewOnly)
             {
                 this.managerCommentRichTextBox.Enabled = false;
+                this.cancelButton.Visible = false;
                 this.saveButton.Visible = false;
-                this.saveButton.Visible = false;
-                this.saveButton.Enabled = false;
+                this.cancelButton.Enabled = false;
                 this.saveButton.Enabled = false;
             }
         }

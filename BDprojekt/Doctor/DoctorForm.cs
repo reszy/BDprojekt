@@ -148,7 +148,7 @@ namespace PresentationLayer
 
         private void ExaminationHistoryButton_Click(object sender, EventArgs e)
         {
-            if(visits.Count > 0)
+            if (this.visitDataGrid.SelectedRows.Count == 1)
             {
                 var choosedVisit = visits[this.visitDataGrid.CurrentCell.RowIndex];
                 var dialog = new FullExaminationListDialog(choosedVisit.PatientId);
