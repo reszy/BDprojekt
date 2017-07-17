@@ -8,11 +8,11 @@ namespace BusinessLayer.Enum
 {
     public class UserRole
     {
-        public static readonly UserRole ADMIN = new UserRole("Admin", Type.ADMIN);
-        public static readonly UserRole DOCTOR = new UserRole("Doctor", Type.DOCTOR);
-        public static readonly UserRole LABWORKER = new UserRole("LabWorker", Type.LABWORKER);
-        public static readonly UserRole LABMANAGER = new UserRole("LabManager", Type.LABMANAGER);
-        public static readonly UserRole RECEPTIONIST = new UserRole("Receptionist", Type.RECEPTIONIST);
+        public static readonly UserRole ADMIN = new UserRole("ADMIN", Type.ADMIN);
+        public static readonly UserRole DOCTOR = new UserRole("DOCTOR", Type.DOCTOR);
+        public static readonly UserRole LABWORKER = new UserRole("LABWORKER", Type.LABWORKER);
+        public static readonly UserRole LABMANAGER = new UserRole("LABMANAGER", Type.LABMANAGER);
+        public static readonly UserRole RECEPTIONIST = new UserRole("RECEPTIONIST", Type.RECEPTIONIST);
         public static readonly UserRole EMPTY = new UserRole("", Type.EMPTY);
 
         public enum Type{ ADMIN, DOCTOR, LABWORKER, LABMANAGER, RECEPTIONIST, EMPTY }

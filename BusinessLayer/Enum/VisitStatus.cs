@@ -8,10 +8,10 @@ namespace BusinessLayer.Enum
 {
     public class VisitStatus
     {
-        public static readonly VisitStatus REGISTER = new VisitStatus("Register", Type.REGISTER);
-        public static readonly VisitStatus CANCEL = new VisitStatus("Cancel", Type.CANCEL);
-        public static readonly VisitStatus FINISH = new VisitStatus("Finish", Type.FINISH);
-        public static readonly VisitStatus INPROGRESS = new VisitStatus("InProgress", Type.FINISH);
+        public static readonly VisitStatus REGISTER = new VisitStatus("REGISTER", Type.REGISTER);
+        public static readonly VisitStatus CANCEL = new VisitStatus("CANCEL", Type.CANCEL);
+        public static readonly VisitStatus FINISH = new VisitStatus("FINISH", Type.FINISH);
+        public static readonly VisitStatus INPROGRESS = new VisitStatus("INPROGRESS", Type.FINISH);
 
         public enum Type { REGISTER, CANCEL, FINISH, INPROGRESS }
 
