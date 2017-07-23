@@ -123,6 +123,24 @@ namespace BusinessLayer
 
             user.Password = Hash(user.Password);
 
+            UserRole role = (UserRole)user.Role;            
+
+            switch(role.ToEnum())
+            {
+                case UserRole.Type.DOCTOR:
+                    user.Doctor = new Doctor() { DoctorId = user.PersonId };
+                    break;
+                case UserRole.Type.LABMANAGER:
+                    user.LaboratoryManager = new LaboratoryManager() { LaboratoryManagerId = user.PersonId };
+                    break;
+                case UserRole.Type.LABWORKER:
+                    user.LabWorker = new LabWorker() { LabWorkerId = user.PersonId };
+                    break;
+                case UserRole.Type.RECEPTIONIST:
+                    user.Receptionist = new Receptionist() { ReceptionistId = user.PersonId };
+                    break;
+            }
+
             dc.Users.InsertOnSubmit(user);
             dc.SubmitChanges();
         }

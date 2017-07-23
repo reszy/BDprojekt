@@ -8,11 +8,11 @@ namespace BusinessLayer.Enum
 {
     public class ExaminationStatus
     {
-        public static readonly ExaminationStatus PENDING = new ExaminationStatus("Pending", Type.PENDING);
-        public static readonly ExaminationStatus CANCEL_MAN = new ExaminationStatus("Cancel_Man", Type.CANCEL_MAN);
-        public static readonly ExaminationStatus CANCEL_WOR = new ExaminationStatus("Cancel_Wor", Type.CANCEL_WOR);
-        public static readonly ExaminationStatus READY = new ExaminationStatus("Finish", Type.READY);
-        public static readonly ExaminationStatus TOCONFIRM = new ExaminationStatus("ToConfirm", Type.TOCONFIRM);
+        public static readonly ExaminationStatus PENDING = new ExaminationStatus("PENDING", Type.PENDING);
+        public static readonly ExaminationStatus CANCEL_MAN = new ExaminationStatus("CANCEL_MAN", Type.CANCEL_MAN);
+        public static readonly ExaminationStatus CANCEL_WOR = new ExaminationStatus("CANCEL_WOR", Type.CANCEL_WOR);
+        public static readonly ExaminationStatus READY = new ExaminationStatus("FINISH", Type.READY);
+        public static readonly ExaminationStatus TOCONFIRM = new ExaminationStatus("TOCONFIRM", Type.TOCONFIRM);
 
 
         public enum Type { PENDING, CANCEL_MAN, CANCEL_WOR, READY, TOCONFIRM }
