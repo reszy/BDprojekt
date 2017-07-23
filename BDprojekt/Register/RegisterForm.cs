@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DataLayer;
 using BusinessLayer;
 using BDprojekt.Register;
+using BusinessLayer.Enum;
 
 namespace PresentationLayer.Clinic
 {
@@ -20,13 +21,13 @@ namespace PresentationLayer.Clinic
         private bool logout = false;
 
         private List<Patient> patients;
-        private List<Visit> visits;        
+        private List<Visit> visits;
 
         public RegisterForm(LoginScreen mainForm)
         {
             this.mainForm = mainForm;
 
-            InitializeComponent();            
+            InitializeComponent();
 
             this.RefreshPatientList();
             this.RefreshVisitList(-1);
@@ -36,7 +37,7 @@ namespace PresentationLayer.Clinic
         {
             if (getAll)
                 patients = PatientsFacade.GetPatients(new Patient()).ToList();
-            
+
 
 
             this.patientsDataGrid.Rows.Clear();
@@ -93,7 +94,7 @@ namespace PresentationLayer.Clinic
                     var doctor = PersonelFacade.GetUsers(new User { PersonId = visit.DoctorId }).ToList();
 
                     this.visitDataGrid.Rows.Add(
-                        visit.Patient.FirstName + " " + visit.Patient.LastName, visit.DateOfRegistration.ToString(), doctor[0].LastName, visit.Status, visit.EndCancelDate.ToString() 
+                        visit.Patient.FirstName + " " + visit.Patient.LastName, visit.DateOfRegistration.ToString(), doctor[0].LastName, visit.Status, visit.EndCancelDate.ToString()
                         );
                 }
             }
@@ -117,7 +118,7 @@ namespace PresentationLayer.Clinic
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                if(logout)
+                if (logout)
                 {
                     mainForm.Show();
                 }
@@ -191,15 +192,18 @@ namespace PresentationLayer.Clinic
             {
                 Patient selected = visits[this.visitDataGrid.CurrentCell.RowIndex].Patient;
                 Visit toDelete = visits[this.visitDataGrid.CurrentCell.RowIndex];
-                if ( DialogResult.Yes == MessageBox.Show(
-                    this,
-                    "Czy napewno anulować wizytę pacjenta " + selected.FirstName + " " + selected.LastName + " w dniu " + toDelete.DateOfRegistration.ToShortDateString() + "?", "Usuwanie",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    ))
+                if (toDelete.Status == VisitStatus.REGISTER.ToString())
                 {
-                    VisitsFacade.CancelVisit(toDelete.VisitId);
-                    RefreshVisitList(this.patientsDataGrid.CurrentCell.RowIndex);
+                    if (DialogResult.Yes == MessageBox.Show(
+                        this,
+                        "Czy napewno anulować wizytę pacjenta " + selected.FirstName + " " + selected.LastName + " w dniu " + toDelete.DateOfRegistration.ToShortDateString() + "?", "Usuwanie",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                        ))
+                    {
+                        VisitsFacade.CancelVisit(toDelete.VisitId);
+                        RefreshVisitList(this.patientsDataGrid.CurrentCell.RowIndex);
+                    }
                 }
             }
         }
