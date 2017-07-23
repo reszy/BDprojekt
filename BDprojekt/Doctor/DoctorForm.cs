@@ -139,7 +139,10 @@ namespace PresentationLayer
             if (this.visitDataGrid.SelectedRows.Count == 1)
             {
                 var choosedVisit = visits[this.visitDataGrid.CurrentCell.RowIndex];
-                var dialog = new VisitDialog(choosedVisit, mainForm.LoggedId, (choosedVisit.DoctorId != mainForm.LoggedId));
+
+                bool isReadOnly = choosedVisit.DoctorId != mainForm.LoggedId || choosedVisit.Status == VisitStatus.CANCEL.ToString();
+
+                var dialog = new VisitDialog(choosedVisit, mainForm.LoggedId, isReadOnly);
                 dialog.ShowDialog();
 
                 RefreshVisitList();
