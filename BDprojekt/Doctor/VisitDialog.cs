@@ -57,9 +57,14 @@ namespace BDprojekt.Doctor
             dialog.ShowDialog();
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void EndVisitButton_Click(object sender, EventArgs e)
         {
-            QuickSave();
+            visit.EndCancelDate = DateTime.Now;
+            visit.Status = VisitStatus.FINISH.ToString();
+            visit.DoctorId = doctorId;
+            visit.Description = this.DescriptionTextBox.Text;
+            visit.Diagnosis = this.diagnosisTextBox.Text;
+            VisitsFacade.UpdateVisit(visit);
             this.Close();
         }
 
@@ -100,12 +105,7 @@ namespace BDprojekt.Doctor
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            visit.EndCancelDate = DateTime.Now;
-            visit.Status = VisitStatus.FINISH.ToString();
-            visit.DoctorId = doctorId;
-            visit.Description = this.DescriptionTextBox.Text;
-            visit.Diagnosis = this.diagnosisTextBox.Text;
-            VisitsFacade.UpdateVisit(visit);
+            QuickSave();
             this.Close();
         }
     }

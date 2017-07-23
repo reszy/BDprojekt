@@ -14,14 +14,14 @@ using BusinessLayer;
 namespace BDprojekt.Register
 {
     public partial class EditPatientDialog : Form
-    {        
+    {
         Patient editedPatient;
 
         bool update = false;
 
         public EditPatientDialog(Patient patient)
         {
-            this.editedPatient = patient;            
+            this.editedPatient = patient;
             InitializeComponent();
             if (editedPatient != null)
             {
@@ -31,8 +31,16 @@ namespace BDprojekt.Register
                 this.peselTextBox.Text = editedPatient.Pesel;
                 this.nipTextBox.Text = editedPatient.NIP;
                 this.insuranceCheckBox.Checked = (editedPatient.Insurance == 'Y');
-                    this.sexComboBox.Text = this.editedPatient.Sex.ToString();
-                if(editedPatient.BirthdayDate != null)
+                if (this.editedPatient.Sex != null && Convert.ToChar(this.editedPatient.Sex) == 'F')
+                {
+                    this.sexComboBox.SelectedIndex = 0;
+                }
+                else
+                {
+                    this.sexComboBox.SelectedIndex = 1;
+                }
+
+                if (editedPatient.BirthdayDate != null)
                 {
                     this.birthdatePicker.Checked = true;
                     this.birthdatePicker.Value = Convert.ToDateTime(editedPatient.BirthdayDate);
@@ -66,7 +74,7 @@ namespace BDprojekt.Register
             editedPatient.LastName = this.lastnameTextBox.Text;
             editedPatient.Pesel = this.peselTextBox.Text;
             editedPatient.NIP = this.nipTextBox.Text;
-            editedPatient.Sex = this.sexComboBox.Text[0];
+            editedPatient.Sex = (this.sexComboBox.SelectedIndex == 0) ? 'F' : 'M';
             editedPatient.Insurance = this.insuranceCheckBox.Checked ? 'Y' : 'N';
 
             if (this.birthdatePicker.Checked)

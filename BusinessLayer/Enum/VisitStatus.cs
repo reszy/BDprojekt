@@ -11,7 +11,7 @@ namespace BusinessLayer.Enum
         public static readonly VisitStatus REGISTER = new VisitStatus("Register", Type.REGISTER);
         public static readonly VisitStatus CANCEL = new VisitStatus("Cancel", Type.CANCEL);
         public static readonly VisitStatus FINISH = new VisitStatus("Finish", Type.FINISH);
-        public static readonly VisitStatus INPROGRESS = new VisitStatus("InProgress", Type.FINISH);
+        public static readonly VisitStatus INPROGRESS = new VisitStatus("InProgress", Type.INPROGRESS);
 
         public enum Type { REGISTER, CANCEL, FINISH, INPROGRESS }
 

@@ -53,22 +53,22 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(603, 329);
+            this.cancelButton.Location = new System.Drawing.Point(538, 329);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(107, 23);
+            this.cancelButton.Size = new System.Drawing.Size(172, 23);
             this.cancelButton.TabIndex = 40;
-            this.cancelButton.Text = "Zamknij";
+            this.cancelButton.Text = "Zakończ wizytę";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.EndVisitButton_Click);
             // 
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveButton.Location = new System.Drawing.Point(490, 329);
+            this.saveButton.Location = new System.Drawing.Point(367, 329);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(107, 23);
+            this.saveButton.Size = new System.Drawing.Size(159, 23);
             this.saveButton.TabIndex = 39;
-            this.saveButton.Text = "Zapisz";
+            this.saveButton.Text = "Zapisz i zamknij";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
