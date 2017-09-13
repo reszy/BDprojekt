@@ -18,10 +18,12 @@ namespace BDprojekt.Doctor
     {
         Visit visit;
         int doctorId;
+        bool readOnly;
         public VisitDialog(Visit visit, int doctorId, bool readOnly = false)
         {
             this.visit = visit;
             this.doctorId = doctorId;
+            this.readOnly = readOnly;
             InitializeComponent();
 
             if (readOnly)
@@ -59,12 +61,15 @@ namespace BDprojekt.Doctor
 
         private void EndVisitButton_Click(object sender, EventArgs e)
         {
-            visit.EndCancelDate = DateTime.Now;
-            visit.Status = VisitStatus.FINISH.ToString();
-            visit.DoctorId = doctorId;
-            visit.Description = this.DescriptionTextBox.Text;
-            visit.Diagnosis = this.diagnosisTextBox.Text;
-            VisitsFacade.UpdateVisit(visit);
+            if (!readOnly)
+            {
+                visit.EndCancelDate = DateTime.Now;
+                visit.Status = VisitStatus.FINISH.ToString();
+                visit.DoctorId = doctorId;
+                visit.Description = this.DescriptionTextBox.Text;
+                visit.Diagnosis = this.diagnosisTextBox.Text;
+                VisitsFacade.UpdateVisit(visit);
+            }
             this.Close();
         }
 
@@ -91,7 +96,7 @@ namespace BDprojekt.Doctor
 
         private void QuickSave()
         {
-            if(doctorId == visit.DoctorId)
+            if(doctorId == visit.DoctorId && !readOnly)
             {
                 if(visit.Status == VisitStatus.REGISTER.ToString())
                     visit.Status = VisitStatus.INPROGRESS.ToString();
